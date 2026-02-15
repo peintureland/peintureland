@@ -1,8 +1,25 @@
+# robots.txt for PeintureLand
+# Allow search engines to crawl main pages
 User-agent: *
 Allow: /index.html
 Allow: /brand.html
 Allow: /product.html
+Allow: /search.html
+Allow: /css/
+Allow: /js/
+Allow: /favicon.ico
+Allow: /logo.png
+Allow: /background-pattern.css
+Allow: /productCard.css
+
+# Block pages that should not appear in search
 Disallow: /cart.html
 Disallow: /checkout.html
-Disallow: /search.html
+Disallow: /cart-manager.js
+Disallow: /logo-loader.js
+Disallow: /paint-mixer.js
+Disallow: /supabase-client.js
+Disallow: /js/libs/
+
+# Sitemap location
 Sitemap: https://peintureland.com/sitemap.xml

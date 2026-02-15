@@ -242,7 +242,7 @@ html {
 @media (min-width: 375px) {
     .hero-actions {
         gap: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 120px;
     }
 
     .scroll-indicator {
@@ -264,7 +264,7 @@ html {
 @media (min-width: 428px) {
     .hero-actions {
         gap: 12px;
-        margin-bottom: 55px;
+        margin-bottom: 115px;
     }
 
     .scroll-indicator {
@@ -286,7 +286,7 @@ html {
 @media (min-width: 768px) {
     .hero-actions {
         gap: 15px;
-        margin-bottom: 60px;
+        margin-bottom: 90px;
     }
 
     .scroll-indicator {
@@ -1570,4 +1570,5 @@ body:not(.loader-complete) .container:not(#paint-bucket-loader) {
     .error-text {
         font-size: 13.5px;
     }
+
 }

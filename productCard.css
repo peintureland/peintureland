@@ -1,0 +1,395 @@
+/* ============================= */
+/* PRODUCT CARD - MOBILE FIRST   */
+/* ============================= */
+
+/* Product Grid */
+.brand-products {
+    display: grid;
+    grid-template-columns: 1fr; /* single column on very small phones */
+    gap: 20px;
+    align-items: stretch;
+    padding: 0 10px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Fills grid cell height naturally */
+    min-height: 480px;
+    border: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Image Container */
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 180px; /* smaller on mobile */
+    flex-shrink: 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.15);
+}
+
+/* Info Section */
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 220px;
+}
+
+/* Brand Badge */
+.brand-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+/* Product Name */
+.product-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1a1a2e;
+    line-height: 1.3;
+    min-height: 44px; /* 2 lines max on small phones */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Description */
+.product-description-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 60px;
+    max-height: 100px;
+    margin-bottom: 15px;
+    padding-right: 3px;
+}
+
+.product-description {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Properties */
+.properties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 15px 0;
+    min-height: 32px;
+    max-height: 60px;
+    overflow-y: auto;
+    padding-right: 3px;
+}
+
+.property-tag {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0c4a6e;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    height: 28px;
+}
+
+.property-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* Actions */
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes actions to bottom of flex container */
+    padding-top: 15px;
+    border-top: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+.btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.3);
+}
+
+.view-details {
+    color: #4facfe;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.product-card:hover .view-details {
+    transform: translateX(5px);
+    color: #f093fb;
+}
+
+/* Loading, No Products, Error */
+.loading, .no-products, .error {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 15px;
+    color: #666;
+}
+
+.loading i, .no-products i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #4facfe;
+}
+
+.error {
+    color: #dc3545;
+}
+
+.no-products {
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px dashed #dee2e6;
+}
+
+/* ============================ */
+/* EXTRA COMPACT: Very small phones (<400px) */
+/* ============================ */
+@media (max-width: 399px) {
+    .brand-products {
+        gap: 15px;
+        padding: 0 8px;
+    }
+    
+    .product-card {
+        min-height: 420px;
+    }
+    
+    .product-image-container {
+        height: 150px;
+    }
+    
+    .product-info {
+        padding: 12px;
+        min-height: 200px;
+    }
+    
+    .product-name {
+        font-size: 15px;
+        min-height: 40px;
+    }
+    
+    .product-description {
+        font-size: 12px;
+    }
+    
+    .brand-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+    
+    .property-tag {
+        font-size: 10px;
+        padding: 4px 8px;
+        height: 24px;
+    }
+    
+    .btn, .view-details {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}
+
+/* ============================ */
+/* SMALL PHONES (2 columns starting at 360px) */
+/* ============================ */
+@media (min-width: 360px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+/* ============================ */
+/* MEDIUM PHONES (iPhone 12/13/14) - 2 columns */
+/* ============================ */
+@media (min-width: 375px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+        gap: 25px;
+    }
+    
+    .product-card {
+        min-height: 500px;
+    }
+    
+    .product-image-container {
+        height: 200px;
+    }
+    
+    .product-info {
+        padding: 20px;
+    }
+    
+    .product-name {
+        font-size: 17px;
+        min-height: 48px;
+    }
+    
+    .btn, .view-details {
+        font-size: 14px;
+        padding: 11px 20px;
+    }
+}
+
+/* ============================ */
+/* LARGE PHONES / SMALL PHONES PLUS - 2 columns */
+/* ============================ */
+@media (min-width: 414px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+    }
+    
+    .product-card {
+        min-height: 520px;
+    }
+    
+    .product-image-container {
+        height: 220px;
+    }
+    
+    .product-name {
+        font-size: 18px;
+        min-height: 52px;
+    }
+    
+    .btn, .view-details {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+}
+
+/* ============================ */
+/* TABLETS (3 columns) */
+/* ============================ */
+@media (min-width: 768px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 35px;
+    }
+    
+    .product-card {
+        min-height: 550px;
+    }
+    
+    .product-image-container {
+        height: 240px;
+    }
+    
+    .product-name {
+        font-size: 19px;
+        min-height: 56px;
+    }
+}
+
+/* ============================ */
+/* LAPTOPS (3-4 columns fluid) */
+/* ============================ */
+@media (min-width: 1024px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+    }
+    
+    .product-card {
+        min-height: 580px;
+    }
+    
+    .product-image-container {
+        height: 260px;
+    }
+    
+    .product-name {
+        font-size: 20px;
+        min-height: 60px;
+    }
+}
+
+/* ============================ */
+/* LARGE SCREENS (fluid scaling) */
+/* ============================ */
+@media (min-width: 1440px) {
+    .brand-products {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 50px;
+    }
+    
+    .product-card {
+        min-height: 600px;
+    }
+    
+    .product-image-container {
+        height: 280px;
+    }
+    
+    .product-name {
+        font-size: 21px;
+        min-height: 64px;
+    }
+}

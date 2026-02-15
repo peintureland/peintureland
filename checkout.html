@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="fr">
+
+    <!-- Page Title -->
+    <title>Finalisez votre commande – PEINTURE LAND</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Finalisez votre commande chez Peinture Land. Remplissez vos informations et confirmez votre commande via WhatsApp.">
+
+    <!-- Robots: No Index -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://peintureland.com/checkout.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="background-pattern.css">
+
+    <!-- Fonts / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+</head>
+
+<body>
+    <!-- Background patterns -->
+    <div class="paint-splatter-bg"></div>
+    <div class="floating-paint-dots"></div>
+    
+    <!-- Header -->
+    <header class="header animate-gradient-shift">
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="PEINTURE LAND Logo" class="logo animate-float">
+                <h1 class="animate-fade-in">PEINTURE LAND</h1>
+            </div>
+            <div class="global-search-container animate-fade-in">
+                <form class="search-form" id="globalSearchForm">
+                    <input type="text" 
+                           class="search-input" 
+                           id="globalSearchInput" 
+                           placeholder="Rechercher produits et marques…"
+                           autocomplete="on">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="search-dropdown" id="searchDropdown"></div>
+                </form>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="active animate-fade-in-left">
+                    <i class="fas fa-home"></i> Accueil
+                </a>
+                <a href="cart.html" class="cart-link animate-fade-in-right">
+                    <i class="fas fa-shopping-cart"></i> Panier 
+                    <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section animate-fade-in">
+        <div class="container">
+            <div class="checkout-container">
+                <!-- Checkout Steps -->
+                <div class="checkout-steps animate-fade-in-up">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Panier</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <div class="step-text">étails</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Commande</div>
+                    </div>
+                </div>
+                
+                <h2 class="animate-fade-in-up">Finalisez votre commande</h2>
+                <p class="checkout-subtitle animate-fade-in-up" style="animation-delay: 0.2s">
+                    Remplissez vos informations et passez à WhatsApp pour confirmer votre commande
+                </p>
+                
+                <!-- Form with staggered animations -->
+                <form class="checkout-form stagger-animation">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Nom complet *</label>
+                        <input type="text" id="name" placeholder="Entrez votre nom complet" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Numéro de téléphone *</label>
+                        <input type="tel" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Adresse e-mail</label>
+                        <input type="email" id="email" placeholder="Entrez votre email (optionnel)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address"><i class="fas fa-map-marker-alt"></i> Adresse de livraison *</label>
+                        <textarea id="address" rows="3" placeholder="Entrez l’adresse complète de livraison" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes"><i class="fas fa-edit"></i>Remarques supplémentaires</label>
+                        <textarea id="notes" rows="3" placeholder="Toute instruction ou remarque spéciale..."></textarea>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="order-summary animate-fade-in-up">
+                        <h3>Résumé de la commande</h3>
+                        <div class="summary-items" id="orderItems">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        <div class="summary-total">
+                            <span>Nombre total d’articles:</span>
+                            <span id="orderTotalItems">0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <a href="cart.html" class="btn btn-back animate-fade-in-left">
+                            <i class="fas fa-arrow-left"></i> Retour au panier
+                        </a>
+                        <button class="btn btn-whatsapp animate-button-pulse" id="whatsappCheckout" type="button">
+                            <i class="fab fa-whatsapp"></i> Envoyer la commande via WhatsApp
+                        </button>
+                    </div>
+                    
+                    <div class="checkout-info">
+                        <h4><i class="fas fa-info-circle"></i> Comment ça marche:</h4>
+                        <p>1. Remplissez vos informations ci-dessus</p>
+                        <p>2. Cliquez sur "Envoyer la commande via WhatsApp"</p>
+                        <p>3. Le résumé de votre commande s’ouvrira dans WhatsApp</p>
+                        <p>4. Envoyez le message à notre équipe commerciale</p>
+                        <p>5. Nous vous contacterons pour confirmer votre commande</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="PEINTURE LAND" class="footer-logo-img">
+                    <h3>PEINTURE LAND</h3>
+                </div>
+                <p class="footer-tagline">Peinture & Revêtements Pro</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+                <div class="footer-address">
+                    <div class="address-line">
+                        <i class="fas fa-building"></i>
+                        <span>39 Boulevard De La Muette</span>
+                    </div>
+                    <div class="address-line">
+                        <i class="fas fa-map-pin"></i>
+                        <span>95140 Garges-Les-Gonesse</span>
+                    </div>
+                    <div class="address-line">
+                        <i class="fas fa-flag"></i>
+                        <span>France</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" 
+                       class="map-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fas fa-directions"></i> Itinéraire
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+                    <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+                    <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+                <div class="footer-hours">
+                    <p><strong>Monday - Friday:</strong> 6:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+
+                <!-- Social Links -->
+                <h4 style="margin-top: 25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+                <div class="footer-social" style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+            <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+        </div>
+    </div>
+</footer>
+
+
+
+    
+<script src="js/libs/gsap/gsap.min.js"></script>
+<script src="js/libs/gsap/ScrollTrigger.min.js"></script>
+<script src="js/paint-loader-enhanced.js"></script>
+<script src="js/gsap-animations.js"></script>
+<script src="logo-loader.js"></script>
+<script src="paint-mixer.js"></script>
+<script src="supabase-client.js"></script>
+<script src="cart-manager.js"></script>
+<script src="js/script.js"></script>
+<script src="js/search.js"></script>
+
+    <script>
+        // Checkout page specific JavaScript - UPDATED WITH COLOR SUPPORT
+        document.addEventListener('DOMContentLoaded', function() {
+            // Redirect to cart if cart is empty (block direct checkout access)
+            const currentCart = (window.cartManager && typeof window.cartManager.getCartItems === 'function') ?
+                window.cartManager.getCartItems() : (JSON.parse(localStorage.getItem('peintureLandCart')) || []);
+            if (!currentCart || currentCart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+
+            initializeAnimations();
+            loadOrderSummary();
+            updateCartCount();
+            
+            // WhatsApp checkout button
+            const waBtn = document.getElementById('whatsappCheckout');
+            if (waBtn) {
+                waBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    processWhatsAppOrder();
+                });
+            }
+            
+            // Form validation on submit
+            const checkoutForm = document.querySelector('.checkout-form');
+            if (checkoutForm) {
+                checkoutForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    processWhatsAppOrder();
+                });
+            }
+            
+            // Add input focus animations
+            setupFormAnimations();
+        });
+        
+        function initializeAnimations() {
+            // Animate checkout steps
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((step, index) => {
+                step.style.animationDelay = `${index * 0.2}s`;
+                step.classList.add('animate-fade-in-up');
+            });
+            
+            // Animate form groups with staggered delay
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                group.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+        
+        function setupFormAnimations() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                // Add focus effect
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('input-focused');
+                    this.classList.add('animate-input-focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('input-focused');
+                    this.classList.remove('animate-input-focus');
+                });
+                
+                // Add validation animation
+                input.addEventListener('invalid', function(e) {
+                    e.preventDefault();
+                    this.classList.add('animate-shake');
+                    setTimeout(() => {
+                        this.classList.remove('animate-shake');
+                    }, 500);
+                });
+            });
+        }
+        
+        function loadOrderSummary() {
+            const cart = (window.cartManager && typeof window.cartManager.getCartItems === 'function') ?
+                window.cartManager.getCartItems() : (JSON.parse(localStorage.getItem('peintureLandCart')) || []);
+            const orderItemsDiv = document.getElementById('orderItems');
+            
+            if (!cart || cart.length === 0) {
+                orderItemsDiv.innerHTML = '<p class="empty-order animate-fade-in">Your cart is empty</p>';
+                document.getElementById('orderTotalItems').textContent = '0';
+                return;
+            }
+
+            orderItemsDiv.innerHTML = '';
+            let totalItems = 0;
+
+            cart.forEach((item, index) => {
+                const qty = parseInt(item.quantity) || 1;
+                totalItems += qty;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'order-item animate-fade-in-up';
+                itemDiv.style.animationDelay = `${index * 0.1}s`;
+
+                itemDiv.innerHTML = `
+                    <span class="item-name">${item.name} × ${qty}</span>
+                    ${item.shade ? `<span class="item-color">Color: ${item.shade.code}</span>` : ''}
+                `;
+                orderItemsDiv.appendChild(itemDiv);
+            });
+
+            // Update total items
+            document.getElementById('orderTotalItems').textContent = totalItems;
+        }
+
+
+        
+        function processWhatsAppOrder() {
+            console.log('Starting WhatsApp order process...');
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const notes = document.getElementById('notes').value.trim();
+            
+            console.log('Form values:', { name, phone, email, address, notes });
+            
+            // Get cart items
+            const cart = window.cartManager.getCartItems();
+            console.log('Cart items:', cart);
+            
+            // Validation
+            const errors = [];
+            
+            if (!name) errors.push("Le nom est obligatoire");
+            if (!phone) errors.push("Le numéro de téléphone est obligatoire");
+            if (!address) errors.push("L'adresse de livraison est obligatoire");
+            if (cart.length === 0) errors.push("Votre panier est vide");
+            
+            if (errors.length > 0) {
+                console.error('Validation errors:', errors);
+                showNotification(errors[0], 'error');
+                
+                // Shake required fields
+                if (!name) document.getElementById('name').classList.add('animate-shake');
+                if (!phone) document.getElementById('phone').classList.add('animate-shake');
+                if (!address) document.getElementById('address').classList.add('animate-shake');
+                
+                setTimeout(() => {
+                    document.getElementById('name').classList.remove('animate-shake');
+                    document.getElementById('phone').classList.remove('animate-shake');
+                    document.getElementById('address').classList.remove('animate-shake');
+                }, 500);
+                
+                return;
+            }
+            
+            // Build order message - UPDATED WITH COLOR INFORMATION
+            let message = "PEINTURE LAND – NOUVELLE COMMANDE\n\n";
+            message += "Résumé de la commande:\n";
+            message += "--------------\n";
+            
+            let totalItems = 0;
+            cart.forEach((item, index) => {
+                const quantity = item.quantity || 1;
+                totalItems += quantity;
+                message += `${quantity}x ${item.name}`;
+                if (item.shade) {
+                    message += ` (Color: ${item.shade.code} - ${item.shade.name})`;
+                }
+                message += `\n`;
+                if (item.description) {
+                    message += `  ${item.description.substring(0, 100)}${item.description.length > 100 ? '...' : ''}\n`;
+                }
+            });
+            
+            message += `\nNombre total d’articles : ${totalItems}\n\n`;
+            message += "Détails du client :\n";
+            message += "-----------------\n";
+            message += `Nom: ${name}\n`;
+            message += `Téléphone : ${phone}\n`;
+            if (email) message += `Email: ${email}\n`;
+            message += `Adresse: ${address}\n`;
+            if (notes) message += `Remarques: ${notes}\n\n`;
+            
+            message += "Détails de l’entreprise :\n";
+            message += "-----------------\n";
+            message += "PEINTURE LAND\n";
+            message += "39 Boulevard De La Muette\n";
+            message += "95140 Garges-Les-Gonesse, France\n";
+            message += "Téléphone: 06.95.22.59.60\n";
+            message += "Adresse: sarlpeintureland@gmail.com\n\n";
+            
+            message += `Heure de la commande: ${new Date().toLocaleString()}\n\n`;
+            message += "Merci de confirmer cette commande !";
+            
+            console.log('Order message created');
+            
+            // Show modal with options
+            showWhatsAppOptionsModal(message, phone);
+        }
+
+        // Function to show modal with options
+        function showWhatsAppOptionsModal(message, phone) {
+            // Clean phone number (remove any non-digit characters and add country code)
+            const cleanPhone = phone.replace(/\D/g, '');
+            // If phone doesn't start with country code, add France code
+            const formattedPhone = cleanPhone.startsWith('33') ? cleanPhone : 
+                                 cleanPhone.startsWith('0') ? '33' + cleanPhone.substring(1) : 
+                                 cleanPhone;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const businessPhone = "33695225960"; // PEINTURE LAND WhatsApp number
+            
+            // Create WhatsApp URLs
+            const whatsappWebURL = `https://web.whatsapp.com/send?phone=${businessPhone}&text=${encodedMessage}`;
+            const whatsappDirectURL = `https://wa.me/${businessPhone}?text=${encodedMessage}`;
+            
+            // Create modal HTML - Fixed syntax errors
+            const modalHTML = `
+                <div class="whatsapp-modal-overlay">
+                    <div class="whatsapp-modal-container animate-fade-in-scale">
+                        <div class="modal-header">
+                            <h3><i class="fab fa-whatsapp"></i> Envoyer la commande via WhatsApp</h3>
+                            <button class="modal-close" onclick="closeModal()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <p class="modal-description">
+                                Choisissez comment vous souhaitez envoyer votre commande à PEINTURE LAND:
+                            </p>
+                            
+                            <div class="whatsapp-options">
+                                <!-- Option 1: Open WhatsApp Web -->
+                                <div class="option-card">
+                                    <div class="option-icon">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                    <div class="option-content">
+                                        <h4>Ouvrir dans WhatsApp Web</h4>
+                                        <p>Ouvre WhatsApp Web. Recommandé sur PC.</p>
+                                        <button class="btn-option btn-whatsapp-web" data-url="${whatsappWebURL}">
+                                            <i class="fab fa-whatsapp"></i> Ouvrir WhatsApp Web
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Option 2: Open WhatsApp Direct -->
+                                <div class="option-card">
+                                    <div class="option-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="option-content">
+                                        <h4>Ouvrir dans WhatsApp (Mobile)</h4>
+                                        <p>Ouvre directement l’application WhatsApp. L’onglet peut se fermer après l’envoi.</p>
+                                        <button class="btn-option btn-whatsapp-direct" data-url="${whatsappDirectURL}">
+                                            <i class="fab fa-whatsapp"></i> Ouvrir WhatsApp
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Option 3: Copy Message -->
+                                <div class="option-card">
+                                    <div class="option-icon">
+                                        <i class="fas fa-copy"></i>
+                                    </div>
+                                    <div class="option-content">
+                                        <h4>Copier le message manuellement</h4>
+                                        <p>Copiez le message de commande et collez-le dans WhatsApp vous-même.</p>
+                                        <div class="message-preview">
+                                            <textarea id="orderMessagePreview" readonly rows="4">${message.replace(/`/g, "'")}</textarea>
+                                        </div>
+                                        <div class="copy-actions">
+                                            <button class="btn-option btn-copy" onclick="copyOrderMessage()">
+                                                <i class="fas fa-copy"></i> Copier le message
+                                            </button>
+                                            <span class="copy-status" id="copyStatus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <p class="footer-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    WhatsApp Web fonctionne mieux sur ordinateur. Sur mobile, choisissez « Ouvrir dans WhatsApp » ou copiez le message.
+                                </p>
+                                <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remove any existing modal
+            const existingModal = document.querySelector('.whatsapp-modal-overlay');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Add modal to page
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalHTML;
+            document.body.appendChild(modalContainer.firstElementChild);
+            
+            // Prevent scrolling on body when modal is open
+            document.body.style.overflow = 'hidden';
+            
+            // Store message in localStorage for backup
+            localStorage.setItem('peintureLandOrderMessage', message);
+            localStorage.setItem('peintureLandOrderPhone', businessPhone);
+            
+            // Add event listeners to buttons
+            setTimeout(() => {
+                const whatsappWebBtn = document.querySelector('.btn-whatsapp-web');
+                const whatsappDirectBtn = document.querySelector('.btn-whatsapp-direct');
+                
+                if (whatsappWebBtn) {
+                    whatsappWebBtn.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url');
+                        openWhatsAppWeb(url);
+                    });
+                }
+                
+                if (whatsappDirectBtn) {
+                    whatsappDirectBtn.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url');
+                        openWhatsAppDirect(url);
+                    });
+                }
+            }, 100);
+        }
+
+        // Function to open WhatsApp Web
+        function openWhatsAppWeb(url) {
+            console.log('Opening WhatsApp Web:', url);
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('Opening WhatsApp Web in a new tab...', 'success');
+            
+            // Ask about clearing cart after 2 seconds
+            setTimeout(() => {
+                if (confirm('Order sent to WhatsApp! Would you like to clear your cart?')) {
+                    window.cartManager.clearCart();
+                    closeModal();
+                    showNotification('Cart cleared successfully!', 'success');
+                }
+            }, 2000);
+        }
+
+        // Function to open WhatsApp directly
+        function openWhatsAppDirect(url) {
+            console.log('Opening WhatsApp Direct:', url);
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('Opening WhatsApp...', 'success');
+            
+            // Show warning about tab closing
+            setTimeout(() => {
+                showNotification('Note: WhatsApp may close this tab after sending the message.', 'info');
+            }, 1000);
+            
+            // Ask about clearing cart after 2 seconds
+            setTimeout(() => {
+                if (confirm('Order sent to WhatsApp! Would you like to clear your cart?')) {
+                    window.cartManager.clearCart();
+                    closeModal();
+                    showNotification('Cart cleared successfully!', 'success');
+                }
+            }, 2000);
+        }
+
+        // Function to copy order message to clipboard
+        function copyOrderMessage() {
+            const message = localStorage.getItem('peintureLandOrderMessage') || '';
+            const phone = localStorage.getItem('peintureLandOrderPhone') || '33695225960';
+            
+            if (!message) {
+                showNotification('No order message found. Please try again.', 'error');
+                return;
+            }
+            
+            // Copy to clipboard using modern API
+            navigator.clipboard.writeText(message).then(() => {
+                const copyStatus = document.getElementById('copyStatus');
+                const copyBtn = document.querySelector('.btn-copy');
+                
+                // Show success animation
+                if (copyStatus) {
+                    copyStatus.textContent = '✓ Copied!';
+                    copyStatus.style.color = '#25D366';
+                }
+                if (copyBtn) {
+                    copyBtn.classList.add('copied');
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                }
+                
+                showNotification('Order message copied to clipboard!', 'success');
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    if (copyStatus) copyStatus.textContent = '';
+                    if (copyBtn) {
+                        copyBtn.classList.remove('copied');
+                        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Message';
+                    }
+                }, 3000);
+                
+                // Ask about opening WhatsApp immediately
+                setTimeout(() => {
+                    if (confirm('Message copied! Do you want to open WhatsApp to send it?')) {
+                        const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+                    }
+                }, 500);
+                
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                showNotification('Failed to copy. Please select and copy the text manually.', 'error');
+            });
+        }
+
+        // Function to close modal
+        function closeModal() {
+            const modal = document.querySelector('.whatsapp-modal-overlay');
+            if (modal) {
+                modal.classList.add('closing');
+                setTimeout(() => {
+                    modal.remove();
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        // Backup WhatsApp function (simple direct approach)
+        function sendWhatsAppDirectBackup() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            
+            if (!name || !phone || !address) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Simple direct WhatsApp URL
+            const message = `Hello PEINTURE LAND, I'd like to place an order. Name: ${name}, Phone: ${phone}, Address: ${address}`;
+            const whatsappURL = `https://wa.me/33695225960?text=${encodeURIComponent(message)}`;
+            
+            // Open in new tab
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+        }
+        
+        // Add notification function
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' : 'linear-gradient(135deg, #ff4757 0%, #ff3838 100%)'};
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 600;
+                animation: slideIn 0.3s ease, fadeOut 0.3s ease 3.7s forwards;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 4 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 4000);
+        }
+        
+        function updateCartCount() {
+            const cartCount = window.cartManager.getTotalItems();
+            const cartCountElement = document.querySelector('.cart-count');
+            cartCountElement.textContent = cartCount;
+            
+            // Animate cart count update
+            cartCountElement.classList.add('animate-pulse');
+            setTimeout(() => {
+                cartCountElement.classList.remove('animate-pulse');
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('whatsapp-modal-overlay')) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+    <style>
+.item-price {
+    color: #4facfe;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.item-subtotal {
+    color: #25D366;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+
+
+
+        /* Checkout page specific styles */
+        .checkout-section {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .checkout-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 1;
+            transform: translateY(20px);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .step.active .step-number {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+        }
+        
+        .step-text {
+            font-size: 0.9rem;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .step.active .step-text {
+            color: #4facfe;
+            font-weight: 600;
+        }
+        
+        .step-line {
+            width: 100px;
+            height: 3px;
+            background: #ddd;
+            margin: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            animation: lineFill 1.5s ease-in-out forwards;
+        }
+        
+        @keyframes lineFill {
+            to {
+                left: 0;
+            }
+        }
+        
+        .checkout-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00f2fe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .checkout-subtitle {
+            text-align: center;
+            color: #464646;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            opacity: 1;
+            transform: translateY(20px);
+        }
+        
+        .checkout-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            opacity: 1;
+            transform: translateY(20px);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 1.1rem;
+        }
+        
+        .form-group label i {
+            margin-right: 10px;
+            color: #4facfe;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group.input-focused label {
+            color: #4facfe;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+        }
+        
+        .order-summary {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            opacity: 1;
+            transform: translateY(20px);
+        }
+        
+        .order-summary h3 {
+            margin-bottom: 20px;
+            color: #2d3436;
+            font-size: 1.5rem;
+        }
+        
+        .summary-items {
+            margin-bottom: 20px;
+        }
+        
+        .order-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 1;
+            transform: translateY(10px);
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            color: #636e72;
+            flex: 1;
+        }
+        
+        /* NEW: Color info in order summary */
+        .item-color {
+            color: #4facfe;
+            font-size: 0.85rem;
+            padding: 3px 8px;
+            background: rgba(79, 172, 254, 0.1);
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3436;
+            border-top: 2px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .checkout-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            opacity: 1;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 1s forwards;
+        }
+        
+        .checkout-info h4 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkout-info p {
+            margin-bottom: 8px;
+            color: #455a64;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .checkout-info p::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #1976d2;
+        }
+        
+        .empty-order {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        /* Animation for input focus */
+        .animate-input-focus {
+            animation: inputFocus 0.3s ease;
+        }
+        
+        @keyframes inputFocus {
+            0% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.2); }
+            50% { box-shadow: 0 0 0 10px rgba(79, 172, 254, 0.1); }
+            100% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.2); }
+        }
+        
+        /* === ENHANCED BUTTON STYLES === */
+        .btn-back, .btn-whatsapp {
+            position: relative;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            overflow: hidden;
+            z-index: 1;
+            min-height: 56px;
+        }
+
+        /* Back to Cart Button */
+        .btn-back {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        .btn-back:hover {
+            transform: translateX(-8px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .btn-back:active {
+            transform: translateX(-4px) scale(0.98);
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: pulseGlow 2s ease-in-out infinite;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            animation: none;
+        }
+
+        .btn-whatsapp:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Button Icons */
+        .btn-back i, .btn-whatsapp i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-back:hover i {
+            transform: translateX(-3px);
+        }
+
+        .btn-whatsapp:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Ripple Effect */
+        .btn-back::after, .btn-whatsapp::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.6);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+            z-index: -1;
+        }
+
+        .btn-back:focus:not(:active)::after,
+        .btn-whatsapp:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(40, 40);
+                opacity: 0;
+            }
+        }
+
+        /* Button Loading State */
+        .btn-whatsapp.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .btn-whatsapp.loading::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: buttonSpin 1s linear infinite;
+        }
+
+        @keyframes buttonSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Pulse Glow Animation */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6), 
+                            0 0 15px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        /* Button Success Animation */
+        .btn-whatsapp.success {
+            animation: buttonSuccess 0.8s ease;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        }
+
+        @keyframes buttonSuccess {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.15);
+                background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            }
+            50% {
+                transform: scale(0.95);
+            }
+            75% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Form Actions Layout */
+        .form-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .form-actions .btn-back {
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .form-actions .btn-whatsapp {
+            flex: 2;
+            min-width: 200px;
+        }
+
+        /* Notification Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .checkout-steps {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .step-line {
+                width: 3px;
+                height: 50px;
+                margin: 10px 0;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn-back, .btn-whatsapp {
+                width: 100%;
+            }
+            
+            .checkout-container h2 {
+                font-size: 2rem;
+            }
+            
+            .form-actions .btn-back,
+            .form-actions .btn-whatsapp {
+                width: 100%;
+            }
+            
+            .btn-back, .btn-whatsapp {
+                padding: 14px 24px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .checkout-form {
+                padding: 20px;
+            }
+            
+            .checkout-container h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-back, .btn-whatsapp {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        /* WhatsApp Modal Styles */
+        .whatsapp-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .whatsapp-modal-overlay.closing {
+            animation: fadeOut 0.3s ease forwards;
+        }
+
+        .whatsapp-modal-container {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-header h3 i {
+            color: #25D366;
+            font-size: 1.5rem;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-description {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .whatsapp-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .option-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(79, 172, 254, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .option-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .option-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .option-content {
+            flex: 1;
+        }
+
+        .option-content h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .option-content p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-option {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .btn-whatsapp-web {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+
+        .btn-whatsapp-direct {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-copy {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-option.copied {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            animation: copiedPulse 0.5s ease;
+        }
+
+        @keyframes copiedPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .message-preview {
+            margin: 15px 0;
+        }
+
+        #orderMessagePreview {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            resize: vertical;
+            min-height: 100px;
+            max-height: 200px;
+        }
+
+        #orderMessagePreview:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .copy-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .copy-status {
+            color: #25D366;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .modal-footer {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-note {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-note i {
+            color: #4facfe;
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Animation for modal */
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .whatsapp-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-modal-container {
+                max-height: 95vh;
+                margin: 10px;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .option-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-modal-container {
+                padding: 10px;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .option-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .option-icon i {
+                font-size: 1.5rem;
+            }
+            
+            .option-content h4 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</body>
+</html>

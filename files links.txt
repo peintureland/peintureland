@@ -1,0 +1,72 @@
+animations.css: https://github.com/Romankhaira/project/blob/main/animations.css
+animations.js : https://github.com/Romankhaira/project/blob/main/animations.js
+background-pattern.css :  https://github.com/Romankhaira/project/blob/main/background-pattern.css
+brand.html : https://github.com/Romankhaira/project/blob/main/brand.html
+cart-manager.js : https://github.com/Romankhaira/project/blob/main/cart-manager.js 
+cart.html : https://github.com/Romankhaira/project/blob/main/cart.html
+checkout.html : https://github.com/Romankhaira/project/blob/main/checkout.html
+index.html : https://github.com/Romankhaira/project/blob/main/index.html
+logo-loader.js : https://github.com/Romankhaira/project/blob/main/logo-loader.js
+material.html : https://github.com/Romankhaira/project/blob/main/material.html
+paint-mixer.js : https://github.com/Romankhaira/project/blob/main/paint-mixer.js
+product.html : https://github.com/Romankhaira/project/blob/main/product.html
+script.js : https://github.com/Romankhaira/project/blob/main/script.js
+style.css : https://github.com/Romankhaira/project/blob/main/style.css
+supabase-client.js : https://github.com/Romankhaira/project/blob/main/supabase-client.js
+
+
+
+
+raw files links:
+animations.css — https://raw.githubusercontent.com/Romankhaira/project/main/animations.css
+animations.js — https://raw.githubusercontent.com/Romankhaira/project/main/animations.js
+background-pattern.css — https://raw.githubusercontent.com/Romankhaira/project/main/background-pattern.css
+brand.html — https://raw.githubusercontent.com/Romankhaira/project/main/brand.html
+cart-manager.js — https://raw.githubusercontent.com/Romankhaira/project/main/cart-manager.js
+cart.html — https://raw.githubusercontent.com/Romankhaira/project/main/cart.html
+checkout.html — https://raw.githubusercontent.com/Romankhaira/project/main/checkout.html
+index.html — https://raw.githubusercontent.com/Romankhaira/project/main/index.html
+logo-loader.js — https://raw.githubusercontent.com/Romankhaira/project/main/logo-loader.js
+material.html — https://raw.githubusercontent.com/Romankhaira/project/main/material.html
+paint-mixer.js — https://raw.githubusercontent.com/Romankhaira/project/main/paint-mixer.js
+product.html — https://raw.githubusercontent.com/Romankhaira/project/main/product.html
+script.js — https://raw.githubusercontent.com/Romankhaira/project/main/script.js
+style.css — https://raw.githubusercontent.com/Romankhaira/project/main/style.css
+supabase-client.js — https://raw.githubusercontent.com/Romankhaira/project/main/supabase-client.js
+color-picker-animations.js - https://raw.githubusercontent.com/Romankhaira/project/refs/heads/main/color-picker-animations.js
+gsap-animations.js - https://raw.githubusercontent.com/Romankhaira/project/refs/heads/main/gsap-animations.js
+paint-loader-enhanced.js - https://raw.githubusercontent.com/Romankhaira/project/refs/heads/main/paint-loader-enhanced.js
+
+
+
+peinture-land:.
+│   animations.css
+│   animations.js
+│   background-pattern.css
+│   brand.html
+│   cart-manager.js
+│   cart.html
+│   checkout.html
+│   favicon.ico
+│   files links.txt
+│   hero.png
+│   index.html
+│   logo-loader.js
+│   logo.png
+│   material.html
+│   paint-mixer.js
+│   product.html
+│   README.md
+│   script.js
+│   style.css
+│   supabase-client.js
+│   vercel.json
+└───js
+    │   color-picker-animations.js
+    │   gsap-animations.js
+    │   paint-loader-enhanced.js
+    │
+    └───libs
+        └───gsap
+                gsap.min.js
+                ScrollTrigger.min.js

@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="fr">
+
+    <!-- Title -->
+    <title>Panier – PEINTURE LAND</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Visualisez votre panier sur Peinture Land et gérez vos produits avant le paiement.">
+
+    <!-- Robots: noindex -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Canonical (optional for internal consistency) -->
+    <link rel="canonical" href="https://peintureland.com/cart.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="background-pattern.css">
+
+    <!-- Fonts / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+</head>
+
+<body>
+    <!-- ADD BACKGROUND PATTERNS: -->
+    <div class="paint-splatter-bg"></div>
+    <div class="floating-paint-dots"></div>
+
+    <!-- Header -->
+    <header class="header animate-gradient-shift">
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="PEINTURE LAND Logo" class="logo animate-float">
+                <h1 class="site-name animate-fade-in">PEINTURE LAND</h1>
+            </div>
+            <div class="global-search-container animate-fade-in">
+                <form class="search-form" id="globalSearchForm">
+                    <input type="text" 
+                           class="search-input" 
+                           id="globalSearchInput" 
+                           placeholder="Rechercher produits et marques…"
+                           autocomplete="on">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="search-dropdown" id="searchDropdown"></div>
+                </form>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="active animate-fade-in-left">
+                    <i class="fas fa-home"></i> Accueil
+                </a>
+                <a href="cart.html" class="cart-link animate-fade-in-right">
+                    <i class="fas fa-shopping-cart"></i> Panier 
+                    <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Cart Section -->
+    <section class="cart-section animate-fade-in">
+        <div class="container">
+            <h2 class="animate-fade-in-up">Votre panier</h2>
+            
+            <div class="cart-container" id="cartContainer">
+                <!-- Empty Cart State -->
+                <div class="empty-cart animate-fade-in" id="emptyCart">
+                    <i class="fas fa-shopping-cart animate-float"></i>
+                    <h3>Votre panier est vide</h3>
+                    <p>Ajoutez des produits pour commencer</p>
+                    <a href="index.html" class="btn btn-primary animate-button-pulse">
+                        Parcourir les marques
+                    </a>
+                </div>
+                
+                <!-- Cart Items (will load with animations) -->
+                <div class="cart-items" id="cartItems" style="display: none;">
+                    <!-- Cart items will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="cart-actions animate-fade-in-up" id="cartActions" style="display: none;">
+                <div class="cart-summary">
+                    <h3>Résumé de la commande</h3>
+                    <div class="summary-item">
+                        <span>Articles au total:</span>
+                        <span id="totalItems">0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Résumé Total:</span>
+                        <span id="totalProducts">0</span>
+                    </div>
+                    
+                    <!-- NEW: Button Group Container -->
+                    <div class="cart-button-group">
+                        <!-- Checkout Button -->
+                        <a href="checkout.html" class="btn btn-checkout animate-button-pulse" id="checkoutBtn">
+                            <i class="fas fa-credit-card"></i> Procéder au paiement
+                        </a>
+                        
+                        <!-- Clear Cart Button -->
+                        <button class="btn btn-clear animate-shake" id="clearCart">
+                            <i class="fas fa-trash"></i> Vider le panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="PEINTURE LAND" class="footer-logo-img">
+                    <h3>PEINTURE LAND</h3>
+                </div>
+                <p class="footer-tagline">Peinture & Revêtements Pro</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+                <div class="footer-address">
+                    <div class="address-line">
+                        <i class="fas fa-building"></i>
+                        <span>39 Boulevard De La Muette</span>
+                    </div>
+                    <div class="address-line">
+                        <i class="fas fa-map-pin"></i>
+                        <span>95140 Garges-Les-Gonesse</span>
+                    </div>
+                    <div class="address-line">
+                        <i class="fas fa-flag"></i>
+                        <span>France</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" 
+                       class="map-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fas fa-directions"></i> Itinéraire
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+                    <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+                    <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+                <div class="footer-hours">
+                    <p><strong>Monday - Friday:</strong> 6:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+
+                <!-- Social Links -->
+                <h4 style="margin-top: 25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+                <div class="footer-social" style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+            <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/libs/gsap/gsap.min.js"></script>
+<script src="js/libs/gsap/ScrollTrigger.min.js"></script>
+<script src="js/paint-loader-enhanced.js"></script>
+<script src="js/gsap-animations.js"></script>
+<script src="logo-loader.js"></script>
+<script src="paint-mixer.js"></script>
+<script src="supabase-client.js"></script>
+<script src="cart-manager.js"></script>
+<script src="js/script.js"></script>
+<script src="js/search.js"></script>
+
+    
+    <script>
+    // Cart page specific JavaScript - UPDATED WITH COLOR SUPPORT
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Cart page loaded, cartManager:', window.cartManager);
+        
+        // Wait a moment for cartManager to initialize
+        setTimeout(function() {
+            loadCartItems();
+            updateCartCount();
+            
+            // Clear cart button - updated with enhanced interaction
+            document.getElementById('clearCart').addEventListener('click', function(e) {
+                const cart = window.cartManager?.getCartItems() || 
+                           JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+                
+                if (cart.length === 0) {
+                    this.classList.add('animate-shake');
+                    setTimeout(() => {
+                        this.classList.remove('animate-shake');
+                    }, 500);
+                    return;
+                }
+                
+                // Add confirmation with visual feedback
+                this.classList.add('animate-button-success');
+                this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Confirm Clear';
+                
+                let confirmed = false;
+                
+                // First click: Show confirmation
+                if (!this.dataset.confirming) {
+                    e.preventDefault();
+                    this.dataset.confirming = 'true';
+                    
+                    // Reset after 3 seconds if no second click
+                    setTimeout(() => {
+                        if (!confirmed) {
+                            this.classList.remove('animate-button-success');
+                            this.innerHTML = '<i class="fas fa-trash"></i> Clear Cart';
+                            delete this.dataset.confirming;
+                        }
+                    }, 3000);
+                    
+                    return;
+                }
+                
+                // Second click: Confirm clear
+                confirmed = true;
+                
+                if (window.cartManager && typeof window.cartManager.clearCart === 'function') {
+                    window.cartManager.clearCart();
+                } else {
+                    localStorage.removeItem('peintureLandCart');
+                }
+                
+                // Show success animation
+                this.classList.remove('animate-button-success');
+                this.classList.add('animate-button-success');
+                this.innerHTML = '<i class="fas fa-check"></i> Cleared!';
+                
+                setTimeout(() => {
+                    this.classList.remove('animate-button-success');
+                    this.innerHTML = '<i class="fas fa-trash"></i> Clear Cart';
+                    delete this.dataset.confirming;
+                    
+                    // Reload cart items
+                    loadCartItems();
+                    updateCartCount();
+                }, 1000);
+            });
+            
+            // Enhanced animations setup
+            setupEnhancedCartInteractions();
+            
+            // Checkout button interaction
+            document.getElementById('checkoutBtn').addEventListener('click', function(e) {
+                // Check if cart is empty
+                const cart = window.cartManager?.getCartItems() || 
+                           JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+                
+                if (cart.length === 0) {
+                    e.preventDefault();
+                    this.classList.add('animate-shake');
+                    setTimeout(() => {
+                        this.classList.remove('animate-shake');
+                    }, 500);
+                    
+                    // Show message
+                    alert('Your cart is empty. Add some products first.');
+                    return;
+                }
+                
+                // Add success animation
+                this.classList.add('animate-button-success');
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                
+                // Reset after animation
+                setTimeout(() => {
+                    this.classList.remove('animate-button-success');
+                    this.innerHTML = '<i class="fas fa-credit-card"></i> Proceed to Checkout';
+                }, 800);
+            });
+            
+            // Add ripple effect to both buttons
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const clearBtn = document.getElementById('clearCart');
+            
+            [checkoutBtn, clearBtn].forEach(button => {
+                button?.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        }, 100);
+    });
+    
+    function loadCartItems() {
+        // Try to get cart from cartManager first, then localStorage
+        let cart;
+        if (window.cartManager && typeof window.cartManager.getCartItems === 'function') {
+            cart = window.cartManager.getCartItems();
+        } else {
+            try {
+                cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+            } catch (e) {
+                console.error('Error loading cart:', e);
+                cart = [];
+            }
+        }
+        
+        console.log('Cart items:', cart);
+        
+        const cartItemsDiv = document.getElementById('cartItems');
+        const emptyCartDiv = document.getElementById('emptyCart');
+        const cartActionsDiv = document.getElementById('cartActions');
+        
+        if (!cartItemsDiv || !emptyCartDiv || !cartActionsDiv) {
+            console.error('Cart elements not found');
+            return;
+        }
+        
+        if (!cart || cart.length === 0) {
+            cartItemsDiv.style.display = 'none';
+            emptyCartDiv.style.display = 'block';
+            cartActionsDiv.style.display = 'none';
+            return;
+        }
+        
+        emptyCartDiv.style.display = 'none';
+        cartItemsDiv.style.display = 'block';
+        cartActionsDiv.style.display = 'block';
+        
+        cartItemsDiv.innerHTML = '';
+        
+        let totalItems = 0;
+        
+        cart.forEach((item, index) => {
+            totalItems += item.quantity || 1;
+            
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.style.animationDelay = `${index * 0.1}s`;
+            
+            // UPDATED: Include color information in cart display - SANITIZED
+            const img = document.createElement('img');
+            img.src = item.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=150&h=150&fit=crop';
+            img.alt = item.name || 'Product image';
+            img.className = 'cart-item-image';
+            
+            const details = document.createElement('div');
+            details.className = 'cart-item-details';
+            
+            const nameEl = document.createElement('h3');
+            nameEl.className = 'cart-item-name';
+            nameEl.textContent = item.name || 'Unknown Product';
+            details.appendChild(nameEl);
+            
+            if (item.shade) {
+                const colorEl = document.createElement('p');
+                colorEl.className = 'cart-item-color';
+                const strongEl = document.createElement('strong');
+                strongEl.textContent = 'Color: ';
+                colorEl.appendChild(strongEl);
+                // Sanitize shade code and name before using
+                const shadeCode = String(item.shade.code || '').replace(/[<>\"']/g, '');
+                const shadeName = String(item.shade.name || '').replace(/[<>\"']/g, '');
+                colorEl.appendChild(document.createTextNode(`${shadeCode} - ${shadeName}`));
+                details.appendChild(colorEl);
+            }
+            
+            const descEl = document.createElement('p');
+            descEl.className = 'cart-item-description';
+            // Sanitize description before using
+            const sanitizedDesc = item.description ? String(item.description).replace(/[<>\"']/g, '').substring(0, 100) + '...' : 'No description available';
+            descEl.textContent = sanitizedDesc;
+            details.appendChild(descEl);
+            
+            const quantityDiv = document.createElement('div');
+            quantityDiv.className = 'cart-item-quantity';
+            
+            const minusBtn = document.createElement('button');
+            minusBtn.className = 'quantity-btn minus';
+            minusBtn.dataset.key = item.key;
+            minusBtn.textContent = '-';
+            
+            const quantitySpan = document.createElement('span');
+            quantitySpan.className = 'quantity';
+            quantitySpan.textContent = item.quantity || 1;
+            
+            const plusBtn = document.createElement('button');
+            plusBtn.className = 'quantity-btn plus';
+            plusBtn.dataset.key = item.key;
+            plusBtn.textContent = '+';
+            
+            quantityDiv.appendChild(minusBtn);
+            quantityDiv.appendChild(quantitySpan);
+            quantityDiv.appendChild(plusBtn);
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'cart-item-remove';
+            removeBtn.dataset.key = item.key;
+            removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+            
+            cartItem.appendChild(img);
+            cartItem.appendChild(details);
+            cartItem.appendChild(quantityDiv);
+            cartItem.appendChild(removeBtn);
+            
+            cartItemsDiv.appendChild(cartItem);
+        });
+        
+        // Update summary
+        document.getElementById('totalItems').textContent = totalItems;
+        document.getElementById('totalProducts').textContent = cart.length;
+        
+        // Add event listeners for quantity buttons
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemKey = this.dataset.key;  // CHANGED: Using key instead of id
+                const isPlus = this.classList.contains('plus');
+                
+                // Add click animation
+                this.classList.add('quantity-clicked');
+                setTimeout(() => {
+                    this.classList.remove('quantity-clicked');
+                }, 300);
+                
+                // Animate quantity number
+                const quantitySpan = this.parentElement.querySelector('.quantity');
+                quantitySpan.classList.add('quantity-updating');
+                setTimeout(() => {
+                    quantitySpan.classList.remove('quantity-updating');
+                }, 300);
+                
+                // Update cart using key
+                if (window.cartManager && typeof window.cartManager.updateQuantity === 'function') {
+                    const cart = window.cartManager.getCartItems();
+                    const item = cart.find(item => item.key === itemKey);
+                    
+                    if (item) {
+                        const currentQty = item.quantity || 1;
+                        const newQuantity = isPlus ? currentQty + 1 : currentQty - 1;
+                        if (newQuantity >= 0) {
+                            window.cartManager.updateQuantity(itemKey, newQuantity);
+                            loadCartItems(); // Reload to update UI
+                            updateCartCount();
+                        }
+                    }
+                } else {
+                    // Fallback to localStorage
+                    const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+                    const itemIndex = cart.findIndex(item => item.key === itemKey);
+                    
+                    if (itemIndex !== -1) {
+                        const currentQty = cart[itemIndex].quantity || 1;
+                        const newQuantity = isPlus ? currentQty + 1 : currentQty - 1;
+                        
+                        if (newQuantity <= 0) {
+                            cart.splice(itemIndex, 1);
+                        } else {
+                            cart[itemIndex].quantity = newQuantity;
+                        }
+                        
+                        localStorage.setItem('peintureLandCart', JSON.stringify(cart));
+                        loadCartItems(); // Reload to update UI
+                        updateCartCount();
+                    }
+                }
+            });
+        });
+        
+        // Add event listeners for remove buttons
+        document.querySelectorAll('.cart-item-remove').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemKey = this.dataset.key;  // CHANGED: Using key instead of id
+                const cartItem = this.closest('.cart-item');
+                
+                // Add removal animation
+                cartItem.classList.add('removing');
+                
+                // Wait for animation to complete before actual removal
+                setTimeout(() => {
+                    if (window.cartManager && typeof window.cartManager.removeItem === 'function') {
+                        window.cartManager.removeItem(itemKey);
+                    } else {
+                        // Fallback: update localStorage directly
+                        const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+                        const updatedCart = cart.filter(item => item.key !== itemKey);
+                        localStorage.setItem('peintureLandCart', JSON.stringify(updatedCart));
+                    }
+                    
+                    loadCartItems(); // Reload to update UI
+                    updateCartCount();
+                }, 500);
+            });
+        });
+        
+        // Add staggered animation to cart items
+        const cartItems = document.querySelectorAll('.cart-item');
+        cartItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+        
+        // Hover effect for cart items
+        cartItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+    }
+    
+    function updateCartCount() {
+        // Use cartManager if available, otherwise use localStorage directly
+        let cartCount;
+        if (window.cartManager && typeof window.cartManager.getTotalItems === 'function') {
+            cartCount = window.cartManager.getTotalItems();
+        } else {
+            try {
+                const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+                cartCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+            } catch (e) {
+                cartCount = 0;
+            }
+        }
+        
+        const cartCountElement = document.querySelector('.cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = cartCount;
+            
+            // Animate cart count update
+            cartCountElement.classList.add('animate-pulse');
+            setTimeout(() => {
+                cartCountElement.classList.remove('animate-pulse');
+            }, 300);
+        }
+    }
+    
+    function setupEnhancedCartInteractions() {
+        // Checkout button hover effect
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'checkoutGlow 3s ease-in-out infinite';
+                }, 10);
+            });
+        }
+    }
+    </script>
+
+    <style>
+/* Responsive fixes specific to cart.html */
+@media (max-width: 768px) {
+    .cart-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .cart-item-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .cart-item-quantity {
+        grid-column: 1 / 3;
+        justify-content: center;
+    }
+    
+    .cart-item-remove {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .cart-button-group {
+        gap: 12px;
+    }
+    
+    .btn-checkout,
+    .btn-clear {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cart-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .cart-item-color {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+        /* ENHANCED CART PAGE ANIMATIONS */
+        .cart-section {
+            padding: 40px 0;
+            min-height: 60vh;
+        }
+        
+        .cart-section h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .cart-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #4facfe, transparent);
+            border-radius: 2px;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(102, 126, 234, 0.3),
+                             0 0 40px rgba(102, 126, 234, 0.2);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(102, 126, 234, 0.5),
+                             0 0 60px rgba(102, 126, 234, 0.3);
+            }
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .empty-cart i {
+            font-size: 5rem;
+            color: #4facfe;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: cartFloat 3s ease-in-out infinite, cartSpin 20s linear infinite;
+            filter: drop-shadow(0 5px 15px rgba(79, 172, 254, 0.3));
+        }
+        
+        @keyframes cartFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        @keyframes cartSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .empty-cart h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #2d3436;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 3s ease infinite;
+        }
+        
+        @keyframes textGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .empty-cart p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        /* ENHANCED CART ITEMS */
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto auto;
+            gap: 20px;
+            align-items: center;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation: cartItemSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid transparent;
+        }
+        
+        @keyframes cartItemSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cart-item:nth-child(1) { animation-delay: 0.1s; border-left-color: #4facfe; }
+        .cart-item:nth-child(2) { animation-delay: 0.2s; border-left-color: #00f2fe; }
+        .cart-item:nth-child(3) { animation-delay: 0.3s; border-left-color: #f093fb; }
+        .cart-item:nth-child(4) { animation-delay: 0.4s; border-left-color: #f5576c; }
+        .cart-item:nth-child(5) { animation-delay: 0.5s; border-left-color: #667eea; }
+        
+        .cart-item:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.12),
+                0 0 0 1px rgba(79, 172, 254, 0.1) !important;
+            border-left: 4px solid #4facfe;
+        }
+        
+        .cart-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(79, 172, 254, 0.03) 0%, 
+                rgba(0, 242, 254, 0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .cart-item:hover::before {
+            opacity: 1;
+        }
+        
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cart-item:hover .cart-item-image {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #4facfe;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cart-item-name {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #2d3436;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cart-item-name::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            transition: width 0.4s ease;
+        }
+        
+        .cart-item:hover .cart-item-name {
+            color: #4facfe;
+        }
+        
+        .cart-item:hover .cart-item-name::after {
+            width: 100%;
+        }
+        
+        /* NEW: Color info in cart */
+        .cart-item-color {
+            color: #4facfe;
+            font-size: 0.9rem;
+            margin: 5px 0;
+            padding: 3px 8px;
+            background: rgba(79, 172, 254, 0.1);
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .cart-item-color strong {
+            color: #2d3436;
+            margin-right: 5px;
+        }
+        
+        .cart-item-description {
+            color: #636e72;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        
+        .cart-item:hover .cart-item-description {
+            color: #555;
+        }
+        
+        /* ENHANCED QUANTITY CONTROLS */
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #4facfe;
+            background: white;
+            color: #4facfe;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(79, 172, 254, 0.2);
+        }
+        
+        .quantity-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #4facfe;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .quantity-btn:hover {
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(79, 172, 254, 0.3);
+        }
+        
+        .quantity-btn:hover::before {
+            transform: scale(1);
+        }
+        
+        .quantity-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .quantity {
+            font-size: 1.3rem;
+            font-weight: 700;
+            min-width: 30px;
+            text-align: center;
+            color: #2d3436;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .quantity-updating {
+            animation: quantityPulse 0.3s ease;
+        }
+        
+        @keyframes quantityPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); color: #4facfe; }
+            100% { transform: scale(1); }
+        }
+        
+        .quantity-clicked {
+            animation: buttonClick 0.3s ease;
+        }
+        
+        @keyframes buttonClick {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        
+        /* ENHANCED REMOVE BUTTON */
+        .cart-item-remove {
+            background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+        
+        .cart-item-remove::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cart-item-remove:hover {
+            transform: scale(1.15) rotate(90deg);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
+            animation: shakeButton 0.5s ease;
+        }
+        
+        @keyframes shakeButton {
+            0%, 100% { transform: scale(1.15) rotate(90deg); }
+            25% { transform: scale(1.15) rotate(95deg); }
+            75% { transform: scale(1.15) rotate(85deg); }
+        }
+        
+        .cart-item-remove:hover::before {
+            left: 100%;
+        }
+        
+        .cart-item-remove i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cart-item-remove:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* ENHANCED CART SUMMARY */
+        .cart-summary {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            border: 1px solid rgba(240, 240, 240, 0.8);
+            animation: summarySlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-delay: 0.3s;
+        }
+        
+        @keyframes summarySlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cart-summary h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #2d3436;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .summary-item, .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .summary-item:hover {
+            padding-left: 10px;
+            padding-right: 10px;
+            background: rgba(79, 172, 254, 0.03);
+            border-radius: 8px;
+            border-bottom-color: transparent;
+        }
+        
+        .summary-item span:first-child {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .summary-item span:last-child {
+            color: #2d3436;
+            font-weight: 600;
+        }
+        
+        .summary-total {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #2d3436;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .summary-total:hover {
+            background: rgba(79, 172, 254, 0.05);
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 10px;
+        }
+        
+        .summary-total span:first-child {
+            color: #2d3436;
+        }
+        
+        .summary-total span:last-child {
+            color: #4facfe;
+            font-size: 1.6rem;
+            animation: pricePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pricePulse {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+                color: #4facfe;
+            }
+            50% { 
+                text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+                color: #667eea;
+            }
+        }
+        
+        /* ===== ENHANCED CHECKOUT BUTTON ===== */
+        .btn-checkout {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            box-shadow: 
+                0 8px 25px rgba(102, 126, 234, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-checkout::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .btn-checkout::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            transition: left 0.7s ease;
+            z-index: 1;
+        }
+
+        .btn-checkout:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(102, 126, 234, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.8px;
+        }
+
+        .btn-checkout:hover::before {
+            opacity: 1;
+        }
+
+        .btn-checkout:hover::after {
+            left: 100%;
+        }
+
+        .btn-checkout:active {
+            transform: translateY(-2px) scale(0.98);
+            transition: transform 0.1s ease;
+            box-shadow: 
+                0 5px 20px rgba(102, 126, 234, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-checkout i {
+            font-size: 1.3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-checkout:hover i {
+            transform: translateX(3px) scale(1.1);
+            animation: cardFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateX(3px) scale(1.1) translateY(0); }
+            50% { transform: translateX(3px) scale(1.1) translateY(-3px); }
+        }
+
+        /* Pulsing glow effect */
+        .btn-checkout.animate-button-pulse {
+            animation: checkoutGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes checkoutGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 8px 25px rgba(102, 126, 234, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            }
+            50% {
+                box-shadow: 
+                    0 8px 35px rgba(102, 126, 234, 0.5),
+                    0 0 30px rgba(102, 126, 234, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        /* Success animation */
+        .btn-checkout.animate-button-success {
+            animation: checkoutSuccess 0.8s ease;
+        }
+
+        @keyframes checkoutSuccess {
+            0% {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                transform: scale(1);
+            }
+            25% {
+                background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+                transform: scale(1.08);
+            }
+            50% {
+                background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+                transform: scale(0.95);
+            }
+            75% {
+                background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+                transform: scale(1.03);
+            }
+            100% {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                transform: scale(1);
+            }
+        }
+
+        /* ===== ENHANCED CLEAR CART BUTTON ===== */
+        .btn-clear {
+            position: relative;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 20px rgba(255, 107, 107, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-clear::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ee5a52 0%, #ff6b6b 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .btn-clear::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.25), 
+                transparent);
+            transition: left 0.7s ease;
+            z-index: 1;
+        }
+
+        .btn-clear:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 12px 30px rgba(255, 107, 107, 0.35),
+                0 4px 12px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: clearShake 0.8s ease;
+        }
+
+        @keyframes clearShake {
+            0%, 100% { transform: translateY(-3px) scale(1.02) rotate(0deg); }
+            25% { transform: translateY(-3px) scale(1.02) rotate(-1deg); }
+            50% { transform: translateY(-3px) scale(1.02) rotate(1deg); }
+            75% { transform: translateY(-3px) scale(1.02) rotate(-0.5deg); }
+        }
+
+        .btn-clear:hover::before {
+            opacity: 1;
+        }
+
+        .btn-clear:hover::after {
+            left: 100%;
+        }
+
+        .btn-clear:active {
+            transform: translateY(0) scale(0.98);
+            transition: transform 0.1s ease;
+            box-shadow: 
+                0 4px 15px rgba(255, 107, 107, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-clear i {
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-clear:hover i {
+            transform: rotate(15deg) scale(1.2);
+            animation: trashShake 1s ease-in-out infinite;
+        }
+
+        @keyframes trashShake {
+            0%, 100% { transform: rotate(15deg) scale(1.2); }
+            25% { transform: rotate(20deg) scale(1.2); }
+            75% { transform: rotate(10deg) scale(1.2); }
+        }
+
+        /* Warning pulse effect */
+        .btn-clear.animate-shake {
+            animation: clearWarning 2s ease-in-out infinite;
+        }
+
+        @keyframes clearWarning {
+            0%, 100% {
+                box-shadow: 
+                    0 6px 20px rgba(255, 107, 107, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            }
+            50% {
+                box-shadow: 
+                    0 6px 25px rgba(255, 107, 107, 0.4),
+                    0 0 25px rgba(255, 107, 107, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        /* Click animation */
+        .btn-clear:active {
+            animation: clearClick 0.3s ease;
+        }
+
+        @keyframes clearClick {
+            0% { transform: scale(0.98); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(0.98); }
+        }
+
+        /* ===== CONTAINER FOR BOTH BUTTONS ===== */
+        .cart-button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* Ripple effect animation */
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* ITEM REMOVAL ANIMATION */
+        .cart-item.removing {
+            animation: itemRemove 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            pointer-events: none;
+        }
+        
+        @keyframes itemRemove {
+            0% { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                max-height: 200px;
+            }
+            50% { 
+                opacity: 0.5;
+                transform: translateY(-20px) scale(0.95);
+            }
+            100% { 
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+                max-height: 0;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        
+        /* ITEM ADDED ANIMATION */
+        @keyframes itemAdded {
+            0% { 
+                background-color: rgba(37, 211, 102, 0.1);
+                transform: scale(1);
+            }
+            50% { 
+                background-color: rgba(37, 211, 102, 0.2);
+                transform: scale(1.02);
+            }
+            100% { 
+                background-color: white;
+                transform: scale(1);
+            }
+        }
+        
+        .cart-item.added {
+            animation: itemAdded 0.5s ease;
+        }
+        
+        /* RESPONSIVE ENHANCEMENTS */
+        @media (max-width: 768px) {
+            .cart-item {
+                grid-template-columns: 80px 1fr;
+                grid-template-rows: auto auto;
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .cart-item-quantity {
+                grid-column: 1 / 3;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .cart-item-remove {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .cart-summary {
+                padding: 25px;
+            }
+            
+            .btn-checkout, .btn-clear {
+                padding: 16px;
+                font-size: 1.1rem;
+            }
+            
+            .cart-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-checkout, .btn-clear {
+                padding: 14px 20px;
+                font-size: 1rem;
+                letter-spacing: 0.3px;
+            }
+            
+            .cart-button-group {
+                gap: 12px;
+            }
+        }
+
+    </style>
+</body>
+</html>

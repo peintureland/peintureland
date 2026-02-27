@@ -1,228 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Résultats de recherche – PEINTURE LAND</title>
+  <meta name="description" content="Résultats de recherche de produits et marques sur Peinture Land. Trouvez facilement les peintures et matériaux professionnels que vous recherchez.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://peintureland.com/search.html">
+  <!-- Favicon -->
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Page Title -->
-    <title>Résultats de recherche – PEINTURE LAND</title>
-
-    <!-- Meta Description -->
-    <meta name="description" content="Résultats de recherche de produits et marques sur Peinture Land. Trouvez facilement les peintures et matériaux professionnels que vous recherchez.">
-
-    <!-- Robots: noindex -->
-    <meta name="robots" content="noindex, nofollow">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://peintureland.com/search.html">
-
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/search.css">
-    <link rel="stylesheet" href="productCard.css">
-    <link rel="stylesheet" href="background-pattern.css">
-
-    <!-- Fonts / Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-
-    <script>
-      window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
-      window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
-    </script>
-        
+  <link rel="preconnect" href="https://ywcpovfepiuspgcsjizs.supabase.co">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="productCard.css">
+  <link rel="stylesheet" href="background-pattern.css">
+  <!-- Hamburger CSS -->
+  <link rel="stylesheet" href="css/ham.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script>
+    window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
+    window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
+  </script>
+  <!-- Minified inline styles (search-specific) -->
+  <style>.search-results-section{padding-top:40px}.search-header{margin-bottom:40px}.search-header h2{font-size:2.5rem;color:#1a1a2e;margin-bottom:10px}.search-query{color:#4facfe}.results-count{color:#666;font-size:1.1rem}@media(max-width:768px){.search-header h2{font-size:2rem}}</style>
 </head>
-
 <body>
-    <div class="paint-splatter-bg"></div>
-    <div class="floating-paint-dots"></div>
+  <div class="paint-splatter-bg"></div>
+  <div class="floating-paint-dots"></div>
 
-    <!-- Header -->
-    <header class="header animate-gradient-shift">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="PEINTURE LAND Logo" class="logo animate-float">
-                <h1 class="animate-fade-in">PEINTURE LAND</h1>
-            </div>
-            <div class="global-search-container animate-fade-in">
-                <form class="search-form" id="globalSearchForm">
-                    <input type="text" 
-                           class="search-input" 
-                           id="globalSearchInput" 
-                           placeholder="Rechercher produits et marques…"
-                           autocomplete="on">
-                    <button type="submit" class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <div class="search-dropdown" id="searchDropdown"></div>
-                </form>
-            </div>
+  <!-- Header with hamburger -->
+  <header class="header animate-gradient-shift">
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
+        <h3 class="animate-fade-in">PEINTURE LAND</h3>
+      </div>
+      <div class="global-search-container animate-fade-in">
+        <form class="search-form" id="globalSearchForm">
+          <input type="text" class="search-input" id="globalSearchInput" placeholder="Rechercher produits et marques…" autocomplete="on" aria-label="Rechercher">
+          <button type="submit" class="search-button" aria-label="Rechercher"><i class="fas fa-search"></i></button>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </form>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
+        <a href="cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
+      </nav>
+      <!-- Hamburger button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
 
-            <nav class="nav">
-                <a href="index.html" class="active animate-fade-in-left">
-                    <i class="fas fa-home"></i> Accueil
-                </a>
-                <a href="cart.html" class="cart-link animate-fade-in-right">
-                    <i class="fas fa-shopping-cart"></i> Panier 
-                    <span class="cart-count">0</span>
-                </a>
-            </nav>
-        </div>
-    </header>
+  <!-- Hamburger overlay menu (full screen) - adapted for search page -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-header">
+      <img src="logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
+      <button class="menu-close" id="menuClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="menu-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
+      <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Actions rapides</span>
+      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Aller à</span>
+      <a href="#"><i class="fas fa-arrow-up"></i> Haut de page</a>
+    </nav>
+    <div class="menu-trust">
+      <p><i class="fas fa-lock"></i> Paiement sécurisé</p>
+      <p><i class="fas fa-truck"></i> Livraison rapide</p>
+      <p><i class="fas fa-award"></i> Produits certifiés</p>
+    </div>
+  </div>
 
-    <!-- Search Results Section -->
-    <section class="search-results-section">
-        <div class="container">
-            <!-- Breadcrumb -->
-            <div class="breadcrumb animate-fade-in-left">
-                <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
-                <span>Résultats de la recherche</span>
-            </div>
-            
-            <!-- Search Header -->
-            <div class="search-header animate-fade-in-up">
-                <h2>Résultats de la recherche pour "<span id="searchQuery" class="search-query"></span>"</h2>
-                <p class="results-count" id="resultsCount">Recherche...</p>
-            </div>
-            
-            <!-- Results Grid -->
-            <div class="brand-products search-results-grid stagger-animation"
-                 id="searchResultsGrid">
-               <!-- <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i> Loading results...
-                </div>-->
-            </div>
-            
-            <!-- Infinite Scroll Loader -->
-            <div class="infinite-scroll-loader hidden" id="infiniteScrollLoader">
-                <i class="fas fa-spinner fa-spin"></i> Chargement de plus de résultats...
-            </div>
-        </div>
-    </section>
+  <!-- Search Results Section -->
+  <section class="search-results-section">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb animate-fade-in-left">
+        <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
+        <span>Résultats de la recherche</span>
+      </div>
+      <!-- Search Header -->
+      <div class="search-header animate-fade-in-up">
+        <h1>Résultats de la recherche pour "<span id="searchQuery" class="search-query"></span>"</h1>
+        <p class="results-count" id="resultsCount">Recherche...</p>
+      </div>
+      <!-- Results Grid -->
+      <div class="brand-products search-results-grid stagger-animation" id="searchResultsGrid"></div>
+      <!-- Infinite Scroll Loader -->
+      <div class="infinite-scroll-loader hidden" id="infiniteScrollLoader">
+        <i class="fas fa-spinner fa-spin"></i> Chargement de plus de résultats...
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <img src="logo.png" alt="PEINTURE LAND" class="footer-logo-img">
-                    <h3>PEINTURE LAND</h3>
-                </div>
-                <p class="footer-tagline">Peinture & Revêtements Pro</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
-                <div class="footer-address">
-                    <div class="address-line">
-                        <i class="fas fa-building"></i>
-                        <span>39 Boulevard De La Muette</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-map-pin"></i>
-                        <span>95140 Garges-Les-Gonesse</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-flag"></i>
-                        <span>France</span>
-                    </div>
-                    <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" 
-                       class="map-link" 
-                       target="_blank" 
-                       rel="noopener noreferrer">
-                        <i class="fas fa-directions"></i> Itinéraire
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
-                <div class="footer-contact">
-                    <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
-                    <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
-                    <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
-                <div class="footer-hours">
-                    <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
-                    <p><strong>Sunday : </strong> Closed</p>
-                </div>
-
-                <!-- Social Links -->
-                <h4 style="margin-top: 25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
-                <div class="footer-social" style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
+            <h3>PEINTURE LAND</h3>
+          </div>
+          <p class="footer-tagline">Peinture & Revêtements Pro</p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
-            <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+        <div class="footer-column">
+          <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+          <div class="footer-address">
+            <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
+            <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
+            <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
+            <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Itinéraire</a>
+          </div>
         </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+            <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+            <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+          <div class="footer-hours">
+            <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
+            <p><strong>Sunday : </strong> Closed</p>
+          </div>
+          <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+          <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
+            <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+        <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+      </div>
     </div>
-</footer>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="js/libs/gsap/gsap.min.js"></script>
-    <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
-    <script src="js/paint-loader-enhanced.js"></script>
-    <script src="js/gsap-animations.js"></script>
-    <script src="logo-loader.js"></script>
-    <script src="paint-mixer.js"></script>
-    <script src="supabase-client.js"></script>
-    <script src="cart-manager.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/search.js"></script>
-    
-    <style>
-        /* Additional styles specific to search.html */
-        .search-results-section {
-            padding-top: 40px;
-        }
-        
-        .search-header {
-            margin-bottom: 40px;
-        }
-        
-        .search-header h2 {
-            font-size: 2.5rem;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-        
-        .search-query {
-            color: #4facfe;
-        }
-        
-        .results-count {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .search-header h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <!-- Scripts (deferred where possible) -->
+  <script src="js/libs/gsap/gsap.min.js"></script>
+  <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="js/libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="logo-loader.js" defer></script>
+  <script src="paint-mixer.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="cart-manager.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <!-- Hamburger JS -->
+  <script src="js/ham.js" defer></script>
 </body>
-
 </html>
-

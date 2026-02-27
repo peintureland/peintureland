@@ -282,7 +282,7 @@ class GsapAnimations {
     initScrollAnimations() {
         if (typeof ScrollTrigger !== 'undefined') {
             // Register ScrollTrigger plugin
-            gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
             
             console.log('Initializing ScrollTrigger animations...');
             

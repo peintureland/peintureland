@@ -1,1839 +1,731 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title id="productTitle">Nom du Produit – PEINTURE LAND</title>
+  <meta name="description" id="productMetaDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land. Livraison rapide et fiable.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" id="productCanonical" href="https://peintureland.com/product.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" id="ogTitle" content="Nom du Produit – PEINTURE LAND">
+  <meta property="og:description" id="ogDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
+  <meta property="og:url" id="ogUrl" content="https://peintureland.com/product.html">
+  <meta property="og:image" id="ogImage" content="https://peintureland.com/logo.webp">
+  <meta property="og:locale" content="fr_FR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="twitterTitle" content="Nom du Produit – PEINTURE LAND">
+  <meta name="twitter:description" id="twitterDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
+  <meta name="twitter:image" id="twitterImage" content="https://peintureland.com/logo.webp">
+  <!-- Favicon -->
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- SEO Title Template -->
-    <title id="productTitle">Nom du Produit – PEINTURE LAND</title>
+  <link rel="preconnect" href="https://ywcpovfepiuspgcsjizs.supabase.co">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="background-pattern.css">
+  <!-- Hamburger CSS -->
+  <link rel="stylesheet" href="css/ham.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <!-- Structured Data (Product JSON-LD) -->
+  <script type="application/ld+json" id="productJsonLd">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{Nom du Produit}",
+    "image": ["{URL Image Produit}"],
+    "description": "{Description du produit}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{Nom de la Marque}"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://peintureland.com/product.html?id={ProductID}",
+      "priceCurrency": "EUR",
+      "price": "{Prix}",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <script>
+    window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
+    window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
+  </script>
+  <!-- Minified inline styles (original product.css) -->
+  <style>.language-toggle{position:absolute;top:20px;right:20px;z-index:10}.lang-btn{background:rgba(255,255,255,.2);border:none;width:40px;height:40px;border-radius:50%;color:#fff;font-size:16px;cursor:pointer;backdrop-filter:blur(5px);transition:all .3s ease;display:flex;align-items:center;justify-content:center}.lang-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.05)}#lang-flag{display:inline-block;transition:transform .3s ease}.lang-btn:hover #lang-flag{transform:rotate(360deg)}.product-detail-section{padding:40px 0;min-height:70vh}.breadcrumb{margin-bottom:30px;font-size:1rem;display:flex;align-items:center;gap:10px}.breadcrumb a{color:#4facfe;text-decoration:none;transition:color .3s ease}.breadcrumb a:hover{color:#667eea;text-decoration:underline}.breadcrumb i{color:#999;font-size:.8rem}.breadcrumb span{color:#4facfe;font-weight:600}.loading-product{text-align:center;padding:60px;color:#666;font-size:1.2rem}.loading-product i{margin-right:10px}.product-image-top{width:100%;margin-bottom:40px;animation:fadeIn .8s ease}.product-image-container{width:100%;max-width:800px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15)}.product-main-image{width:100%;height:auto;max-height:600px;object-fit:contain;display:block;transition:transform .5s ease}.product-image-container:hover .product-main-image{transform:scale(1.02)}.product-info-below{max-width:800px;margin:0 auto}.product-basic-info{margin-bottom:30px;text-align:center}#productTitle{font-size:2.5rem;margin-bottom:15px;color:#1a1a2e;line-height:1.2}.brand-tag{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;padding:8px 20px;border-radius:50px;font-weight:600}.brand-tag i{font-size:.9rem}.product-description-container{margin-bottom:40px;background:#f8f9fa;padding:25px;border-radius:15px;border-left:4px solid #4facfe}.product-description-container h3{font-size:1.5rem;margin-bottom:15px;color:#2d3436}#productDescription{font-size:1.1rem;line-height:1.7;color:#555;white-space:pre-line}.color-section{margin-bottom:30px;padding:20px;background:#f8f9fa;border-radius:12px}.color-section h3{font-size:1.3rem;margin-bottom:15px;color:#2d3436;display:flex;align-items:center;flex-wrap:wrap;gap:5px}.color-note{font-size:.9rem;color:#666;font-weight:400;font-style:italic;margin-left:5px}.color-dropdown-wrapper{position:relative;width:100%;margin-bottom:15px}.color-dropdown-header{display:flex;align-items:center;gap:12px;padding:15px;background:#fff;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;transition:all .3s ease;position:relative}.color-dropdown-header:hover{border-color:#4facfe;box-shadow:0 2px 8px rgba(79,172,254,.1)}.color-dropdown-preview{width:40px;height:40px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-text{flex:1;font-size:1rem;color:#2d3436;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-dropdown-text strong{color:#1a1a2e}.color-dropdown-arrow{color:#666;transition:transform .3s ease}.color-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:2px solid #e0e0e0;border-radius:8px;margin-top:5px;max-height:300px;overflow-y:auto;z-index:1000;box-shadow:0 10px 25px rgba(0,0,0,.1)}.color-dropdown-option{padding:12px 15px;cursor:pointer;transition:all .3s ease;border-bottom:1px solid #f0f0f0}.color-dropdown-option:last-child{border-bottom:none}.color-dropdown-option:hover{background:#f8f9fa}.color-dropdown-option.selected{background:#e3f2ff;border-left:3px solid #4facfe}.color-option-content{display:flex;align-items:center;gap:12px}.color-dropdown-option .color-swatch{width:35px;height:35px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-option:hover .color-swatch{transform:scale(1.1)}.color-text{flex:1;font-size:.95rem;color:#2d3436;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-text strong{color:#1a1a2e;font-weight:600}.selected-shade-info{font-size:1rem;color:#475569;padding:12px 16px;background:#fff;border-radius:8px;border-left:4px solid #4facfe;margin-top:10px;font-weight:500}.selected-shade-info strong{color:#1a1a2e;font-weight:700;margin-right:5px}.product-actions{background:#f8f9fa;padding:30px;border-radius:15px;margin-bottom:40px}.quantity-selector{margin-bottom:25px}.quantity-selector label{display:block;margin-bottom:10px;font-weight:600;color:#2d3436;font-size:1.1rem}.quantity-controls{display:flex;align-items:center;gap:15px}.quantity-controls input{width:80px;text-align:center;padding:12px;font-size:1.2rem;font-weight:600;border:2px solid #ddd;border-radius:8px;outline:none;transition:all .3s ease}.quantity-controls input:focus{border-color:#4facfe;box-shadow:0 0 0 3px rgba(79,172,254,.2)}.quantity-btn{width:45px;height:45px;border-radius:50%;border:2px solid #4facfe;background:#fff;color:#4facfe;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease}.quantity-btn:hover{background:#4facfe;color:#fff;transform:scale(1.1)}.btn-add-to-cart{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;margin-bottom:15px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-add-to-cart:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(79,172,254,.3)}.btn-whatsapp-order{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-whatsapp-order:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(37,211,102,.3)}.animate-button-success{animation:buttonSuccess 1s ease}@keyframes buttonSuccess{0%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}50%{background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%)}100%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}}.contact-info-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:25px;border-radius:15px}.contact-info-card h3{margin-bottom:15px;font-size:1.4rem;display:flex;align-items:center;gap:10px}.contact-info-card p{margin-bottom:15px;opacity:.9}.contact-info-card ul{list-style:none;padding-left:0}.contact-info-card li{margin-bottom:10px;display:flex;align-items:center;gap:10px}.contact-info-card i{width:20px}.related-products{margin-top:60px;padding-top:40px;border-top:2px solid #eee}.related-products h3{font-size:1.8rem;margin-bottom:30px;color:#2d3436}.related-products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}.related-product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation-fill-mode:forwards;position:relative;border:1px solid rgba(240,240,240,.8)}.related-product-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.12);border:1px solid rgba(79,172,254,.1)}.related-product-card a{text-decoration:none;color:inherit;display:block;position:relative;z-index:1}.related-product-image{width:100%;height:180px;object-fit:contain;transition:all .6s cubic-bezier(.4,0,.2,1);transform-origin:center center}.related-product-card:hover .related-product-image{transform:scale(1.08);filter:brightness(1.03) saturate(1.05)}.related-product-info{padding:20px;position:relative;z-index:1}.related-product-info h4{font-size:1.2rem;margin-bottom:10px;color:#2d3436;transition:all .3s cubic-bezier(.4,0,.2,1);line-height:1.4}.related-product-info h4::after{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,#4facfe,#00f2fe);margin-top:5px;transform:scaleX(.3);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}.related-product-card:hover .related-product-info h4{color:#4facfe;transform:translateY(-2px)}.related-product-card:hover .related-product-info h4::after{transform:scaleX(1)}.related-product-info p{color:#666;font-size:.95rem;margin-bottom:15px;line-height:1.5}.view-product{color:#4facfe;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .4s cubic-bezier(.4,0,.2,1);padding:8px 16px;border-radius:50px;background:rgba(79,172,254,.05);border:1px solid rgba(79,172,254,.1)}.related-product-card:hover .view-product{gap:10px;color:#fff;background:linear-gradient(135deg,#4facfe,#00f2fe);border-color:transparent;padding:8px 20px;box-shadow:0 5px 15px rgba(79,172,254,.2)}.view-product i{transition:all .3s cubic-bezier(.4,0,.2,1);font-size:.8rem}.related-product-card:hover .view-product i{transform:translateX(4px)}.no-related{text-align:center;color:#999;font-style:italic;padding:30px;grid-column:1/-1}.error-message{text-align:center;padding:60px;color:#ff4757;font-size:1.2rem;grid-column:1/-1}.cart-count{transition:all .3s ease}.animate-pulse{animation:pulse .3s ease-in-out}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}.product-properties-container{margin:30px 0;padding:25px;background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);border-radius:15px;border-left:4px solid #4facfe}.product-properties-container h3{font-size:1.4rem;margin-bottom:20px;color:#2d3436;display:flex;align-items:center;gap:10px}.product-properties-container h3 i{color:#4facfe}.properties-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.property-item{background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);display:flex;gap:15px;align-items:flex-start;transition:transform .3s ease,box-shadow .3s ease}.property-item:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.12)}.property-icon{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#f8f9fa;padding:8px}.property-content{flex:1}.property-content h4{font-size:1.1rem;margin-bottom:8px;color:#2d3436;font-weight:600}.property-short-label{font-size:.9rem;color:#4facfe;font-weight:500;margin-bottom:10px;padding:4px 10px;background:rgba(79,172,254,.1);border-radius:4px;display:inline-block}.property-full-description{color:#555;font-size:.95rem;line-height:1.6;white-space:pre-line}.no-colors-message{text-align:center;padding:30px;background:#fff;border-radius:10px;border:2px dashed #e0e0e0}.no-colors-message i{font-size:3rem;color:#bdc3c7;margin-bottom:15px;display:block}.no-colors-message p{color:#666;font-size:1.1rem;margin:0}.btn-disabled{opacity:.6;cursor:not-allowed!important;background:linear-gradient(135deg,#ccc 0%,#999 100%)!important}.btn-disabled:hover{transform:none!important;box-shadow:none!important}.highlight-required{animation:highlightPulse 1s ease;border:2px solid #ff9800!important}@keyframes highlightPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,152,0,.4)}50%{box-shadow:0 0 0 10px rgba(255,152,0,0)}}@media(max-width:992px){#productTitle{font-size:2rem}.product-main-image{max-height:450px}.color-section h3{flex-direction:column;align-items:flex-start}.color-note{margin-left:0;margin-top:5px;font-size:.85rem}}@media(max-width:768px){.related-products-grid{grid-template-columns:1fr}.quantity-controls{justify-content:center}.product-actions{padding:20px}.color-dropdown-header{padding:12px}.color-dropdown-preview{width:35px;height:35px}.color-dropdown-option .color-swatch{width:30px;height:30px}.properties-grid{grid-template-columns:1fr}.property-item{flex-direction:column;text-align:center}.property-icon{margin:0 auto}}@media(max-width:480px){#productTitle{font-size:1.8rem}.product-main-image{max-height:350px}.btn-add-to-cart,.btn-whatsapp-order{padding:15px;font-size:1.1rem}.brand-tag{font-size:.9rem;padding:6px 15px}.color-dropdown-header{padding:10px}.color-dropdown-preview{width:30px;height:30px}.color-dropdown-text{font-size:.9rem}.color-dropdown-option{padding:10px 12px}.color-dropdown-option .color-swatch{width:25px;height:25px}}</style>
+</head>
+<body>
+  <div class="paint-splatter-bg"></div>
+  <div class="floating-paint-dots"></div>
 
-    <!-- Meta Description Template -->
-    <meta name="description" id="productMetaDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land. Livraison rapide et fiable.">
+  <!-- Header with hamburger -->
+  <header class="header animate-gradient-shift">
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
+        <h3 class="site-name animate-fade-in">PEINTURE LAND</h3>
+      </div>
+      <div class="global-search-container animate-fade-in">
+        <form class="search-form" id="globalSearchForm">
+          <input type="text" class="search-input" id="globalSearchInput" placeholder="Rechercher produits et marques…" autocomplete="on" aria-label="Rechercher">
+          <button type="submit" class="search-button" aria-label="Rechercher"><i class="fas fa-search"></i></button>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </form>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
+        <a href="cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
+      </nav>
+      <!-- Hamburger button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
 
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
+  <!-- Hamburger overlay menu (full screen) - adapted for product page -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-header">
+      <img src="logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
+      <button class="menu-close" id="menuClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="menu-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
+      <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Actions rapides</span>
+      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Aller à</span>
+      <a href="#"><i class="fas fa-arrow-up"></i> Haut de page</a>
+    </nav>
+    <div class="menu-trust">
+      <p><i class="fas fa-lock"></i> Paiement sécurisé</p>
+      <p><i class="fas fa-truck"></i> Livraison rapide</p>
+      <p><i class="fas fa-award"></i> Produits certifiés</p>
+    </div>
+  </div>
 
-    <!-- Canonical -->
-    <link rel="canonical" id="productCanonical" href="https://peintureland.com/product.html">
+  <!-- Product Detail Section -->
+  <section class="product-detail-section">
+    <div class="container">
+      <div class="breadcrumb animate-fade-in-left" id="breadcrumb">
+        <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
+        <a href="#" id="brandLink">Marque</a> <i class="fas fa-chevron-right"></i>
+        <span id="productNameTitle">Produits</span>
+      </div>
+      <div class="product-detail-container animate-fade-in-scale" id="productContainer">
+        <div class="loading-product">
+          <i class="fas fa-spinner fa-spin"></i> Chargement des détails du produit...
+        </div>
+      </div>
+      <div class="related-products animate-fade-in-up" id="relatedProductsSection" style="display: none;">
+        <h3>Autres produits de la marque <span id="relatedBrandName">Cette Marque</span></h3>
+        <div class="related-products-grid stagger-animation" id="relatedProductsGrid"></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="product">
-    <meta property="og:title" id="ogTitle" content="Nom du Produit – PEINTURE LAND">
-    <meta property="og:description" id="ogDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
-    <meta property="og:url" id="ogUrl" content="https://peintureland.com/product.html">
-    <meta property="og:image" id="ogImage" content="https://peintureland.com/logo.png">
-    <meta property="og:locale" content="fr_FR">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
+            <h3>PEINTURE LAND</h3>
+          </div>
+          <p class="footer-tagline">Peinture & Revêtements Pro</p>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+          <div class="footer-address">
+            <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
+            <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
+            <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
+            <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Itinéraire</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+            <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+            <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+          <div class="footer-hours">
+            <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
+            <p><strong>Sunday : </strong> Closed</p>
+          </div>
+          <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+          <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
+            <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+        <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" id="twitterTitle" content="Nom du Produit – PEINTURE LAND">
-    <meta name="twitter:description" id="twitterDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
-    <meta name="twitter:image" id="twitterImage" content="https://peintureland.com/logo.png">
+  <!-- Scripts -->
+  <script src="js/libs/gsap/gsap.min.js"></script>
+  <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="js/libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="logo-loader.js" defer></script>
+  <script src="paint-mixer.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="cart-manager.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <!-- Hamburger JS -->
+  <script src="js/ham.js" defer></script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
+  <!-- Product page specific JavaScript (optimized, minor tweaks) -->
+  <script>
+    let currentProduct = null;
+    let selectedShade = null;
+    let colorDropdownOpen = false;
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/search.css">
-    <link rel="stylesheet" href="background-pattern.css">
+    document.addEventListener('DOMContentLoaded', async function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      if (productId) {
+        await loadProductDetails(productId);
+        updateCartCount();
+        initializeAnimations();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
 
-    <!-- Fonts / Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-
-    <!-- Structured Data (Product JSON-LD) -->
-    <script type="application/ld+json" id="productJsonLd">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "{Nom du Produit}",
-      "image": ["{URL Image Produit}"],
-      "description": "{Description du produit}",
-      "brand": {
-        "@type": "Brand",
-        "name": "{Nom de la Marque}"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://peintureland.com/product.html?id={ProductID}",
-        "priceCurrency": "EUR",
-        "price": "{Prix}",
-        "availability": "https://schema.org/InStock"
+    function initializeAnimations() {
+      if (typeof gsap !== 'undefined' && window.gsapAnimations) {
+        // GSAP handles animations
       }
     }
-    </script>
 
-    <script>
-      window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
-      window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
-    </script>
-        
-</head>
+    async function loadProductDetails(productId) {
+      try {
+        document.getElementById('productContainer').innerHTML = `
+          <div class="loading-product"><i class="fas fa-spinner fa-spin"></i> Loading product details...</div>
+        `;
+        ensureSupabase(async () => {
+          const { data: product, error } = await window.supabaseClient
+            .from('products')
+            .select('*, brands(name)')
+            .eq('id', productId)
+            .single();
+          if (error) throw error;
+          currentProduct = product;
 
+          // SEO meta updates based on fetched product
+          // Update meta description
+          let metaDescription = document.querySelector('meta[name="description"]');
+          if (!metaDescription) {
+              metaDescription = document.createElement('meta');
+              metaDescription.name = 'description';
+              document.head.appendChild(metaDescription);
+          }
+          metaDescription.content = product.description ? product.description.substring(0, 160) : `Achetez ${product.name}, peinture professionnelle de qualité chez Peinture Land.`;
 
-<body>
-    <!-- Background patterns -->
-    <div class="paint-splatter-bg"></div>
-    <div class="floating-paint-dots"></div>
-    
-    <!-- Header -->
-    <header class="header animate-gradient-shift">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="PEINTURE LAND Logo" class="logo animate-float">
-                <h1 class="site-name animate-fade-in">PEINTURE LAND</h1>
-            </div>
-            <div class="global-search-container animate-fade-in">
-                <form class="search-form" id="globalSearchForm">
-                    <input type="text" 
-                           class="search-input" 
-                           id="globalSearchInput" 
-                           placeholder="Rechercher produits et marques…"
-                           autocomplete="on">
-                    <button type="submit" class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <div class="search-dropdown" id="searchDropdown"></div>
-                </form>
-            </div>
+          // Update canonical URL
+          let canonical = document.querySelector('link[rel="canonical"]');
+          if (!canonical) {
+              canonical = document.createElement('link');
+              canonical.rel = 'canonical';
+              document.head.appendChild(canonical);
+          }
+          canonical.href = `https://peintureland.com/product.html?id=${product.id}`;
 
-            <nav class="nav">
-                <a href="index.html" class="active animate-fade-in-left">
-                    <i class="fas fa-home"></i> Accueil
-                </a>
-                <a href="cart.html" class="cart-link animate-fade-in-right">
-                    <i class="fas fa-shopping-cart"></i> Panier 
-                    <span class="cart-count">0</span>
-                </a>
-            </nav>
-        </div>
-    </header>
+          // Update Open Graph / Twitter meta tags (as above, using product data)
+          const ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) ogTitle.content = `${product.name} – Peinture Land`;
 
-    <!-- Product Detail Section -->
-    <section class="product-detail-section">
-        <div class="container">
-            <div class="breadcrumb animate-fade-in-left" id="breadcrumb">
-                <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
-                <a href="#" id="brandLink">Marque</a> <i class="fas fa-chevron-right"></i>
-                <span id="productNameTitle">Produits</span>
-            </div>
-            
-            <!-- Main Product Container -->
-            <div class="product-detail-container animate-fade-in-scale" id="productContainer">
-                <div class="loading-product">
-                    <i class="fas fa-spinner fa-spin"></i> Chargement des détails du produit...
-                </div>
-            </div>
-            
-            <!-- Related Products Section -->
-            <div class="related-products animate-fade-in-up" id="relatedProductsSection" style="display: none;">
-                <h3>Autres produits de la marque <span id="relatedBrandName">Cette Marque</span></h3>
-                <div class="related-products-grid stagger-animation" id="relatedProductsGrid">
-                    <!-- Related products will be loaded here -->
-                </div>
-            </div>
-        </div>
-    </section>
+          const ogDescription = document.querySelector('meta[property="og:description"]');
+          if (ogDescription) ogDescription.content = product.description ? product.description.substring(0, 160) : `Achetez ${product.name} sur Peinture Land.`;
 
- <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <img src="logo.png" alt="PEINTURE LAND" class="footer-logo-img">
-                    <h3>PEINTURE LAND</h3>
-                </div>
-                <p class="footer-tagline">Peinture & Revêtements Pro</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
-                <div class="footer-address">
-                    <div class="address-line">
-                        <i class="fas fa-building"></i>
-                        <span>39 Boulevard De La Muette</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-map-pin"></i>
-                        <span>95140 Garges-Les-Gonesse</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-flag"></i>
-                        <span>France</span>
-                    </div>
-                    <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" 
-                       class="map-link" 
-                       target="_blank" 
-                       rel="noopener noreferrer">
-                        <i class="fas fa-directions"></i> Itinéraire
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
-                <div class="footer-contact">
-                    <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
-                    <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
-                    <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
-                <div class="footer-hours">
-                    <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
-                    <p><strong>Sunday : </strong> Closed</p>
-                </div>
+          const ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl) ogUrl.content = `https://peintureland.com/product.html?id=${product.id}`;
 
-                <!-- Social Links -->
-                <h4 style="margin-top: 25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
-                <div class="footer-social" style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
-            <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
-        </div>
-    </div>
-</footer>
+          const ogImage = document.querySelector('meta[property="og:image"]');
+          if (ogImage && product.image_url) ogImage.content = product.image_url;
 
+          // Update Twitter meta tags similarly (using product data)
 
-<script src="js/libs/gsap/gsap.min.js"></script>
-<script src="js/libs/gsap/ScrollTrigger.min.js"></script>
-<script src="js/paint-loader-enhanced.js"></script>
-<script src="js/gsap-animations.js"></script>
-<script src="logo-loader.js"></script>
-<script src="paint-mixer.js"></script>
-<script src="supabase-client.js"></script>
-<script src="cart-manager.js"></script>
-<script src="js/script.js"></script>
-<script src="js/search.js"></script>
-    
-    <script>
-        // Product page specific JavaScript
-        let currentProduct = null;
-        let selectedShade = null;
-        let colorDropdownOpen = false;
-        
-        document.addEventListener('DOMContentLoaded', async function() {
-            console.log('Product page loaded');
-            
-            // Get product ID from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
-            
-            if (productId) {
-                await loadProductDetails(productId);
-                updateCartCount();
-                initializeAnimations();
-            } else {
-                window.location.href = 'index.html';
-            }
+          // Update JSON-LD structured data
+          const jsonLdScript = document.getElementById('productJsonLd');
+          if (jsonLdScript) {
+              const productData = {
+                  "@context": "https://schema.org/",
+                  "@type": "Product",
+                  "name": product.name,
+                  "image": [product.image_url || "https://peintureland.com/logo.webp"],
+                  "description": product.description || "",
+                  "brand": {
+                      "@type": "Brand",
+                      "name": product.brands ? product.brands.name : ""
+                  },
+                  "offers": {
+                      "@type": "Offer",
+                      "url": `https://peintureland.com/product.html?id=${product.id}`,
+                      "priceCurrency": "EUR",
+                      "price": "0", // replace with actual price if available
+                      "availability": "https://schema.org/InStock"
+                  }
+              };
+              jsonLdScript.innerHTML = JSON.stringify(productData, null, 2);
+          }
+
+          const { data: properties, error: propertiesError } = await window.supabaseClient
+            .from('product_properties')
+            .select(`property:properties (full_description, name, icon_url, short_label)`)
+            .eq('product_id', productId)
+            .order('sort_order', { ascending: true });
+          if (propertiesError) console.warn('Could not load product properties:', propertiesError);
+          product.properties = properties || [];
+
+          document.title = `${product.name} - PEINTURE LAND`;
+          document.getElementById('productNameTitle').textContent = product.name;
+          const brandLinkEl = document.getElementById('brandLink');
+          brandLinkEl.textContent = product.brands.name;
+          brandLinkEl.href = `brand.html?id=${product.brand_id}`;
+
+          renderProduct(product);
+
+          const hasColorGroups = await loadColorVariants(productId);
+          product.hasColorGroups = hasColorGroups;
+          if (!hasColorGroups) updateColorSectionForNoColors();
+
+          await loadRelatedProducts(product.brand_id, product.id);
+          updateCartCount();
         });
-        
-        function initializeAnimations() {
-            // Remove old code and replace with:
-            if (typeof gsap !== 'undefined' && window.gsapAnimations) {
-                // GSAP will handle animations automatically
-            }
-        }
-        
-        async function loadProductDetails(productId) {
-            try {
-                document.getElementById('productContainer').innerHTML = `
-                    <div class="loading-product">
-                        <i class="fas fa-spinner fa-spin"></i> Loading product details...
-                    </div>
-                `;
-                
-                ensureSupabase(async () => {
-                    // Fetch product with brand info
-                    const { data: product, error } = await window.supabaseClient
-                        .from('products')
-                        .select('*, brands(name)')
-                        .eq('id', productId)
-                        .single();
-                    
-                    if (error) throw error;
-                    
-                    currentProduct = product;
-                    
-                    // Fetch product properties with full_description
-                    const { data: properties, error: propertiesError } = await window.supabaseClient
-                        .from('product_properties')
-                        .select(`
-                            property:properties (full_description, name, icon_url, short_label)
-                        `)
-                        .eq('product_id', productId)
-                        .order('sort_order', { ascending: true });
-                    
-                    if (propertiesError) console.warn('Could not load product properties:', propertiesError);
-                    
-                    // Add properties to product object
-                    product.properties = properties || [];
-                    
-                    document.title = `${product.name} - PEINTURE LAND`;
-                    
-                    const productNameTitleEl = document.getElementById('productNameTitle');
-                    if (productNameTitleEl) {
-                        productNameTitleEl.textContent = product.name;
-                    }
-                    
-                    const brandLinkEl = document.getElementById('brandLink');
-                    if (brandLinkEl) {
-                        brandLinkEl.textContent = product.brands.name;
-                        brandLinkEl.href = `brand.html?id=${product.brand_id}`;
-                    }
-                    
-                    renderProduct(product);
-                    
-                    // Load color variants and check if there are any
-                    const hasColorGroups = await loadColorVariants(productId);
-                    
-                    // Set hasColorGroups flag on product for later use
-                    product.hasColorGroups = hasColorGroups;
-                    
-                    // If no color groups, update UI immediately
-                    if (!hasColorGroups) {
-                        updateColorSectionForNoColors();
-                    }
-                    
-                    await loadRelatedProducts(product.brand_id, product.id);
-                    
-                    updateCartCount();
-                });
-                
-            } catch (error) {
-                console.error('Error loading product details:', error);
-                document.getElementById('productContainer').innerHTML = 
-                    `<div class="error-message">Error loading product. Please try again later.</div>`;
-            }
-        }
-        
-        // Color Picker Function
-        async function loadColorVariants(productId) {
-            try {
-                console.log('🔄 Loading color variants for product:', productId);
-                
-                // Get all color groups for this product
-                const { data: productColorGroups, error: groupsError } = await window.supabaseClient
-                    .from('product_color_groups')
-                    .select('group_id')
-                    .eq('product_id', productId)
-                    .order('sort_order', { ascending: true });
-                
-                if (groupsError) {
-                    console.error('❌ Error loading color groups:', groupsError);
-                    return false;
-                }
-                
-                console.log('📋 Found color groups:', productColorGroups);
-                
-                if (!productColorGroups || productColorGroups.length === 0) {
-                    console.log('⚠️ No color groups found for this product');
-                    return false;
-                }
-                
-                // Get all group IDs
-                const groupIds = productColorGroups.map(group => group.group_id);
-                console.log('🎯 Group IDs to fetch:', groupIds);
-                
-                // Get color variants for these groups
-                const { data: colorVariants, error: variantsError } = await window.supabaseClient
-                    .from('color_variants')
-                    .select('*')
-                    .in('group_id', groupIds)
-                    .order('shade_code', { ascending: true });
-                
-                if (variantsError) {
-                    console.error('❌ Error loading color variants:', variantsError);
-                    return false;
-                }
-                
-                console.log('✅ Color variants loaded:', colorVariants);
-                
-                if (colorVariants && colorVariants.length > 0) {
-                    displayColorVariants(colorVariants);
-                    return true;
-                } else {
-                    console.log('⚠️ No color variants found in these groups');
-                    return false;
-                }
-                
-            } catch (error) {
-                console.error('🔥 Unexpected error:', error);
-                return false;
-            }
-        }
-        
-        function updateColorSectionForNoColors() {
-            const colorSection = document.getElementById('colorSection');
-            const selectedShadeInfo = document.getElementById('selectedShadeInfo');
-            
-            if (colorSection) {
-                colorSection.innerHTML = `
-                    <h3>Options de couleur</h3>
-                    <div class="no-colors-message">
-                        <i class="fas fa-palette"></i>
-                        <p>Ce produit n'a pas de couleurs.</p>
-                    </div>
-                `;
-                colorSection.style.display = 'block';
-            }
-            
-            if (selectedShadeInfo) {
-                selectedShadeInfo.style.display = 'none';
-            }
-            
-            // Enable Add to Cart button since no colors required
-            const addToCartBtn = document.getElementById('addToCartBtn');
-            if (addToCartBtn) {
-                addToCartBtn.disabled = false;
-                addToCartBtn.classList.remove('btn-disabled');
-            }
-        }
-        
-        function displayColorVariants(variants) {
-            const colorSection = document.getElementById('colorSection');
-            const colorDropdown = document.getElementById('colorDropdown');
-            const selectedShadeInfo = document.getElementById('selectedShadeInfo');
-            
-            if (!colorSection || !colorDropdown) {
-                console.error('❌ Color picker elements not found');
-                return;
-            }
-            
-            colorSection.style.display = 'block';
-            colorDropdown.innerHTML = '';
-            
-            console.log(`🎨 Displaying ${variants.length} color variants`);
-            
-            // Create dropdown options
-            variants.forEach((variant, index) => {
-                const option = document.createElement('div');
-                option.className = 'color-dropdown-option';
-                option.dataset.id = variant.id;
-                option.dataset.code = variant.shade_code || '';
-                option.dataset.name = variant.name || '';
-                option.dataset.hex = variant.hex_code || '';
-                
-                option.innerHTML = `
-                    <div class="color-option-content">
-                        <span class="color-swatch" style="background-color: ${variant.hex_code || '#f0f0f0'}; ${isLightColor(variant.hex_code) ? 'border: 1px solid #e0e0e0;' : ''}"></span>
-                        <span class="color-text">
-                            <strong>${variant.shade_code || ''}</strong>${variant.name ? ' - ' + variant.name : ''}
-                        </span>
-                    </div>
-                `;
-                
-                // Click handler for option
-                option.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    selectColorOption(this, variant);
-                });
-                
-                colorDropdown.appendChild(option);
-            });
-            
-            // Select first variant by default
-            if (variants.length > 0) {
-                const firstOption = colorDropdown.querySelector('.color-dropdown-option');
-                selectColorOption(firstOption, variants[0]);
-            }
-        }
-        
-        function selectColorOption(optionElement, variant) {
-            // Remove selection from all options
-            document.querySelectorAll('.color-dropdown-option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            
-            // Select this option
-            optionElement.classList.add('selected');
-            
-            // Update selected shade - STORE FULL SHADE OBJECT
-            selectedShade = {
-                id: optionElement.dataset.id,
-                code: optionElement.dataset.code,
-                name: optionElement.dataset.name,
-                hex: optionElement.dataset.hex
-            };
-            
-            // Update dropdown header
-            const dropdownHeader = document.querySelector('.color-dropdown-header');
-            const dropdownPreview = document.querySelector('.color-dropdown-preview');
-            const dropdownText = document.querySelector('.color-dropdown-text');
-            
-            if (dropdownHeader && dropdownPreview && dropdownText) {
-                dropdownPreview.style.backgroundColor = variant.hex_code || '#f0f0f0';
-                dropdownText.innerHTML = `<strong>${variant.shade_code || ''}</strong>${variant.name ? ' - ' + variant.name : ''}`;
-            }
-            
-            // Update selected shade info
-            const selectedShadeInfo = document.getElementById('selectedShadeInfo');
-            if (selectedShadeInfo) {
-                selectedShadeInfo.innerHTML = `<strong>Sélectionné</strong> ${variant.shade_code || ''}${variant.name ? ' - ' + variant.name : ''}`;
-            }
-            
-            // Close dropdown
-            toggleColorDropdown(false);
-            
-            console.log('✅ Selected color:', selectedShade);
-            
-            // Enable Add to Cart button when color is selected
-            const addToCartBtn = document.getElementById('addToCartBtn');
-            if (addToCartBtn) {
-                addToCartBtn.disabled = false;
-                addToCartBtn.classList.remove('btn-disabled');
-                addToCartBtn.classList.add('animate-button-pulse');
-            }
-        }
-        
-        function toggleColorDropdown(forceState) {
-            const colorDropdown = document.getElementById('colorDropdown');
-            const dropdownArrow = document.querySelector('.color-dropdown-arrow i');
-            
-            if (colorDropdown && dropdownArrow) {
-                if (forceState !== undefined) {
-                    colorDropdownOpen = forceState;
-                } else {
-                    colorDropdownOpen = !colorDropdownOpen;
-                }
-                
-                if (colorDropdownOpen) {
-                    colorDropdown.style.display = 'block';
-                    dropdownArrow.classList.remove('fa-chevron-down');
-                    dropdownArrow.classList.add('fa-chevron-up');
-                    
-                    // Add click outside listener
-                    setTimeout(() => {
-                        document.addEventListener('click', closeColorDropdownOutside);
-                    }, 10);
-                } else {
-                    colorDropdown.style.display = 'none';
-                    dropdownArrow.classList.remove('fa-chevron-up');
-                    dropdownArrow.classList.add('fa-chevron-down');
-                    
-                    // Remove click outside listener
-                    document.removeEventListener('click', closeColorDropdownOutside);
-                }
-            }
-        }
-        
-        function closeColorDropdownOutside(e) {
-            const colorSection = document.getElementById('colorSection');
-            const dropdownHeader = document.querySelector('.color-dropdown-header');
-            
-            if (colorSection && dropdownHeader && 
-                !colorSection.contains(e.target) && 
-                !dropdownHeader.contains(e.target)) {
-                toggleColorDropdown(false);
-            }
-        }
-        
-        // Helper to check if color is light
-        function isLightColor(hex) {
-            if (!hex || typeof hex !== 'string') return false;
-            
-            try {
-                // Remove #
-                let cleanHex = hex.replace('#', '');
-                
-                // Handle shorthand (3-digit) hex
-                if (cleanHex.length === 3) {
-                    cleanHex = cleanHex.split('').map(c => c + c).join('');
-                }
-                
-                // Convert to RGB
-                const r = parseInt(cleanHex.substr(0, 2), 16);
-                const g = parseInt(cleanHex.substr(2, 2), 16);
-                const b = parseInt(cleanHex.substr(4, 2), 16);
-                
-                // Calculate brightness (perceived luminance)
-                const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-                
-                // Light if brightness > 128 (out of 255)
-                return brightness > 128;
-            } catch (e) {
-                console.warn('Could not parse color:', hex, e);
-                return false;
-            }
-        }
-        
-        function renderProduct(product) {
-            const container = document.getElementById('productContainer');
-            container.innerHTML = `
-                <!-- Product Image at Top -->
-                <div class="product-image-top will-animate">
-                    <div class="product-image-container">
-                        <img id="mainProductImage" src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop'}" 
-                             alt="${product.name}" 
-                             class="product-main-image">
-                    </div>
-                </div>
-                
-                <!-- Product Information Below Image -->
-                <div class="product-info-below">
-                    <div class="product-basic-info will-animate">
-                        <h2 id="productTitle">${product.name}</h2>
-                        <div class="brand-tag" id="brandTag">
-                            <i class="fas fa-tag"></i> ${product.brands.name}
-                        </div>
-                    </div>
-                    
-                    <div class="product-description-container animate-fade-in-up" style="animation-delay: 0.2s">
-                        <h3>Description du produit</h3>
-                        <p id="productDescription">${product.description || 'No description available.'}</p>
-                    </div>
+      } catch (error) {
+        console.error('Error loading product details:', error);
+        document.getElementById('productContainer').innerHTML = '<div class="error-message">Error loading product. Please try again later.</div>';
+      }
+    }
 
-                    ${product.properties && product.properties.length > 0 ? `
-                        <div class="product-properties-container animate-fade-in-up" style="animation-delay: 0.3s">
-                            <h3><i class="fas fa-info-circle"></i> Caractéristiques du produit</h3>
-                            <div class="properties-grid">
-                                ${product.properties.map((prop, index) => `
-                                    <div class="property-item" style="animation-delay: ${0.3 + (index * 0.05)}s">
-                                        ${prop.property.icon_url ? `<img src="${prop.property.icon_url}" alt="${prop.property.name || 'Property'}" class="property-icon">` : ''}
-                                        <div class="property-content">
-                                            ${prop.property.name ? `<h4>${prop.property.name}</h4>` : ''}
-                                            ${prop.property.short_label ? `<div class="property-short-label">${prop.property.short_label}</div>` : ''}
-                                            ${prop.property.full_description ? `<div class="property-full-description">${prop.property.full_description}</div>` : ''}
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    ` : ''}
-                    
-                    <!-- Color Picker Section -->
-                    <div class="color-section" id="colorSection" style="display: none; animation-delay: 0.4s">
-                        <h3>Choisir une teinte: <span class="color-note">(Les teintes présentées sont indicatives. Pour des informations précises sur les couleurs, veuillez nous contacter.)</span></h3>
-                        <div class="color-dropdown-wrapper">
-                            <div class="color-dropdown-header" id="colorDropdownHeader">
-                                <div class="color-dropdown-preview"></div>
-                                <div class="color-dropdown-text">Select a shade</div>
-                                <div class="color-dropdown-arrow">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="color-dropdown" id="colorDropdown"></div>
-                        </div>
-                        <div class="selected-shade-info" id="selectedShadeInfo">
-                            Pas de teinte
-                        </div>
-                    </div>
-                    
-                    <div class="product-actions animate-fade-in-up" style="animation-delay: 0.5s">
-                        <div class="quantity-selector">
-                            <label for="quantity">Quantité:</label>
-                            <div class="quantity-controls">
-                                <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
-                                <input type="number" id="quantity" name="quantity" value="1" min="1" max="99">
-                                <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
-                            </div>
-                        </div>
-                        
-                        <button class="btn btn-add-to-cart animate-button-pulse ${currentProduct && currentProduct.hasColorGroups ? 'btn-disabled' : ''}" 
-                                id="addToCartBtn" 
-                                data-product-id="${product.id}"
-                                ${currentProduct && currentProduct.hasColorGroups ? 'disabled' : ''}>
-                            <i class="fas fa-cart-plus"></i> Ajouter au panier
-                        </button>
-                        
-                        <button class="btn btn-whatsapp-order animate-button-pulse" id="whatsappOrderBtn">
-                            <i class="fab fa-whatsapp"></i> Commander via WhatsApp
-                        </button>
-                    </div>
-                    
-                    <div class="contact-info-card animate-fade-in-up" style="animation-delay: 0.6s">
-                        <h3><i class="fas fa-info-circle"></i> informations de commande</h3>
-                        <p>Pour plus d'informations sur nos prix et modalités de livraison, n'hésitez pas à nous contacter :</p>
-                        <ul>
-                            <li><i class="fas fa-phone"></i> 06.95.22.59.60 / 07.86.02.96.89</li>
-                            <li><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> 39 Boulevard De La Muette, 95140 Garges-Les-Gonesse, France</li>
-                        </ul>
-                    </div>
-                </div>
-            `;
-            
-            // Setup color dropdown toggle
-            const dropdownHeader = document.getElementById('colorDropdownHeader');
-            if (dropdownHeader) {
-                dropdownHeader.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleColorDropdown();
-                });
-            }
-            
-            setupQuantityControls();
-            setupAddToCart(product);
-            setupWhatsAppButton(product);
-            initializeAnimations();
-        }
-        
-        function setupQuantityControls() {
-            const quantityInput = document.getElementById('quantity');
-            const minusBtn = document.querySelector('.quantity-btn.minus');
-            const plusBtn = document.querySelector('.quantity-btn.plus');
-            
-            if (!quantityInput || !minusBtn || !plusBtn) return;
-            
-            minusBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value > 1) {
-                    quantityInput.value = value - 1;
-                }
-                quantityInput.dispatchEvent(new Event('change'));
-            });
-            
-            plusBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value < 99) {
-                    quantityInput.value = value + 1;
-                }
-                quantityInput.dispatchEvent(new Event('change'));
-            });
-            
-            quantityInput.addEventListener('change', function() {
-                let value = parseInt(this.value);
-                if (isNaN(value) || value < 1) {
-                    this.value = 1;
-                } else if (value > 99) {
-                    this.value = 99;
-                }
-            });
-        }
-        
-        function setupAddToCart(product) {
-            const addToCartBtn = document.getElementById('addToCartBtn');
-            if (!addToCartBtn) return;
-            
-            addToCartBtn.addEventListener('click', function() {
-                // Check if product requires color selection but none is selected
-                if (product.hasColorGroups && !selectedShade) {
-                    // Show error message
-                    const notification = document.createElement('div');
-                    notification.style.cssText = `
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: #ff9800;
-                        color: white;
-                        padding: 15px 25px;
-                        border-radius: 10px;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                        z-index: 10000;
-                        animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
-                        font-weight: 600;
-                    `;
-                    notification.innerHTML = `<i class="fas fa-exclamation-circle"></i> Please select a color before adding to cart.`;
-                    document.body.appendChild(notification);
-                    
-                    // Highlight color picker
-                    const colorSection = document.getElementById('colorSection');
-                    if (colorSection) {
-                        colorSection.classList.add('highlight-required');
-                        setTimeout(() => {
-                            colorSection.classList.remove('highlight-required');
-                        }, 2000);
-                    }
-                    
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 3000);
-                    return;
-                }
-                
-                const quantity = parseInt(document.getElementById('quantity').value);
-                
-                // UPDATED: Store full shade object, not just string
-                const cartProduct = {
-                    id: product.id,
-                    name: product.name,
-                    description: product.description,
-                    image_url: product.image_url,
-                    brand_id: product.brand_id,
-                    shade: selectedShade,  // This should contain {id, code, name, hex}
-                    quantity: quantity
-                };
-                
-                if (window.cartManager && typeof window.cartManager.addItem === 'function') {
-                    window.cartManager.addItem(cartProduct, quantity);
-                } else {
-                    // Fallback for localStorage - UPDATED WITH MIGRATION SUPPORT
-                    const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
-                    // Create a key for the new item
-                    const shadeId = cartProduct.shade ? cartProduct.shade.id : 'no-shade';
-                    const itemKey = `${cartProduct.id}_${shadeId}`;
-                    
-                    // Find existing item by key
-                    const existingItemIndex = cart.findIndex(item => {
-                        // If the item has a key, use it
-                        if (item.key) {
-                            return item.key === itemKey;
-                        }
-                        // Otherwise, old format: check id and shade
-                        return item.id === cartProduct.id && 
-                               ((!item.shade && !cartProduct.shade) || 
-                                (item.shade && cartProduct.shade && item.shade.code === cartProduct.shade.code));
-                    });
-                    
-                    if (existingItemIndex !== -1) {
-                        cart[existingItemIndex].quantity += quantity;
-                    } else {
-                        // Add key to the cartProduct
-                        cartProduct.key = itemKey;
-                        cart.push(cartProduct);
-                    }
-                    
-                    localStorage.setItem('peintureLandCart', JSON.stringify(cart));
-                    updateCartCount();
-                    
-                    const notification = document.createElement('div');
-                    notification.style.cssText = `
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-                        color: white;
-                        padding: 15px 25px;
-                        border-radius: 10px;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                        z-index: 10000;
-                        animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
-                        font-weight: 600;
-                    `;
-                    notification.innerHTML = `<i class="fas fa-check-circle"></i> ${product.name} added to cart`;
-                    document.body.appendChild(notification);
-                    
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 3000);
-                }
-                
-                this.classList.add('animate-button-success');
-                setTimeout(() => {
-                    this.classList.remove('animate-button-success');
-                }, 1000);
-            });
-        }
-        
-        function setupWhatsAppButton(product) {
-            const whatsappBtn = document.getElementById('whatsappOrderBtn');
-            if (!whatsappBtn) return;
-            
-            whatsappBtn.addEventListener('click', function() {
-                const quantity = parseInt(document.getElementById('quantity').value);
-                
-                let shadeText = '';
-                if (selectedShade) {
-                    shadeText = ` in shade **${selectedShade.code}${selectedShade.name ? ' – ' + selectedShade.name : ''}**`;
-                }
-                
-                const message = `Hello, I would like to order: ${quantity}x **${product.name}**${shadeText} from **${product.brands.name}**.`;
-                
-                const phoneNumber = '+33695225960';
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                window.open(whatsappURL, '_blank');
-            });
-        }
-        
-        async function loadRelatedProducts(brandId, excludeProductId) {
-            try {
-                const { data: products, error } = await window.supabaseClient
-                    .from('products')
-                    .select('*')
-                    .eq('brand_id', brandId)
-                    .neq('id', excludeProductId)
-                    .limit(3);
-                
-                if (error) throw error;
-                
-                const relatedGrid = document.getElementById('relatedProductsGrid');
-                const relatedSection = document.getElementById('relatedProductsSection');
-                const relatedBrandNameEl = document.getElementById('relatedBrandName');
-                
-                if (!relatedGrid || !relatedSection) return;
-                
-                if (products.length === 0) {
-                    return;
-                }
-                
-                relatedSection.style.display = 'block';
-                relatedGrid.innerHTML = '';
-                
-                if (relatedBrandNameEl && currentProduct && currentProduct.brands) {
-                    relatedBrandNameEl.textContent = currentProduct.brands.name;
-                }
-                
-                products.forEach((product, index) => {
-                    const productCard = createRelatedProductCard(product);
-                    productCard.style.animationDelay = `${index * 0.1}s`;
-                    relatedGrid.appendChild(productCard);
-                });
-                
-            } catch (error) {
-                console.error('Error loading related products:', error);
-            }
-        }
-        
-        function createRelatedProductCard(product) {
-            const card = document.createElement('div');
-            card.className = 'related-product-card animate-fade-in-up';
-            
-            const shortDescription = product.description && product.description.length > 80 
-                ? product.description.substring(0, 80) + '...' 
-                : product.description || '';
-            
-            card.innerHTML = `
-                <a href="product.html?id=${product.id}">
-                    <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop'}" 
-                         alt="${product.name}" 
-                         class="related-product-image">
-                    <div class="related-product-info">
-                        <h4>${product.name}</h4>
-                        <p>${shortDescription}</p>
-                        <span class="view-product">Voir les détails <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            `;
-            
-            return card;
-        }
-        
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
-            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            
-            const cartCountElements = document.querySelectorAll('.cart-count');
-            cartCountElements.forEach(element => {
-                element.textContent = cartCount;
-            });
-            
-            const cartCountElement = document.querySelector('.cart-count');
-            if (cartCountElement) {
-                cartCountElement.classList.add('animate-pulse');
-                setTimeout(() => {
-                    cartCountElement.classList.remove('animate-pulse');
-                }, 300);
-            }
-        }
-    </script>
+    async function loadColorVariants(productId) {
+      try {
+        const { data: productColorGroups, error: groupsError } = await window.supabaseClient
+          .from('product_color_groups')
+          .select('group_id')
+          .eq('product_id', productId)
+          .order('sort_order', { ascending: true });
+        if (groupsError) return false;
+        if (!productColorGroups || productColorGroups.length === 0) return false;
 
-    <style>
-        /* Language Toggle */
-        .language-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 10;
+        const groupIds = productColorGroups.map(group => group.group_id);
+        const { data: colorVariants, error: variantsError } = await window.supabaseClient
+          .from('color_variants')
+          .select('*')
+          .in('group_id', groupIds)
+          .order('shade_code', { ascending: true });
+        if (variantsError) return false;
+        if (colorVariants && colorVariants.length > 0) {
+          displayColorVariants(colorVariants);
+          return true;
         }
-        
-        .lang-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-        }
-        
-        #lang-flag {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        
-        .lang-btn:hover #lang-flag {
-            transform: rotate(360deg);
-        }
+        return false;
+      } catch (error) {
+        console.error('Unexpected error:', error);
+        return false;
+      }
+    }
 
-        /* Product Detail Page Styles - UPDATED LAYOUT */
-        .product-detail-section {
-            padding: 40px 0;
-            min-height: 70vh;
-        }
-        
-        .breadcrumb {
-            margin-bottom: 30px;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .breadcrumb a {
-            color: #4facfe;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb a:hover {
-            color: #667eea;
-            text-decoration: underline;
-        }
-        
-        .breadcrumb i {
-            color: #999;
-            font-size: 0.8rem;
-        }
-        
-        .breadcrumb span {
-            color: #4facfe;
-            font-weight: 600;
-        }
-        
-        .loading-product {
-            text-align: center;
-            padding: 60px;
-            color: #666;
-            font-size: 1.2rem;
-        }
-        
-        .loading-product i {
-            margin-right: 10px;
-        }
-        
-        /* Product Image at Top - NEW */
-        .product-image-top {
-            width: 100%;
-            margin-bottom: 40px;
-            animation: fadeIn 0.8s ease;
-        }
-        
-        .product-image-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .product-main-image {
-            width: 100%;
-            height: auto;
-            max-height: 600px;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-image-container:hover .product-main-image {
-            transform: scale(1.02);
-        }
-        
-        /* Product Information Below Image - NEW */
-        .product-info-below {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .product-basic-info {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        #productTitle {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #1a1a2e;
-            line-height: 1.2;
-        }
-        
-        .brand-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        
-        .brand-tag i {
-            font-size: 0.9rem;
-        }
-        
-        .product-description-container {
-            margin-bottom: 40px;
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #4facfe;
-        }
-        
-        .product-description-container h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2d3436;
-        }
-        
-        #productDescription {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #555;
-            white-space: pre-line;
-        }
-        
-        /* Color Picker Section */
-        .color-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-        }
-        
-        .color-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #2d3436;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-        
-        .color-note {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: normal;
-            font-style: italic;
-            margin-left: 5px;
-        }
-        
-        .color-dropdown-wrapper {
-            position: relative;
-            width: 100%;
-            margin-bottom: 15px;
-        }
-        
-        .color-dropdown-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .color-dropdown-header:hover {
-            border-color: #4facfe;
-            box-shadow: 0 2px 8px rgba(79, 172, 254, 0.1);
-        }
-        
-        .color-dropdown-preview {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            border: 2px solid #e0e0e0;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .color-dropdown-text {
-            flex: 1;
-            font-size: 1rem;
-            color: #2d3436;
-            font-weight: 500;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        
-        .color-dropdown-text strong {
-            color: #1a1a2e;
-        }
-        
-        .color-dropdown-arrow {
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-        
-        .color-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            margin-top: 5px;
-            max-height: 300px;
-            overflow-y: auto;
-            z-index: 1000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .color-dropdown-option {
-            padding: 12px 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .color-dropdown-option:last-child {
-            border-bottom: none;
-        }
-        
-        .color-dropdown-option:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .color-dropdown-option.selected {
-            background-color: #e3f2ff;
-            border-left: 3px solid #4facfe;
-        }
-        
-        .color-option-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .color-dropdown-option .color-swatch {
-            width: 35px;
-            height: 35px;
-            border-radius: 6px;
-            border: 2px solid #e0e0e0;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .color-dropdown-option:hover .color-swatch {
-            transform: scale(1.1);
-        }
-        
-        .color-text {
-            flex: 1;
-            font-size: 0.95rem;
-            color: #2d3436;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        
-        .color-text strong {
-            color: #1a1a2e;
-            font-weight: 600;
-        }
-        
-        .selected-shade-info {
-            font-size: 1rem;
-            color: #475569;
-            padding: 12px 16px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #4facfe;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-        
-        .selected-shade-info strong {
-            color: #1a1a2e;
-            font-weight: 700;
-            margin-right: 5px;
-        }
-        
-        /* Product Actions */
-        .product-actions {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-        }
-        
-        .quantity-selector {
-            margin-bottom: 25px;
-        }
-        
-        .quantity-selector label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #2d3436;
-            font-size: 1.1rem;
-        }
-        
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .quantity-controls input {
-            width: 80px;
-            text-align: center;
-            padding: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .quantity-controls input:focus {
-            border-color: #4facfe;
-            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
-        }
-        
-        .quantity-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid #4facfe;
-            background: white;
-            color: #4facfe;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .quantity-btn:hover {
-            background: #4facfe;
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .btn-add-to-cart {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            width: 100%;
-            padding: 18px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-add-to-cart:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
-        }
-        
-        .btn-whatsapp-order {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            width: 100%;
-            padding: 18px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-whatsapp-order:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-        
-        .animate-button-success {
-            animation: buttonSuccess 1s ease;
-        }
-        
-        @keyframes buttonSuccess {
-            0% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-            50% { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
-            100% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        }
-        
-        .contact-info-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-        }
-        
-        .contact-info-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-info-card p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-        
-        .contact-info-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .contact-info-card li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-info-card i {
-            width: 20px;
-        }
-        
-        /* Related Products */
-        .related-products {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 2px solid #eee;
-        }
-        
-        .related-products h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: #2d3436;
-        }
-        
-        .related-products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .related-product-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation-fill-mode: forwards;
-            position: relative;
-            border: 1px solid rgba(240, 240, 240, 0.8);
-        }
-        
-        .related-product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border: 1px solid rgba(79, 172, 254, 0.1);
-        }
-        
-        .related-product-card a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .related-product-image {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: center center;
-        }
-        
-        .related-product-card:hover .related-product-image {
-            transform: scale(1.08);
-            filter: brightness(1.03) saturate(1.05);
-        }
-        
-        .related-product-info {
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .related-product-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #2d3436;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            line-height: 1.4;
-        }
-        
-        .related-product-info h4::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            margin-top: 5px;
-            transform: scaleX(0.3);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .related-product-card:hover .related-product-info h4 {
-            color: #4facfe;
-            transform: translateY(-2px);
-        }
-        
-        .related-product-card:hover .related-product-info h4::after {
-            transform: scaleX(1);
-        }
-        
-        .related-product-info p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .view-product {
-            color: #4facfe;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 8px 16px;
-            border-radius: 50px;
-            background: rgba(79, 172, 254, 0.05);
-            border: 1px solid rgba(79, 172, 254, 0.1);
-        }
-        
-        .related-product-card:hover .view-product {
-            gap: 10px;
-            color: white;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            border-color: transparent;
-            padding: 8px 20px;
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2);
-        }
-        
-        .view-product i {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.8rem;
-        }
-        
-        .related-product-card:hover .view-product i {
-            transform: translateX(4px);
-        }
-        
-        .no-related {
-            text-align: center;
-            color: #999;
-            font-style: italic;
-            padding: 30px;
-            grid-column: 1 / -1;
-        }
-        
-        .error-message {
-            text-align: center;
-            padding: 60px;
-            color: #ff4757;
-            font-size: 1.2rem;
-            grid-column: 1 / -1;
-        }
-        
-        /* Animation for cart count */
-        .cart-count {
-            transition: all 0.3s ease;
-        }
-        
-        .animate-pulse {
-            animation: pulse 0.3s ease-in-out;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Product Properties Styles */
-        .product-properties-container {
-            margin: 30px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border-radius: 15px;
-            border-left: 4px solid #4facfe;
-        }
-        
-        .product-properties-container h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: #2d3436;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .product-properties-container h3 i {
-            color: #4facfe;
-        }
-        
-        .properties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .property-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .property-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-        }
-        
-        .property-icon {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #f8f9fa;
-            padding: 8px;
-        }
-        
-        .property-content {
-            flex: 1;
-        }
-        
-        .property-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #2d3436;
-            font-weight: 600;
-        }
-        
-        .property-short-label {
-            font-size: 0.9rem;
-            color: #4facfe;
-            font-weight: 500;
-            margin-bottom: 10px;
-            padding: 4px 10px;
-            background: rgba(79, 172, 254, 0.1);
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .property-full-description {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            white-space: pre-line;
-        }
-        
-        /* No Colors Message */
-        .no-colors-message {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            border: 2px dashed #e0e0e0;
-        }
-        
-        .no-colors-message i {
-            font-size: 3rem;
-            color: #bdc3c7;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .no-colors-message p {
-            color: #666;
-            font-size: 1.1rem;
-            margin: 0;
-        }
-        
-        /* Disabled Button State */
-        .btn-disabled {
-            opacity: 0.6;
-            cursor: not-allowed !important;
-            background: linear-gradient(135deg, #cccccc 0%, #999999 100%) !important;
-        }
-        
-        .btn-disabled:hover {
-            transform: none !important;
-            box-shadow: none !important;
-        }
-        
-        /* Highlight for required fields */
-        .highlight-required {
-            animation: highlightPulse 1s ease;
-            border: 2px solid #ff9800 !important;
-        }
-        
-        @keyframes highlightPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.4); }
-            50% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            #productTitle {
-                font-size: 2rem;
-            }
+    function updateColorSectionForNoColors() {
+        const colorSection = document.getElementById('colorSection');
+        const dropdownWrapper = colorSection?.querySelector('.color-dropdown-wrapper');
+        const selectedShadeInfo = document.getElementById('selectedShadeInfo');
+        
+        if (colorSection) {
+            // Hide the dropdown and show a message instead
+            if (dropdownWrapper) dropdownWrapper.style.display = 'none';
+            if (selectedShadeInfo) selectedShadeInfo.style.display = 'none';
             
-            .product-main-image {
-                max-height: 450px;
-            }
-            
-            .color-section h3 {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .color-note {
-                margin-left: 0;
-                margin-top: 5px;
-                font-size: 0.85rem;
+            // Add a "no colors" message if not already present
+            let noColorsMsg = colorSection.querySelector('.no-colors-message');
+            if (!noColorsMsg) {
+                noColorsMsg = document.createElement('div');
+                noColorsMsg.className = 'no-colors-message';
+                noColorsMsg.innerHTML = '<i class="fas fa-palette"></i><p>Ce produit n\'a pas de couleurs.</p>';
+                colorSection.appendChild(noColorsMsg);
             }
         }
         
-        @media (max-width: 768px) {
-            .related-products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .quantity-controls {
-                justify-content: center;
-            }
-            
-            .product-actions {
-                padding: 20px;
-            }
-            
-            .color-dropdown-header {
-                padding: 12px;
-            }
-            
-            .color-dropdown-preview {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .color-dropdown-option .color-swatch {
-                width: 30px;
-                height: 30px;
-            }
-            
-            .properties-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .property-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .property-icon {
-                margin: 0 auto;
-            }
+        // Enable the add‑to‑cart button
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        if (addToCartBtn) {
+            addToCartBtn.disabled = false;
+            addToCartBtn.classList.remove('btn-disabled');
         }
-        
-        @media (max-width: 480px) {
-            #productTitle {
-                font-size: 1.8rem;
-            }
-            
-            .product-main-image {
-                max-height: 350px;
-            }
-            
-            .btn-add-to-cart,
-            .btn-whatsapp-order {
-                padding: 15px;
-                font-size: 1.1rem;
-            }
-            
-            .brand-tag {
-                font-size: 0.9rem;
-                padding: 6px 15px;
-            }
-            
-            .color-dropdown-header {
-                padding: 10px;
-            }
-            
-            .color-dropdown-preview {
-                width: 30px;
-                height: 30px;
-            }
-            
-            .color-dropdown-text {
-                font-size: 0.9rem;
-            }
-            
-            .color-dropdown-option {
-                padding: 10px 12px;
-            }
-            
-            .color-dropdown-option .color-swatch {
-                width: 25px;
-                height: 25px;
-            }
-        }
+    }
 
-    </style>
+    function displayColorVariants(variants) {
+      const colorSection = document.getElementById('colorSection');
+      const colorDropdown = document.getElementById('colorDropdown');
+      const selectedShadeInfo = document.getElementById('selectedShadeInfo');
+      if (!colorSection || !colorDropdown) return;
+      colorSection.style.display = 'block';
+      colorDropdown.innerHTML = '';
+
+      variants.forEach(variant => {
+        const option = document.createElement('div');
+        option.className = 'color-dropdown-option';
+        option.dataset.id = variant.id;
+        option.dataset.code = variant.shade_code || '';
+        option.dataset.name = variant.name || '';
+        option.dataset.hex = variant.hex_code || '';
+        option.innerHTML = `
+          <div class="color-option-content">
+            <span class="color-swatch" style="background-color: ${variant.hex_code || '#f0f0f0'}; ${isLightColor(variant.hex_code) ? 'border:1px solid #e0e0e0' : ''}"></span>
+            <span class="color-text"><strong>${variant.shade_code || ''}</strong>${variant.name ? ' - ' + variant.name : ''}</span>
+          </div>
+        `;
+        option.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          selectColorOption(this, variant);
+        });
+        colorDropdown.appendChild(option);
+      });
+
+      if (variants.length > 0) {
+        const firstOption = colorDropdown.querySelector('.color-dropdown-option');
+        selectColorOption(firstOption, variants[0]);
+      }
+    }
+
+    function selectColorOption(optionElement, variant) {
+      document.querySelectorAll('.color-dropdown-option').forEach(opt => opt.classList.remove('selected'));
+      optionElement.classList.add('selected');
+      selectedShade = {
+        id: optionElement.dataset.id,
+        code: optionElement.dataset.code,
+        name: optionElement.dataset.name,
+        hex: optionElement.dataset.hex
+      };
+      const dropdownHeader = document.querySelector('.color-dropdown-header');
+      const dropdownPreview = document.querySelector('.color-dropdown-preview');
+      const dropdownText = document.querySelector('.color-dropdown-text');
+      if (dropdownHeader && dropdownPreview && dropdownText) {
+        dropdownPreview.style.backgroundColor = variant.hex_code || '#f0f0f0';
+        dropdownText.innerHTML = `<strong>${variant.shade_code || ''}</strong>${variant.name ? ' - ' + variant.name : ''}`;
+      }
+      const selectedShadeInfo = document.getElementById('selectedShadeInfo');
+      if (selectedShadeInfo) {
+        selectedShadeInfo.innerHTML = `<strong>Sélectionné</strong> ${variant.shade_code || ''}${variant.name ? ' - ' + variant.name : ''}`;
+      }
+      toggleColorDropdown(false);
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      if (addToCartBtn) {
+        addToCartBtn.disabled = false;
+        addToCartBtn.classList.remove('btn-disabled');
+        addToCartBtn.classList.add('animate-button-pulse');
+      }
+    }
+
+    function toggleColorDropdown(forceState) {
+      const colorDropdown = document.getElementById('colorDropdown');
+      const dropdownArrow = document.querySelector('.color-dropdown-arrow i');
+      if (colorDropdown && dropdownArrow) {
+        if (forceState !== undefined) colorDropdownOpen = forceState;
+        else colorDropdownOpen = !colorDropdownOpen;
+        if (colorDropdownOpen) {
+          colorDropdown.style.display = 'block';
+          dropdownArrow.classList.remove('fa-chevron-down');
+          dropdownArrow.classList.add('fa-chevron-up');
+          setTimeout(() => document.addEventListener('click', closeColorDropdownOutside), 10);
+        } else {
+          colorDropdown.style.display = 'none';
+          dropdownArrow.classList.remove('fa-chevron-up');
+          dropdownArrow.classList.add('fa-chevron-down');
+          document.removeEventListener('click', closeColorDropdownOutside);
+        }
+      }
+    }
+
+    function closeColorDropdownOutside(e) {
+      const colorSection = document.getElementById('colorSection');
+      const dropdownHeader = document.querySelector('.color-dropdown-header');
+      if (colorSection && dropdownHeader && !colorSection.contains(e.target) && !dropdownHeader.contains(e.target)) {
+        toggleColorDropdown(false);
+      }
+    }
+
+    function isLightColor(hex) {
+      if (!hex || typeof hex !== 'string') return false;
+      try {
+        let cleanHex = hex.replace('#', '');
+        if (cleanHex.length === 3) cleanHex = cleanHex.split('').map(c => c + c).join('');
+        const r = parseInt(cleanHex.substr(0, 2), 16);
+        const g = parseInt(cleanHex.substr(2, 2), 16);
+        const b = parseInt(cleanHex.substr(4, 2), 16);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness > 128;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function renderProduct(product) {
+      const container = document.getElementById('productContainer');
+      container.innerHTML = `
+        <div class="product-image-top will-animate">
+          <div class="product-image-container">
+            <img id="mainProductImage" src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop'}" alt="${product.name}" class="product-main-image" width="800" height="500">
+          </div>
+        </div>
+        <div class="product-info-below">
+          <div class="product-basic-info will-animate">
+            <h1 id="productTitle">${product.name}</h1>
+            <div class="brand-tag" id="brandTag"><i class="fas fa-tag"></i> ${product.brands.name}</div>
+          </div>
+          <div class="product-description-container animate-fade-in-up" style="animation-delay:0.2s">
+            <h3>Description du produit</h3>
+            <p id="productDescription">${product.description || 'No description available.'}</p>
+          </div>
+          ${product.properties && product.properties.length ? `
+            <div class="product-properties-container animate-fade-in-up" style="animation-delay:0.3s">
+              <h3><i class="fas fa-info-circle"></i> Caractéristiques du produit</h3>
+              <div class="properties-grid">
+                ${product.properties.map((prop, index) => `
+                  <div class="property-item" style="animation-delay:${0.3 + index * 0.05}s">
+                    ${prop.property.icon_url ? `<img src="${prop.property.icon_url}" alt="${prop.property.name || 'Property'}" class="property-icon" width="40" height="40">` : ''}
+                    <div class="property-content">
+                      ${prop.property.name ? `<h4>${prop.property.name}</h4>` : ''}
+                      ${prop.property.short_label ? `<div class="property-short-label">${prop.property.short_label}</div>` : ''}
+                      ${prop.property.full_description ? `<div class="property-full-description">${prop.property.full_description}</div>` : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+          <div class="color-section" id="colorSection" style="display:none; animation-delay:0.4s">
+            <h3>Choisir une teinte: <span class="color-note">(Les teintes présentées sont indicatives. Pour des informations précises sur les couleurs, veuillez nous contacter.)</span></h3>
+            <div class="color-dropdown-wrapper">
+              <div class="color-dropdown-header" id="colorDropdownHeader">
+                <div class="color-dropdown-preview"></div>
+                <div class="color-dropdown-text">Select a shade</div>
+                <div class="color-dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+              </div>
+              <div class="color-dropdown" id="colorDropdown"></div>
+            </div>
+            <div class="selected-shade-info" id="selectedShadeInfo">Pas de teinte</div>
+          </div>
+          <div class="product-actions animate-fade-in-up" style="animation-delay:0.5s">
+            <div class="quantity-selector">
+              <label for="quantity">Quantité:</label>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus" aria-label="Diminuer quantité"><i class="fas fa-minus"></i></button>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="99" aria-label="Quantité">
+                <button class="quantity-btn plus" aria-label="Augmenter quantité"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+            <button class="btn btn-add-to-cart animate-button-pulse ${currentProduct && currentProduct.hasColorGroups ? 'btn-disabled' : ''}" id="addToCartBtn" data-product-id="${product.id}" ${currentProduct && currentProduct.hasColorGroups ? 'disabled' : ''}>
+              <i class="fas fa-cart-plus"></i> Ajouter au panier
+            </button>
+            <button class="btn btn-whatsapp-order animate-button-pulse" id="whatsappOrderBtn">
+              <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+            </button>
+          </div>
+          <div class="contact-info-card animate-fade-in-up" style="animation-delay:0.6s">
+            <h3><i class="fas fa-info-circle"></i> informations de commande</h3>
+            <p>Pour plus d'informations sur nos prix et modalités de livraison, n'hésitez pas à nous contacter :</p>
+            <ul>
+              <li><i class="fas fa-phone"></i> 06.95.22.59.60 / 07.86.02.96.89</li>
+              <li><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</li>
+              <li><i class="fas fa-map-marker-alt"></i> 39 Boulevard De La Muette, 95140 Garges-Les-Gonesse, France</li>
+            </ul>
+          </div>
+        </div>
+      `;
+      const dropdownHeader = document.getElementById('colorDropdownHeader');
+      if (dropdownHeader) {
+        dropdownHeader.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleColorDropdown();
+        });
+      }
+      setupQuantityControls();
+      setupAddToCart(product);
+      setupWhatsAppButton(product);
+      initializeAnimations();
+    }
+
+    function setupQuantityControls() {
+      const quantityInput = document.getElementById('quantity');
+      const minusBtn = document.querySelector('.quantity-btn.minus');
+      const plusBtn = document.querySelector('.quantity-btn.plus');
+      if (!quantityInput || !minusBtn || !plusBtn) return;
+      minusBtn.addEventListener('click', function() {
+        let value = parseInt(quantityInput.value);
+        if (value > 1) quantityInput.value = value - 1;
+        quantityInput.dispatchEvent(new Event('change'));
+      });
+      plusBtn.addEventListener('click', function() {
+        let value = parseInt(quantityInput.value);
+        if (value < 99) quantityInput.value = value + 1;
+        quantityInput.dispatchEvent(new Event('change'));
+      });
+      quantityInput.addEventListener('change', function() {
+        let value = parseInt(this.value);
+        if (isNaN(value) || value < 1) this.value = 1;
+        else if (value > 99) this.value = 99;
+      });
+    }
+
+    function setupAddToCart(product) {
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      if (!addToCartBtn) return;
+      addToCartBtn.addEventListener('click', function() {
+        if (product.hasColorGroups && !selectedShade) {
+          const notification = document.createElement('div');
+          notification.style.cssText = 'position:fixed; top:20px; right:20px; background:#ff9800; color:white; padding:15px 25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); z-index:10000; animation:fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; font-weight:600;';
+          notification.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please select a color before adding to cart.';
+          document.body.appendChild(notification);
+          const colorSection = document.getElementById('colorSection');
+          if (colorSection) {
+            colorSection.classList.add('highlight-required');
+            setTimeout(() => colorSection.classList.remove('highlight-required'), 2000);
+          }
+          setTimeout(() => { if (notification.parentNode) notification.remove(); }, 3000);
+          return;
+        }
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const cartProduct = {
+          id: product.id,
+          name: product.name,
+          description: product.description,
+          image_url: product.image_url,
+          brand_id: product.brand_id,
+          shade: selectedShade,
+          quantity: quantity
+        };
+        if (window.cartManager && typeof window.cartManager.addItem === 'function') {
+          window.cartManager.addItem(cartProduct, quantity);
+        } else {
+          const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+          const shadeId = cartProduct.shade ? cartProduct.shade.id : 'no-shade';
+          const itemKey = `${cartProduct.id}_${shadeId}`;
+          const existingItemIndex = cart.findIndex(item => {
+            if (item.key) return item.key === itemKey;
+            return item.id === cartProduct.id && ((!item.shade && !cartProduct.shade) || (item.shade && cartProduct.shade && item.shade.code === cartProduct.shade.code));
+          });
+          if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity += quantity;
+          } else {
+            cartProduct.key = itemKey;
+            cart.push(cartProduct);
+          }
+          localStorage.setItem('peintureLandCart', JSON.stringify(cart));
+          updateCartCount();
+          const notification = document.createElement('div');
+          notification.style.cssText = 'position:fixed; top:20px; right:20px; background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); color:white; padding:15px 25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); z-index:10000; animation:fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; font-weight:600;';
+          notification.innerHTML = `<i class="fas fa-check-circle"></i> ${product.name} added to cart`;
+          document.body.appendChild(notification);
+          setTimeout(() => { if (notification.parentNode) notification.remove(); }, 3000);
+        }
+        this.classList.add('animate-button-success');
+        setTimeout(() => this.classList.remove('animate-button-success'), 1000);
+      });
+    }
+
+    function setupWhatsAppButton(product) {
+      const whatsappBtn = document.getElementById('whatsappOrderBtn');
+      if (!whatsappBtn) return;
+      whatsappBtn.addEventListener('click', function() {
+        const quantity = parseInt(document.getElementById('quantity').value);
+        let shadeText = '';
+        if (selectedShade) {
+          shadeText = ` in shade **${selectedShade.code}${selectedShade.name ? ' – ' + selectedShade.name : ''}**`;
+        }
+        const message = `Hello, I would like to order: ${quantity}x **${product.name}**${shadeText} from **${product.brands.name}**.`;
+        const phoneNumber = '+33695225960';
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+      });
+    }
+
+    async function loadRelatedProducts(brandId, excludeProductId) {
+      try {
+        const { data: products, error } = await window.supabaseClient
+          .from('products')
+          .select('*')
+          .eq('brand_id', brandId)
+          .neq('id', excludeProductId)
+          .limit(3);
+        if (error) throw error;
+        const relatedGrid = document.getElementById('relatedProductsGrid');
+        const relatedSection = document.getElementById('relatedProductsSection');
+        const relatedBrandNameEl = document.getElementById('relatedBrandName');
+        if (!relatedGrid || !relatedSection) return;
+        if (products.length === 0) return;
+        relatedSection.style.display = 'block';
+        relatedGrid.innerHTML = '';
+        if (relatedBrandNameEl && currentProduct && currentProduct.brands) {
+          relatedBrandNameEl.textContent = currentProduct.brands.name;
+        }
+        products.forEach((product, index) => {
+          const productCard = createRelatedProductCard(product);
+          productCard.style.animationDelay = `${index * 0.1}s`;
+          relatedGrid.appendChild(productCard);
+        });
+      } catch (error) {
+        console.error('Error loading related products:', error);
+      }
+    }
+
+    function createRelatedProductCard(product) {
+      const card = document.createElement('div');
+      card.className = 'related-product-card animate-fade-in-up';
+      const shortDescription = product.description && product.description.length > 80 ? product.description.substring(0, 80) + '...' : product.description || '';
+      card.innerHTML = `
+        <a href="product.html?id=${product.id}">
+          <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop'}" alt="${product.name}" class="related-product-image" width="300" height="200" loading="lazy">
+          <div class="related-product-info">
+            <h4>${product.name}</h4>
+            <p>${shortDescription}</p>
+            <span class="view-product">Voir les détails <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      `;
+      return card;
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+      const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+      document.querySelectorAll('.cart-count').forEach(element => element.textContent = cartCount);
+      const cartCountElement = document.querySelector('.cart-count');
+      if (cartCountElement) {
+        cartCountElement.classList.add('animate-pulse');
+        setTimeout(() => cartCountElement.classList.remove('animate-pulse'), 300);
+      }
+    }
+  </script>
 </body>
 </html>
-
-

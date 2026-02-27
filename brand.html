@@ -1,1010 +1,438 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nos Marques de Peinture – Peinture Land</title>
+  <meta name="description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land. Qualité et fiabilité depuis 2015.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://peintureland.com/brand.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nos Marques de Peinture – Peinture Land">
+  <meta property="og:description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land. Qualité et fiabilité depuis 2015.">
+  <meta property="og:url" content="https://peintureland.com/brand.html">
+  <meta property="og:image" content="https://peintureland.com/logo.webp">
+  <meta property="og:locale" content="fr_FR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nos Marques de Peinture – Peinture Land">
+  <meta name="twitter:description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land.">
+  <meta name="twitter:image" content="https://peintureland.com/logo.webp">
+  <!-- Favicon -->
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- SEO Title -->
-    <title>Nos Marques de Peinture – Peinture Land</title>
-
-    <!-- Meta Description -->
-    <meta name="description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land. Qualité et fiabilité depuis 2015.">
-
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://peintureland.com/brand.html">
-
-    <!-- Open Graph (Facebook / WhatsApp) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Nos Marques de Peinture – Peinture Land">
-    <meta property="og:description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land. Qualité et fiabilité depuis 2015.">
-    <meta property="og:url" content="https://peintureland.com/brand.html">
-    <meta property="og:image" content="https://peintureland.com/logo.png">
-    <meta property="og:locale" content="fr_FR">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nos Marques de Peinture – Peinture Land">
-    <meta name="twitter:description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land.">
-    <meta name="twitter:image" content="https://peintureland.com/logo.png">
-
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="productCard.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/search.css">
-    <link rel="stylesheet" href="background-pattern.css">
-
-    <!-- Fonts / Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-
-    <!-- Structured Data: Local Business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "PaintStore",
-      "name": "Peinture Land",
-      "image": "https://peintureland.com/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "39 Boulevard De La Muette",
-        "addressLocality": "Garges-lès-Gonesse",
-        "postalCode": "95140",
-        "addressCountry": "FR"
-      },
-      "telephone": "+33695225960",
-      "email": "sarlpeintureland@gmail.com",
-      "url": "https://peintureland.com"
-    }
-    </script>
-
-    <script>
-      window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
-      window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
-    </script>
-        
+  <link rel="preconnect" href="https://ywcpovfepiuspgcsjizs.supabase.co">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="productCard.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/ham.css">
+  <link rel="stylesheet" href="background-pattern.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PaintStore",
+    "name": "Peinture Land",
+    "image": "https://peintureland.com/logo.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "39 Boulevard De La Muette",
+      "addressLocality": "Garges-lès-Gonesse",
+      "postalCode": "95140",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33695225960",
+    "email": "sarlpeintureland@gmail.com",
+    "url": "https://peintureland.com"
+  }
+  </script>
+  <script>
+    window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
+    window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
+  </script>
+  <!-- Inline critical styles (minified) -->
+  <style>.brand-header{background:linear-gradient(135deg,#2a5c9c 0%,#006d8f 100%);padding:60px 0;color:#fff;margin-bottom:40px;text-shadow:1px 1px 3px rgba(0,0,0,.5)}.breadcrumb{margin-bottom:20px;font-size:.9rem}.breadcrumb a{color:#fff;text-decoration:none;transition:color .3s ease}.breadcrumb a:hover{color:#4facfe}.breadcrumb i{margin:0 10px;font-size:.8rem;color:rgba(255,255,255,.7)}.brand-info h2{font-size:3rem;margin-bottom:20px;color:#fff;font-weight:800;text-shadow:2px 2px 5px rgba(0,0,0,.5)}.brand-info p{font-size:1.3rem;max-width:800px;color:#f0f0f0;font-weight:500;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,.3)}.loading-brand{display:flex;align-items:center;gap:10px;font-size:1.2rem}.products-section{padding:40px 0}.section-title{display:block;width:fit-content;margin:0 auto 90px;text-align:center;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}.section-title::after{content:'';position:absolute;bottom:-15px;left:10%;width:80%;height:4px;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);border-radius:2px}.brand-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:50px;align-items:stretch}.product-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 8px 15px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%;min-height:500px;border:1px solid rgba(79,172,254,.1)}.product-card:hover{transform:translateY(-15px) scale(1.09);box-shadow:0 50px 80px rgba(0,110,255,.15);border-color:rgba(0,140,255,.3)}.product-image-container{position:relative;overflow:hidden;height:220px;flex-shrink:0}.product-image{width:100%;height:100%;object-fit:contain;transition:transform .6s ease}.product-card:hover .product-image{transform:scale(1.25)}.product-info{padding:25px;display:flex;flex-direction:column;flex-grow:1;height:calc(100% - 220px);min-height:280px}.brand-badge{display:inline-block;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:15px;align-self:flex-start}.product-name{font-size:20px;font-weight:700;margin:0 0 12px 0;color:#1a1a2e;line-height:1.4;min-height:56px;display:-webkit-box;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.product-description-container{flex-grow:1;overflow-y:auto;min-height:80px;max-height:120px;margin-bottom:20px;padding-right:5px}.product-description-container::-webkit-scrollbar{width:4px}.product-description-container::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}.product-description-container::-webkit-scrollbar-thumb{background:#4facfe;border-radius:10px}.product-description{color:#666;font-size:14px;line-height:1.6;margin:0}.properties{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px 0;min-height:40px;max-height:80px;overflow-y:auto;padding-right:5px}.properties::-webkit-scrollbar{width:3px}.properties::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}.properties::-webkit-scrollbar-thumb{background:#00f2fe;border-radius:10px}.property-tag{background:#f0f9ff;border:1px solid #bae6fd;color:#0c4a6e;padding:6px 12px;border-radius:20px;font-size:12px;display:inline-flex;align-items:center;gap:6px;flex-shrink:0;height:32px}.property-icon{width:16px;height:16px;object-fit:contain}.product-actions{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:20px;border-top:1px solid rgba(79,172,254,.1)}.btn{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;border:none;padding:12px 24px;border-radius:50px;cursor:pointer;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px;transition:all .3s ease;white-space:nowrap}.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,172,254,.4)}.view-details{color:#4facfe;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;transition:all .3s ease;white-space:nowrap}.product-card:hover .view-details{transform:translateX(5px);color:#f093fb}.add-to-cart.added{animation:cartAdded .6s ease}@keyframes cartAdded{0%{transform:scale(1);background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}50%{transform:scale(1.1);background:linear-gradient(135deg,#25D366 0%,#128C7E 100%)}100%{transform:scale(1);background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}}.loading,.no-products,.error{grid-column:1/-1;text-align:center;padding:60px 20px;color:#666}.loading i,.no-products i{font-size:3rem;margin-bottom:20px;color:#4facfe}.error{width:100%;max-width:520px;margin:40px auto;padding:22px 24px;background:linear-gradient(135deg,rgba(255,70,70,.18),rgba(255,0,0,.1));border:1px solid rgba(255,70,70,.45);border-radius:16px;color:#f30000;font-size:15px;font-weight:500;text-align:center;letter-spacing:.2px;backdrop-filter:blur(10px);box-shadow:0 18px 40px rgba(255,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.08);animation:errorEnter .55s ease forwards;position:relative}.error::before{content:"⚠";display:block;font-size:38px;margin-bottom:10px;animation:errorPulse 1.6s infinite}@keyframes errorEnter{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes errorPulse{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}.no-products{background:#f8f9fa;border-radius:15px;border:2px dashed #dee2e6}@media(max-width:768px){.brand-products{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}.product-card{min-height:480px}.product-image-container{height:200px}.product-info{padding:20px}.section-title{font-size:2.2rem}}@media(max-width:480px){.brand-products{grid-template-columns:1fr}.product-actions{flex-direction:column;gap:15px;align-items:stretch}.btn,.view-details{width:100%;justify-content:center}}@media(max-width:1024px){.brand-products{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px}}@media(max-width:768px){.brand-header{padding:40px 0}.brand-info h2{font-size:2.2rem!important}.brand-info p{font-size:1.1rem}.brand-products{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px}.product-card{min-height:460px}.product-image-container{height:200px}}@media(max-width:480px){.brand-info h2{font-size:1.8rem!important}}</style>
 </head>
-
-
 <body>
-    <div class="paint-splatter-bg"></div>
-    <div class="floating-paint-dots"></div>
+  <div class="paint-splatter-bg"></div>
+  <div class="floating-paint-dots"></div>
 
-    <!-- Header -->
-    <header class="header animate-gradient-shift">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="PEINTURE LAND Logo" class="logo animate-float">
-                <h1 class="site-name animate-fade-in">PEINTURE LAND</h1>
-            </div>
-            <div class="global-search-container animate-fade-in">
-                <form class="search-form" id="globalSearchForm">
-                    <input type="text" 
-                           class="search-input" 
-                           id="globalSearchInput" 
-                           placeholder="Rechercher produits et marques…"
-                           autocomplete="on">
-                    <button type="submit" class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <div class="search-dropdown" id="searchDropdown"></div>
-                </form>
-            </div>
-
-            <nav class="nav">
-                <a href="index.html" class="active animate-fade-in-left">
-                    <i class="fas fa-home"></i> Accueil
-                </a>
-                <a href="cart.html" class="cart-link animate-fade-in-right">
-                    <i class="fas fa-shopping-cart"></i> Panier 
-                    <span class="cart-count">0</span>
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Brand Header -->
-    <section class="brand-header animate-gradient-shift">
-        <div class="container">
-            <div class="breadcrumb animate-fade-in-left">
-                <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
-                <span id="brandName">Brand</span>
-            </div>
-            <div class="brand-info animate-fade-in-up" id="brandInfo">
-                <!-- Brand info loaded dynamically -->
-                <div class="loading-brand">
-                    <i class="fas fa-spinner fa-spin"></i> Loading...
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title animate-fade-in-up">PRODUITS</h2>
-            <div class="brand-products" id="productsGrid">
-                <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i> Chargement....
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!-- Footer -->
-<footer class="footer">
+  <!-- Header with hamburger -->
+  <header class="header animate-gradient-shift">
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <img src="logo.png" alt="PEINTURE LAND" class="footer-logo-img">
-                    <h3>PEINTURE LAND</h3>
-                </div>
-                <p class="footer-tagline">Peinture & Revêtements Pro</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
-                <div class="footer-address">
-                    <div class="address-line">
-                        <i class="fas fa-building"></i>
-                        <span>39 Boulevard De La Muette</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-map-pin"></i>
-                        <span>95140 Garges-Les-Gonesse</span>
-                    </div>
-                    <div class="address-line">
-                        <i class="fas fa-flag"></i>
-                        <span>France</span>
-                    </div>
-                    <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" 
-                       class="map-link" 
-                       target="_blank" 
-                       rel="noopener noreferrer">
-                        <i class="fas fa-directions"></i> Itinéraire
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
-                <div class="footer-contact">
-                    <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
-                    <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
-                    <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
-                <div class="footer-hours">
-                    <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
-                    <p><strong>Sunday : </strong> Closed</p>
-                </div>
-
-                <!-- Social Links -->
-                <h4 style="margin-top: 25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
-                <div class="footer-social" style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
-            <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
-        </div>
+      <div class="logo-container">
+        <img src="logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
+        <h3 class="site-name animate-fade-in">PEINTURE LAND</h3>
+      </div>
+      <div class="global-search-container animate-fade-in">
+        <form class="search-form" id="globalSearchForm">
+          <input type="text" class="search-input" id="globalSearchInput" placeholder="Rechercher produits et marques…" autocomplete="on" aria-label="Rechercher">
+          <button type="submit" class="search-button" aria-label="Rechercher"><i class="fas fa-search"></i></button>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </form>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
+        <a href="cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
+      </nav>
+      <!-- Hamburger button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
-</footer>
-    
-    
-    
-    
-    
-    <!-- Add GSAP libraries FIRST -->
-<script src="js/libs/gsap/gsap.min.js"></script>
-<script src="js/libs/gsap/ScrollTrigger.min.js"></script>
-<script src="js/paint-loader-enhanced.js"></script>
-<script src="js/gsap-animations.js"></script>
-<script src="logo-loader.js"></script>
-<script src="paint-mixer.js"></script>
-<script src="supabase-client.js"></script>
-<script src="cart-manager.js"></script>
-<script src="js/script.js"></script>
-<script src="js/search.js"></script>
+  </header>
 
-    <script>
-        // Brand page specific JavaScript
-        document.addEventListener('DOMContentLoaded', async function() {
-            console.log('Brand page loaded');
-            
-            // Get brand ID from URL
-            const brandId = getBrandIdFromURL();
-            
-            if (brandId) {
-                await ensureSupabase();
-                await loadBrandAndProducts(brandId);
-            } else {
-                console.error('No valid brand ID found in URL');
-                window.location.href = 'index.html';
-            }
-            
-            // Initialize cart count
-            updateCartCount();
+  <!-- Hamburger overlay menu (full screen) - adapted for brand page -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-header">
+      <img src="logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
+      <button class="menu-close" id="menuClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="menu-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
+      <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Actions rapides</span>
+      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Aller à</span>
+      <!-- Links specific to this page -->
+      <a href="#brand-header"><i class="fas fa-arrow-up"></i> Haut de page</a>
+    </nav>
+    <div class="menu-trust">
+      <p><i class="fas fa-lock"></i> Paiement sécurisé</p>
+      <p><i class="fas fa-truck"></i> Livraison rapide</p>
+      <p><i class="fas fa-award"></i> Produits certifiés</p>
+    </div>
+  </div>
+
+  <!-- Brand Header -->
+  <section class="brand-header animate-gradient-shift" id="brand-header">
+    <div class="container">
+      <div class="breadcrumb animate-fade-in-left">
+        <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
+        <span id="brandName">Brand</span>
+      </div>
+      <div class="brand-info animate-fade-in-up" id="brandInfo">
+        <div class="loading-brand">
+          <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <h2 class="section-title animate-fade-in-up">PRODUITS</h2>
+      <div class="brand-products" id="productsGrid">
+        <div class="loading">
+          <i class="fas fa-spinner fa-spin"></i> Chargement....
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
+            <h3>PEINTURE LAND</h3>
+          </div>
+          <p class="footer-tagline">Peinture & Revêtements Pro</p>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+          <div class="footer-address">
+            <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
+            <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
+            <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
+            <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Itinéraire</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+            <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+            <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+          <div class="footer-hours">
+            <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
+            <p><strong>Sunday : </strong> Closed</p>
+          </div>
+          <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+          <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
+            <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+        <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/libs/gsap/gsap.min.js"></script>
+  <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
+  <script src="js/libs/gsap/ScrollToPlugin.min.js"></script>
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="logo-loader.js" defer></script>
+  <script src="paint-mixer.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="cart-manager.js" defer></script>
+  <script src="/js/ham.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <!-- Hamburger JS -->
+ 
+
+  <!-- Brand page specific JavaScript (optimized) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      const brandId = getBrandIdFromURL();
+      if (brandId) {
+        await ensureSupabase();
+        await loadBrandAndProducts(brandId);
+      } else {
+        console.error('No valid brand ID found in URL');
+        window.location.href = 'index.html';
+      }
+      updateCartCount();
+    });
+
+    function getBrandIdFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id');
+    }
+
+    async function loadBrandAndProducts(brandId) {
+      try {
+        // Fetch brand
+        const brandRes = window.supabaseCallWithTimeout ?
+          await window.supabaseCallWithTimeout(() => window.supabaseClient
+            .from('brands')
+            .select('*')
+            .eq('id', brandId)
+            .single(), 'brandInfo', 7000)
+          : await window.supabaseClient
+            .from('brands')
+            .select('*')
+            .eq('id', brandId)
+            .single();
+
+        const brand = brandRes && brandRes.data ? brandRes.data : brandRes;
+        if (!brand) throw new Error('Brand not found');
+
+        document.title = `${brand.name} Products - PEINTURE LAND`;
+
+        // Update meta description
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.name = 'description';
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.content = brand.description || `Découvrez les produits de la marque ${brand.name} – peintures professionnelles de qualité.`;
+
+        // Update canonical URL
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.rel = 'canonical';
+            document.head.appendChild(canonical);
+        }
+        canonical.href = `https://peintureland.com/brand.html?id=${brand.id}`;
+
+        // Update Open Graph / Twitter meta tags (optional but recommended)
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.content = `${brand.name} – Peinture Land`;
+
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription) ogDescription.content = brand.description || `Découvrez les produits de la marque ${brand.name} sur Peinture Land.`;
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.content = `https://peintureland.com/brand.html?id=${brand.id}`;
+
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle) twitterTitle.content = `${brand.name} – Peinture Land`;
+
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDescription) twitterDescription.content = brand.description || `Découvrez les produits de la marque ${brand.name} sur Peinture Land.`;
+
+        document.getElementById('brandName').textContent = brand.name;
+
+        const brandInfoDiv = document.getElementById('brandInfo');
+        brandInfoDiv.innerHTML = `
+          <h1>${brand.name}</h1>
+          <p>${brand.description}</p>
+        `;
+
+        await loadBrandProducts(brandId, brand.name);
+      } catch (error) {
+        console.error('Error loading brand:', error);
+        document.getElementById('brandInfo').innerHTML = '<div class="error">Error loading brand</div>';
+        document.getElementById('productsGrid').innerHTML = '<div class="error">Error loading products</div>';
+      }
+    }
+
+    async function loadBrandProducts(brandId, brandName) {
+      try {
+        const productsGrid = document.getElementById('productsGrid');
+        productsGrid.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading products...</div>';
+
+        let productsRes;
+        try {
+          productsRes = window.supabaseCallWithTimeout ?
+            await window.supabaseCallWithTimeout(() => window.supabaseClient
+              .from('products')
+              .select(`
+                *,
+                product_properties (
+                  property: properties (name, short_label, icon_url)
+                )
+              `)
+              .eq('brand_id', brandId)
+              .order('name'), 'productsGrid', 8000)
+            : await window.supabaseClient
+              .from('products')
+              .select(`
+                *,
+                product_properties (
+                  property: properties (name, short_label, icon_url)
+                )
+              `)
+              .eq('brand_id', brandId)
+              .order('name');
+        } catch (err) {
+          console.error('Products fetch timeout or error:', err);
+          productsGrid.innerHTML = '<div class="loading error">Still loading… please refresh or <button onclick="location.reload()">Retry</button></div>';
+          return;
+        }
+
+        const products = productsRes && productsRes.data ? productsRes.data : productsRes;
+        productsGrid.innerHTML = '';
+
+        if (products.length === 0) {
+          productsGrid.innerHTML = '<div class="no-products"><i class="fas fa-box-open"></i><p>No Products Found</p></div>';
+          return;
+        }
+
+        products.forEach(product => {
+          const productCard = createProductCard(product, brandName);
+          productCard.classList.add('will-animate');
+          productsGrid.appendChild(productCard);
         });
-        
-        function getBrandIdFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const brandId = urlParams.get('id');
-            console.log('Brand ID from URL:', brandId);
-            return brandId;
-        }
-        
-        async function loadBrandAndProducts(brandId) {
-            try {
-                console.log('Loading brand with ID:', brandId);
-                
-                    // Fetch brand with timeout and friendly fallback if available
-                    const brandRes = window.supabaseCallWithTimeout ?
-                        await window.supabaseCallWithTimeout(() => window.supabaseClient
-                            .from('brands')
-                            .select('*')
-                            .eq('id', brandId)
-                            .single(), 'brandInfo', 7000)
-                        : await window.supabaseClient
-                            .from('brands')
-                            .select('*')
-                            .eq('id', brandId)
-                            .single();
 
-                    const brand = brandRes && brandRes.data ? brandRes.data : brandRes;
-                    if (!brand) throw new Error('Brand not found');
-                
-                console.log('Brand loaded:', brand);
-                
-                // Update page title and brand name
-                document.title = `${brand.name} Products - PEINTURE LAND`;
-                document.getElementById('brandName').textContent = brand.name;
-                
-                // Update brand info section
-                const brandInfoDiv = document.getElementById('brandInfo');
-                brandInfoDiv.innerHTML = '';
-                
-                const heading = document.createElement('h2');
-                heading.textContent = brand.name;
-                
-                const paragraph = document.createElement('p');
-                paragraph.textContent = brand.description;
-                
-                brandInfoDiv.appendChild(heading);
-                brandInfoDiv.appendChild(paragraph);
-                
-                // Load products for this brand
-                await loadBrandProducts(brandId, brand.name);
-                
-            } catch (error) {
-                console.error('Error loading brand:', error);
-                document.getElementById('brandInfo').innerHTML = 
-                    `<div class="error">Error loading brand</div>`;
-                document.getElementById('productsGrid').innerHTML = 
-                    `<div class="error">Error loading products</div>`;
-            }
-        }
-        
-        async function loadBrandProducts(brandId, brandName) {
-            try {
-                console.log('Loading products for brand ID:', brandId);
-                
-                // Show loading state
-                const productsGrid = document.getElementById('productsGrid');
-                productsGrid.innerHTML = `
-                    <div class="loading">
-                        <i class="fas fa-spinner fa-spin"></i> Loading products...
-                    </div>
-                `;
-                // Fetch products with their properties with timeout wrapper
-                let productsRes;
-                try {
-                    productsRes = window.supabaseCallWithTimeout ?
-                        await window.supabaseCallWithTimeout(() => window.supabaseClient
-                            .from('products')
-                            .select(`
-                                *,
-                                product_properties (
-                                    property: properties (name, short_label, icon_url)
-                                )
-                            `)
-                            .eq('brand_id', brandId)
-                            .order('name'), 'productsGrid', 8000)
-                        : await window.supabaseClient
-                            .from('products')
-                            .select(`
-                                *,
-                                product_properties (
-                                    property: properties (name, short_label, icon_url)
-                                )
-                            `)
-                            .eq('brand_id', brandId)
-                            .order('name');
-                } catch (err) {
-                    console.error('Products fetch timeout or error:', err);
-                    productsGrid.innerHTML = `<div class="loading error">Still loading… please refresh or <button onclick="location.reload()">Retry</button></div>`;
-                    return;
-                }
+        setTimeout(() => {
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    if (window.gsapAnimations && typeof window.gsapAnimations.refreshAnimations === 'function') {
+        window.gsapAnimations.refreshAnimations();
+    }
+}, 200);
 
-                const products = productsRes && productsRes.data ? productsRes.data : productsRes;
-                
-                console.log('Products loaded:', products);
-                
-                // Clear loading state
-                productsGrid.innerHTML = '';
-                
-                if (products.length === 0) {
-                    productsGrid.innerHTML = `
-                        <div class="no-products">
-                            <i class="fas fa-box-open"></i>
-                            <p>No Products Found</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                // Create product cards and mark for animation
-                products.forEach(product => {
-                    const productCard = createProductCard(product, brandName);
-                    productCard.classList.add('will-animate'); // Add animation class
-                    productsGrid.appendChild(productCard);
-                });
-
-                // AFTER ALL CARDS ARE ADDED, REFRESH ANIMATIONS
-                setTimeout(() => {
-                    if (typeof ScrollTrigger !== 'undefined') {
-                        ScrollTrigger.refresh();
-                    }
-                    if (window.gsapAnimations && typeof window.gsapAnimations.refreshAnimations === 'function') {
-                        window.gsapAnimations.refreshAnimations();
-                    }
-                }, 200);
-                
-                // Add event listeners for Add to Cart buttons
-                setTimeout(() => {
-                    document.querySelectorAll('.add-to-cart').forEach(button => {
-                        button.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            
-                            const productId = this.getAttribute('data-product-id');
-                            const productName = this.getAttribute('data-product-name');
-                            const productDescription = this.getAttribute('data-product-description');
-                            const productImage = this.getAttribute('data-product-image');
-                            const brandId = this.getAttribute('data-brand-id');
-                            
-                            const product = {
-                                id: productId,
-                                name: productName,
-                                description: productDescription,
-                                image_url: productImage,
-                                brand_id: brandId,
-                                quantity: 1
-                            };
-                            
-                            // Add to cart
-                            if (typeof addToCartFallback === 'function') {
-                                addToCartFallback(product);
-                            } else if (window.cartManager && typeof window.cartManager.addToCart === 'function') {
-                                window.cartManager.addToCart(product);
-                            }
-                            
-                            // Add visual feedback
-                            this.classList.add('added');
-                            setTimeout(() => {
-                                this.classList.remove('added');
-                            }, 600);
-                        });
-                    });
-                }, 100);
-                
-            } catch (error) {
-                console.error('Error loading products:', error);
-                document.getElementById('productsGrid').innerHTML = 
-                    `<div class="error">Error loading products</div>`;
-            }
-        }
-        
-        function createProductCard(product, brandName) {
-            const shortDescription = product.description && product.description.length > 100 
-                ? product.description.substring(0, 100) + '...' 
-                : product.description || '';
-            
-            const card = document.createElement('a');
-            card.href = `product.html?id=${product.id}`;
-            card.className = 'product-card';
-            
-            card.innerHTML = `
-                <div class="product-image-container">
-                    <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop'}" 
-                         alt="${product.name}" 
-                         class="product-image">
-                </div>
-                <div class="product-info">
-                    <div class="brand-badge">🔖 ${brandName}</div>
-                    <h3 class="product-name">${product.name}</h3>
-                    <div class="product-description-container">
-                        <p class="product-description">${shortDescription}</p>
-                    </div>
-                    
-                    ${product.product_properties && product.product_properties.length > 0 ? `
-                    <div class="properties">
-                        ${product.product_properties.map(pp => `
-                            <span class="property-tag">
-                                ${pp.property.icon_url ? `<img src="${pp.property.icon_url}" alt="${pp.property.name}" class="property-icon">` : ''}
-                                <span class="property-label">${pp.property.short_label || pp.property.name}</span>
-                            </span>
-                        `).join('')}
-                    </div>
-                    ` : ''}
-                    
-                    <div class="product-actions">
-                        <button class="btn add-to-cart" 
-                                data-product-id="${product.id}"
-                                data-product-name="${product.name}"
-                                data-product-description="${product.description}"
-                                data-product-image="${product.image_url || ''}"
-                                data-brand-id="${product.brand_id}">
-                            <i class="fas fa-cart-plus"></i> Ajouter au panier
-                        </button>
-                        <span class="Voir les détails">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </div>
-            `;
-            
-            return card;
-        }
-        
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
-            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            
-            const cartCountElements = document.querySelectorAll('.cart-count');
-            cartCountElements.forEach(element => {
-                element.textContent = cartCount;
+        setTimeout(() => {
+          document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              const product = {
+                id: this.dataset.productId,
+                name: this.dataset.productName,
+                description: this.dataset.productDescription,
+                image_url: this.dataset.productImage,
+                brand_id: this.dataset.brandId,
+                quantity: 1
+              };
+              if (typeof addToCartFallback === 'function') {
+                addToCartFallback(product);
+              } else if (window.cartManager && typeof window.cartManager.addToCart === 'function') {
+                window.cartManager.addToCart(product);
+              }
+              this.classList.add('added');
+              setTimeout(() => this.classList.remove('added'), 600);
             });
-        }
-    </script>
+          });
+        }, 100);
 
-    <style>
-/* Responsive fixes specific to brand.html */
-@media (max-width: 1024px) {
-    .brand-products {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .brand-header {
-        padding: 40px 0;
-    }
-    
-    .brand-info h2 {
-        font-size: 2.2rem !important;
-    }
-    
-    .brand-info p {
-        font-size: 1.1rem;
-    }
-    
-    .brand-products {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 25px;
-    }
-    
-    .product-card {
-        min-height: 460px;
-    }
-    
-    .product-image-container {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .brand-info h2 {
-        font-size: 1.8rem !important;
-    }
-    
-    .brand-products {
-        grid-template-columns: 1fr;
-    }
-    
-    .product-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .btn,
-    .view-details {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-
-        /* Brand page specific styles */
-        .brand-header {
-            background: linear-gradient(135deg, #2a5c9c 0%, #006d8f 100%);
-            padding: 60px 0;
-            color: white;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        
-        .breadcrumb {
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb a:hover {
-            color: #4facfe;
-        }
-        
-        .breadcrumb i {
-            margin: 0 10px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .brand-info h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: white;
-            font-weight: 800;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-        
-        .brand-info p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            color: #f0f0f0;
-            font-weight: 500;
-            line-height: 1.6;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        .loading-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* Products Section */
-        .products-section {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            display: block;               /* full width */
-            width: fit-content;           /* shrink to text width */
-            margin: 0 auto 90px;           /* true horizontal centering */
-            text-align: center;
-
-            font-size: 2.5rem;
-            font-weight: 800;
-
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-
-            position: relative;
-        }
-
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 10%;
-            width: 80%;
-            height: 4px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 2px;
-        }
-        
-        /* Product Grid - Symmetrical Layout */
-        .brand-products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 50px;
-            align-items: stretch; /* This makes all cards in a row the same height */
-        }
-        
-        /* Perfect Product Card with Fixed Height */
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            height: 100%; /* Make all cards same height */
-            min-height: 500px; /* Minimum height for consistency */
-            border: 1px solid rgba(79, 172, 254, 0.1);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-15px) scale(1.09);
-            box-shadow: 0 50px 80px rgba(0, 110, 255, 0.15);
-            border-color: rgba(0, 140, 255, 0.3);
-        }
-        
-        .product-image-container {
-            position: relative;
-            overflow: hidden;
-            height: 220px;
-            flex-shrink: 0; /* Don't let image container shrink */
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.6s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.25);
-        }
-        
-        .product-info {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* Make info section fill remaining space */
-            height: calc(100% - 220px); /* Subtract image height */
-            min-height: 280px; /* Minimum info section height */
-        }
-        
-        .brand-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: rgb(255, 255, 255);
-            font-size: 12px;
-            font-weight: bold;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            align-self: flex-start;
-        }
-        
-        .product-name {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0 0 12px 0;
-            color: #1a1a2e;
-            line-height: 1.4;
-            min-height: 56px; /* Fixed height for name (2 lines) */
-            display: -webkit-box;
-            line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        /* Scrollable Description Container */
-        .product-description-container {
-            flex-grow: 1;
-            overflow-y: auto;
-            min-height: 80px;
-            max-height: 120px;
-            margin-bottom: 20px;
-            padding-right: 5px;
-        }
-        
-        .product-description-container::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        .product-description-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        .product-description-container::-webkit-scrollbar-thumb {
-            background: #4facfe;
-            border-radius: 10px;
-        }
-        
-        .product-description {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        /* Properties Section - Fixed Height */
-        .properties {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 20px 0;
-            min-height: 40px;
-            max-height: 80px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-        
-        .properties::-webkit-scrollbar {
-            width: 3px;
-        }
-        
-        .properties::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        .properties::-webkit-scrollbar-thumb {
-            background: #00f2fe;
-            border-radius: 10px;
-        }
-        
-        .property-tag {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            color: #0c4a6e;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            flex-shrink: 0;
-            height: 32px;
-        }
-        
-        .property-icon {
-            width: 16px;
-            height: 16px;
-            object-fit: contain;
-        }
-        
-        /* Product Actions - Fixed at Bottom */
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto; /* Push to bottom of card */
-            padding-top: 20px;
-            border-top: 1px solid rgba(79, 172, 254, 0.1);
-        }
-        
-        .btn {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-        }
-        
-        .view-details {
-            color: #4facfe;
-            font-size: 14px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .product-card:hover .view-details {
-            transform: translateX(5px);
-            color: #f093fb;
-        }
-        
-        /* Animation for Add to Cart */
-        .add-to-cart.added {
-            animation: cartAdded 0.6s ease;
-        }
-        
-        @keyframes cartAdded {
-            0% { 
-                transform: scale(1); 
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            }
-            50% { 
-                transform: scale(1.1); 
-                background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            }
-            100% { 
-                transform: scale(1); 
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            }
-        }
-        
-        /* Loading and Error States */
-        .loading, .no-products, .error {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-        }
-        
-        .loading i, .no-products i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #4facfe;
-        }
-        
-
-
-
-
-        /* Universal Error Message */
-.error {
-    width: 100%;
-    max-width: 520px;
-    margin: 40px auto;
-    padding: 22px 24px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(255, 70, 70, 0.18),
-        rgba(255, 0, 0, 0.10)
-    );
-    border: 1px solid rgba(255, 70, 70, 0.45);
-    border-radius: 16px;
-
-    color: #f30000;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.2px;
-
-    backdrop-filter: blur(10px);
-    box-shadow:
-        0 18px 40px rgba(255, 0, 0, 0.18),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-
-    animation: errorEnter 0.55s ease forwards;
-    position: relative;
-}
-
-/* Warning Icon (pure CSS) */
-.error::before {
-    content: "⚠";
-    display: block;
-    font-size: 38px;
-    margin-bottom: 10px;
-    animation: errorPulse 1.6s infinite;
-}
-
-/* Entry Animation */
-@keyframes errorEnter {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.96);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Icon Pulse */
-@keyframes errorPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.18); }
-    100% { transform: scale(1); }
-}
-
-/* Mobile Optimization */
-@media (max-width: 480px) {
-    .error {
-        margin: 24px 14px;
-        padding: 18px 16px;
-        font-size: 14px;
+      } catch (error) {
+        console.error('Error loading products:', error);
+        document.getElementById('productsGrid').innerHTML = '<div class="error">Error loading products</div>';
+      }
     }
 
-    .error::before {
-        font-size: 32px;
+    function createProductCard(product, brandName) {
+      const shortDescription = product.description && product.description.length > 100 
+        ? product.description.substring(0, 100) + '...' 
+        : product.description || '';
+      const card = document.createElement('a');
+      card.href = `product.html?id=${product.id}`;
+      card.className = 'product-card';
+      card.innerHTML = `
+        <div class="product-image-container">
+          <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop'}" 
+               alt="${product.name}" class="product-image" loading="lazy" width="400" height="300">
+        </div>
+        <div class="product-info">
+          <div class="brand-badge">🔖 ${brandName}</div>
+          <h3 class="product-name">${product.name}</h3>
+          <div class="product-description-container">
+            <p class="product-description">${shortDescription}</p>
+          </div>
+          ${product.product_properties && product.product_properties.length ? `
+            <div class="properties">
+              ${product.product_properties.map(pp => `
+                <span class="property-tag">
+                  ${pp.property.icon_url ? `<img src="${pp.property.icon_url}" alt="${pp.property.name}" class="property-icon" width="16" height="16">` : ''}
+                  <span class="property-label">${pp.property.short_label || pp.property.name}</span>
+                </span>
+              `).join('')}
+            </div>
+          ` : ''}
+          <div class="product-actions">
+            <button class="btn add-to-cart" 
+                    data-product-id="${product.id}"
+                    data-product-name="${product.name}"
+                    data-product-description="${product.description}"
+                    data-product-image="${product.image_url || ''}"
+                    data-brand-id="${product.brand_id}">
+              <i class="fas fa-cart-plus"></i> Ajouter au panier
+            </button>
+            <span class="view-details">
+              Voir les détails <i class="fas fa-arrow-right"></i>
+            </span>
+          </div>
+        </div>
+      `;
+      return card;
     }
-}
 
-
-
-        
-        .no-products {
-            background: #f8f9fa;
-            border-radius: 15px;
-            border: 2px dashed #dee2e6;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .brand-products {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 20px;
-            }
-            
-            .product-card {
-                min-height: 480px;
-            }
-            
-            .product-image-container {
-                height: 200px;
-            }
-            
-            .product-info {
-                padding: 20px;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .brand-products {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-actions {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
-            }
-            
-            .btn, .view-details {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];
+      const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+      document.querySelectorAll('.cart-count').forEach(el => el.textContent = cartCount);
+    }
+  </script>
 </body>
-
 </html>
-
-
-

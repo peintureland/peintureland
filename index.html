@@ -13,25 +13,28 @@
   <meta property="og:url" content="https://www.peintureland.com/">
   <meta property="og:title" content="PEINTURE LAND – Fournisseur professionnel de peinture">
   <meta property="og:description" content="Distributeur agréé de peintures pour les professionnels. Demandez un devis personnalisé.">
-  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
   <link rel="preconnect" href="https://ywcpovfepiuspgcsjizs.supabase.co">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Existing styles (combined where possible, but kept separate for clarity) -->
-  <link rel="stylesheet" href="css/search.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/landing.css">
-  <link rel="stylesheet" href="css/ham.css">
+  <!-- Existing styles (root-relative) -->
+  <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/landing.css">
+  <link rel="stylesheet" href="/css/ham.css">
   <!-- Supabase config -->
   <script>
     window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
     window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
   </script>
+  <!-- GSAP from CDN (no local 404) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
 
@@ -39,7 +42,7 @@
   <header class="header animate-gradient-shift">
     <div class="container">
       <div class="logo-container">
-        <img src="logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
+        <img src="/logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
         <h3 class="site-name animate-fade-in">PEINTURE LAND</h3>
       </div>
       <div class="global-search-container animate-fade-in">
@@ -50,29 +53,29 @@
         </form>
       </div>
       <nav class="nav">
-        <a href="index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
-        <a href="cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
+        <a href="/index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
+        <a href="/cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
       </nav>
       <!-- Hamburger button -->
       <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
-  <!-- Hamburger overlay menu (full screen) -->
+  <!-- Hamburger overlay menu -->
   <div class="menu-overlay" id="menuOverlay">
     <div class="menu-overlay-header">
-      <img src="logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
+      <img src="/logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
       <button class="menu-close" id="menuClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
     </div>
     <nav class="menu-nav">
-      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
-      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
-      <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
-      <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
-      <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
+      <a href="/index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="/home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="/cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      <a href="/checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
+      <a href="/search.html"><i class="fas fa-search"></i> Recherche</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Actions rapides</span>
-      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="/home.html"><i class="fas fa-star"></i> Explorer les marques</a>
       <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Aller à</span>
@@ -90,11 +93,9 @@
 
   <!-- ========== MAIN CONTENT ========== -->
   <main>
-
     <!-- Hero Section -->
     <section class="hero-luxury" id="hero-luxury">
       <div class="hero-canvas">
-        <!-- Floating panels -->
         <div class="panel panel-1">
           <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/panel-1.webp" alt="Qualité peinture professionnelle" width="300" height="200">
         </div>
@@ -104,18 +105,16 @@
         <div class="panel panel-3">
           <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/panel-3.webp" alt="Mélange de couleurs" width="300" height="200">
         </div>
-        <!-- Particle container -->
         <canvas id="heroParticles"></canvas>
       </div>
-
       <div class="hero-content">
-        <img src="logo.webp" alt="PEINTURE LAND" class="hero-logo">
+        <img src="/logo.webp" alt="PEINTURE LAND" class="hero-logo">
         <span class="hero-eyebrow">Maison Professionnelle</span>
         <h1 class="hero-title">La couleur<br><em>devient matière</em></h1>
         <div class="hero-divider"></div>
         <p class="hero-note">Revêtements conçus pour durer.<br>Pensés pour les surfaces qui comptent.</p>
         <div class="lux-btn-container">
-          <a href="home.html" class="lux-btn"><span class="lux-btn__label">Explorer la collection</span><span class="lux-btn__line"></span></a>
+          <a href="/home.html" class="lux-btn"><span class="lux-btn__label">Explorer la collection</span><span class="lux-btn__line"></span></a>
         </div>
       </div>
     </section>
@@ -127,32 +126,29 @@
       </div>
       <div class="carousel-container">
         <div class="carousel-track" id="carouselTrack">
-          <!-- Slide without link -->
           <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/1.webp');">
             <div class="slide-overlay"><h3>Peintures fiables pour maison & commerce</h3></div>
           </div>
-          <!-- Linked slides (relative URLs) -->
-          <a href="product.html?id=67fa8acf-16e7-4bbd-8075-96bc322e8762" class="carousel-slide-link">
+          <a href="/product.html?id=67fa8acf-16e7-4bbd-8075-96bc322e8762" class="carousel-slide-link">
             <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/2.webp');">
               <div class="slide-overlay"><h3>Couleurs durables & protection longue durée</h3></div>
             </div>
           </a>
-          <a href="product.html?id=7fbd94d4-ecd0-4ee9-ab34-16be8abeef28" class="carousel-slide-link">
+          <a href="/product.html?id=7fbd94d4-ecd0-4ee9-ab34-16be8abeef28" class="carousel-slide-link">
             <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/3.webp');">
               <div class="slide-overlay"><h3>Transformez votre espace avec qualité pro</h3></div>
             </div>
           </a>
-          <a href="brand.html?id=057338df-2c2d-4e0c-9378-1ca76b2147fe" class="carousel-slide-link">
+          <a href="/brand.html?id=057338df-2c2d-4e0c-9378-1ca76b2147fe" class="carousel-slide-link">
             <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/4.webp');">
               <div class="slide-overlay"><h3>Rouleaux doux pour couverture rapide</h3></div>
             </div>
           </a>
-          <a href="product.html?id=e05678b1-d22a-4f94-8ad6-21c73bb613e6" class="carousel-slide-link">
+          <a href="/product.html?id=e05678b1-d22a-4f94-8ad6-21c73bb613e6" class="carousel-slide-link">
             <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/5.webp');">
               <div class="slide-overlay"><h3>Adhésif fiable pour un résultat durable</h3></div>
             </div>
           </a>
-          <!-- Slide without link -->
           <div class="carousel-slide" style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/6.webp');">
             <div class="slide-overlay"><h3>Peintures & outils de qualité supérieure</h3></div>
           </div>
@@ -177,7 +173,7 @@
           </div>
         </div>
         <div class="about-image" id="aboutImage">
-          <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/about-pic.webp" alt="Notre équipe devant l'entrepôt" loading="lazy" >
+          <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/about-pic.webp" alt="Notre équipe devant l'entrepôt" loading="lazy">
         </div>
       </div>
     </section>
@@ -208,7 +204,7 @@
           <div class="brand-logo"><img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/brands/guittet.webp" alt="Guittet" loading="lazy" width="150" height="80"></div>
         </div>
         <div class="lux-btn-container">
-          <a href="home.html" class="lux-btn"><span class="lux-btn__label">Voir toutes les marques</span><span class="lux-btn__line"></span></a>
+          <a href="/home.html" class="lux-btn"><span class="lux-btn__label">Voir toutes les marques</span><span class="lux-btn__line"></span></a>
         </div>
       </div>
     </section>
@@ -232,12 +228,11 @@
         <h2>Prêt à passer commande ?</h2>
         <p>Devenez client professionnel et bénéficiez de nos tarifs exclusifs.</p>
         <div class="cta-buttons">
-          <a href="home.html" class="btn btn-primary">Voir les marques</a>
+          <a href="/home.html" class="btn btn-primary">Voir les marques</a>
           <a href="https://wa.me/33695225960" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -246,7 +241,7 @@
       <div class="footer-content">
         <div class="footer-column">
           <div class="footer-logo">
-            <img src="logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
+            <img src="/logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
             <h3>PEINTURE LAND</h3>
           </div>
           <p class="footer-tagline">Peinture & Revêtements Pro</p>
@@ -289,16 +284,12 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/libs/gsap/gsap.min.js"></script>
-  <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
-  <script src="js/libs/gsap/ScrollToPlugin.min.js"></script>
-  <script src="logo-loader.js" defer></script>
-  <script src="js/paint-loader-enhanced.js" defer></script>
-  <script src="js/landing.js" defer></script>
-  <script src="js/ham.js" defer></script>
-  <script src="supabase-client.js" defer></script>
-  <script src="js/search.js" defer></script>
-
+  <!-- Scripts (root-relative, no local GSAP) -->
+  <script src="/logo-loader.js" defer></script>
+  <script src="/js/paint-loader-enhanced.js" defer></script>
+  <script src="/js/landing.js" defer></script>
+  <script src="/js/ham.js" defer></script>
+  <script src="/supabase-client.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

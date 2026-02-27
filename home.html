@@ -59,6 +59,7 @@
     window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
     window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
   </script>
+  
   <!-- Optimized inline styles (minified) -->
   <style>.section-title-wrapper{text-align:center!important;padding:2rem 0!important;background:transparent!important;width:100%!important}.section-title-wrapper h2{font-family:'Cinzel',serif!important;font-weight:700!important;text-transform:uppercase!important;margin:0 auto!important;display:inline-block!important;background:linear-gradient(135deg,#3b6cb7,#4facfe 20%,#77ab59 38%,#f4a340 55%,#667eea 75%,#764ba2)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18)) drop-shadow(0 3px 6px rgba(0,0,0,.12))!important}@media(max-width:374px){.section-title-wrapper{margin-bottom:2.5rem!important}.section-title-wrapper h2{font-size:1.8rem!important;letter-spacing:.15em!important;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25)) drop-shadow(0 2px 6px rgba(0,0,0,.18))!important}}@media(min-width:375px)and (max-width:430px){.section-title-wrapper{margin-bottom:3rem!important}.section-title-wrapper h2{font-size:2.2rem!important;letter-spacing:.2em!important;filter:drop-shadow(0 1px 1px rgba(0,0,0,.22)) drop-shadow(0 3px 6px rgba(0,0,0,.16))!important}}@media(min-width:431px)and (max-width:767px){.section-title-wrapper{margin-bottom:3.5rem!important}.section-title-wrapper h2{font-size:2.8rem!important;letter-spacing:.25em!important;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2)) drop-shadow(0 4px 8px rgba(0,0,0,.15))!important}}@media(min-width:768px)and (max-width:1024px){.section-title-wrapper{margin-bottom:4rem!important}.section-title-wrapper h2{font-size:3.5rem!important;letter-spacing:.3em!important;filter:drop-shadow(0 2px 2px rgba(0,0,0,.22)) drop-shadow(0 6px 12px rgba(0,0,0,.18))!important}}@media(min-width:1025px)and (max-width:1440px){.section-title-wrapper{margin-bottom:5rem!important}.section-title-wrapper h2{font-size:4.5rem!important;letter-spacing:.4em!important;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25)) drop-shadow(0 8px 16px rgba(0,0,0,.2))!important}}@media(min-width:1441px){.section-title-wrapper{margin-bottom:6rem!important}.section-title-wrapper h2{font-size:5.5rem!important;letter-spacing:.5em!important;filter:drop-shadow(0 4px 4px rgba(0,0,0,.28)) drop-shadow(0 12px 24px rgba(0,0,0,.22))!important}}.brand-card{position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);background:linear-gradient(135deg,#fff,#f8fafc)}.brand-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,#4facfe,#00f2fe,#f093fb);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.4,0,.2,1);z-index:2}.brand-card:hover{transform:translateY(-12px);box-shadow:0 20px 40px rgba(0,0,0,.12),0 4px 8px rgba(0,0,0,.06)!important}.brand-card:hover::before{transform:scaleX(1)}.brand-card:hover .brand-image{transform:scale(1.08);filter:brightness(1.05);transition:transform .8s cubic-bezier(.4,0,.2,1)}.brand-card .brand-info{position:relative;z-index:1}.brand-card:hover .brand-info::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(79,172,254,.05),transparent);z-index:-1}.brand-card:hover .brand-name{color:#4facfe;transform:translateY(-2px);display:inline-block}.brand-card:hover .brand-description{color:#666;transform:translateY(-2px)}.brand-card:hover .view-products{color:#4facfe;transform:translateX(8px);font-weight:600}.brand-card:hover .view-products i{animation:gentleSwing 1s ease-in-out infinite}@keyframes gentleSwing{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(3px) rotate(10deg)}75%{transform:translateX(3px) rotate(-10deg)}}</style>
 </head>
@@ -223,13 +224,19 @@
   </footer>
 
   <!-- Scripts (deferred where possible) -->
+  <!-- Scripts -->
+  <!-- GSAP (loaded normally, no defer) -->
   <script src="js/libs/gsap/gsap.min.js"></script>
   <script src="js/libs/gsap/ScrollTrigger.min.js"></script>
   <script src="js/libs/gsap/ScrollToPlugin.min.js"></script>
+
+  <!-- Load supabase-client synchronously (critical) -->
+  <script src="supabase-client.js"></script>
+
+  <!-- All other scripts can be deferred -->
   <script src="js/gsap-animations.js" defer></script>
   <script src="logo-loader.js" defer></script>
   <script src="paint-mixer.js" defer></script>
-  <script src="supabase-client.js" defer></script>
   <script src="js/ham.js" defer></script>
   <script src="cart-manager.js" defer></script>
   <script src="js/script.js" defer></script>

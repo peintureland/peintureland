@@ -11,6 +11,27 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 const baseUrl = "https://peintureland.com"
 const today = new Date().toISOString().split('T')[0]
 
+function generateSitemapIndex() {
+  const now = new Date().toISOString();
+  const sitemaps = [
+    'sitemap-pages.xml',
+    'sitemap-brands.xml',
+    'sitemap-products.xml'
+  ];
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${sitemaps.map(s => `
+  <sitemap>
+    <loc>${baseUrl}/${s}</loc>
+    <lastmod>${now}</lastmod>
+  </sitemap>`).join('')}
+</sitemapindex>`;
+
+  fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), xml);
+  console.log('✅ Main sitemap index generated');
+}
+
 // Root directory for sitemaps
 const outputDir = path.resolve('.')
 
@@ -70,7 +91,7 @@ async function main() {
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${baseUrl}/home.html</loc>
+    <loc>${baseUrl}/partners.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -85,24 +106,8 @@ async function main() {
 
     fs.writeFileSync(path.join(outputDir, 'sitemap-pages.xml'), pagesXml)
 
-    // Generate sitemap index
-    const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>${baseUrl}/sitemap-pages.xml</loc>
-    <lastmod>${today}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-brands.xml</loc>
-    <lastmod>${today}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-products.xml</loc>
-    <lastmod>${today}</lastmod>
-  </sitemap>
-</sitemapindex>`
-
-    fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), indexXml)
+    // Generate sitemap index using helper
+    generateSitemapIndex();
 
     console.log('✅ Sitemaps generated successfully')
   } catch (err) {

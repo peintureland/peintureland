@@ -340,3 +340,49 @@ window.addEventListener('load', () => {
         }
     });
 })();
+
+
+/**
+ * Updates the store opening status dynamically.
+ * Works on any page that contains the '.footer-hours' class.
+ */
+function updateStoreStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1-6 = Mon-Sat
+    const hour = now.getHours();
+    const minutes = now.getMinutes();
+    const currentTime = hour + (minutes / 60);
+
+    // Target the specific section in your footer
+    const statusContainer = document.querySelector('.footer-hours');
+    
+    if (!statusContainer) {
+        console.warn("Status element .footer-hours not found on this page.");
+        return;
+    }
+
+    // Business Logic: Mon-Sat (1-6), 06:30 (6.5) to 18:00 (18)
+    const isOpen = day !== 0 && currentTime >= 6.5 && currentTime < 18;
+
+    // Create the status badge
+    const statusHTML = `
+        <div class="store-status-badge" style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+            <span style="color: ${isOpen ? '#2ecc71' : '#e74c3c'}; font-size: 18px;">●</span>
+            <span style="font-weight: 700; color: ${isOpen ? '#2ecc71' : '#e74c3c'}; text-transform: uppercase; font-size: 14px;">
+                ${isOpen ? 'Actuellement Ouvert' : 'Actuellement Fermé'}
+            </span>
+        </div>
+    `;
+    
+    // Remove any existing status badge first (prevents duplicates if script runs twice)
+    const existingBadge = statusContainer.querySelector('.store-status-badge');
+    if (existingBadge) existingBadge.remove();
+
+    // Insert at the very top of the hours section
+    statusContainer.insertAdjacentHTML('afterbegin', statusHTML);
+}
+
+// Run once on load
+document.addEventListener('DOMContentLoaded', updateStoreStatus);
+// Optional: Update every minute so it changes while the user is on the site
+setInterval(updateStoreStatus, 60000);

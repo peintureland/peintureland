@@ -3,39 +3,41 @@ class GsapAnimations {
     constructor() {
         this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         this.isInitialized = false;
-        
-        // Always wait for paint loader to complete
-        window.addEventListener('paintLoaderComplete', () => {
+
+        // Init animations as soon as DOM + GSAP are ready
+        requestAnimationFrame(() => {
             this.initAfterLoader();
         });
-        
-        // Fallback: if loader doesn't fire event within 4 seconds, initialize anyway
-        setTimeout(() => {
-            if (!this.isInitialized) {
-                console.warn('Paint loader timeout, initializing animations anyway');
-                this.initAfterLoader();
-            }
-        }, 4000);
+
+        // OPTIONAL: if loader exists, sync with it (non-blocking)
+        window.addEventListener('paintLoaderComplete', () => {
+            this.finishLoaderVisuals();
+        });
     }
     
     initAfterLoader() {
         if (this.isInitialized) return;
-        
-        // Remove loader-active class if still present
+
+        // 🔓 IMMEDIATELY unlock page
         document.body.classList.remove('loader-active');
         document.body.classList.add('loader-complete');
-        
-        // Restore body overflow
         document.body.style.overflow = '';
-        
-        if (!this.prefersReducedMotion) {
-            this.init();
-        } else {
-            this.enableReducedMotionMode();
-        }
-        
+
+        // 🚀 Init animations AFTER paint (non-blocking)
+        requestIdleCallback(() => {
+            if (!this.prefersReducedMotion) {
+                this.init();
+            } else {
+                this.enableReducedMotionMode();
+            }
+        });
+
         this.isInitialized = true;
-        console.log('GSAP animations initialized after loader');
+        console.log('GSAP animations initialized');
+    }
+
+    finishLoaderVisuals() {
+        document.body.classList.add('loader-complete');
     }
 
     init() {

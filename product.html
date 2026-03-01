@@ -7,21 +7,24 @@
   <title id="productTitle">Nom du Produit – PEINTURE LAND</title>
   <meta name="description" id="productMetaDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land. Livraison rapide et fiable.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" id="productCanonical" href="https://peintureland.com/product.html">
+  <link rel="canonical" id="canonicalTag" href="https://peintureland.com/product.html">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Peinture Land" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
   <!-- Open Graph -->
   <meta property="og:type" content="product">
-  <meta property="og:title" id="ogTitle" content="Nom du Produit – PEINTURE LAND">
-  <meta property="og:description" id="ogDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
   <meta property="og:url" id="ogUrl" content="https://peintureland.com/product.html">
-  <meta property="og:image" id="ogImage" content="https://peintureland.com/logo.webp">
-  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" id="ogTitle" content="Peinture Land | Produits Professionnels">
+  <meta property="og:description" id="ogDesc" content="Découvrez nos peintures et enduits de qualité artisanale.">
+  <meta property="og:image" id="ogImage" content="logo.webp">
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" id="twitterTitle" content="Nom du Produit – PEINTURE LAND">
-  <meta name="twitter:description" id="twitterDescription" content="Achetez {Nom du Produit}, peinture professionnelle de qualité chez Peinture Land.">
-  <meta name="twitter:image" id="twitterImage" content="https://peintureland.com/logo.webp">
-  <!-- Favicon -->
-  <link rel="icon" href="logo.webp" type="image/webp">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" id="twitterTitle" content="Peinture Land">
+  <meta property="twitter:description" id="twitterDesc" content="Produits de peinture professionnels.">
+  <meta property="twitter:image" id="twitterImage" content="logo.webp">
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
@@ -30,6 +33,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/whtsp-flot.css">
   <link rel="stylesheet" href="background-pattern.css">
   <!-- Hamburger CSS -->
   <link rel="stylesheet" href="css/ham.css">
@@ -37,33 +41,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Supabase (deferred) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-  <!-- Structured Data (Product JSON-LD) -->
-  <script type="application/ld+json" id="productJsonLd">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "{Nom du Produit}",
-    "image": ["{URL Image Produit}"],
-    "description": "{Description du produit}",
-    "brand": {
-      "@type": "Brand",
-      "name": "{Nom de la Marque}"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://peintureland.com/product.html?id={ProductID}",
-      "priceCurrency": "EUR",
-      "price": "{Prix}",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
+  <!-- Supabase (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script>
     window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
     window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
   </script>
   <!-- Minified inline styles (original product.css) -->
-  <style>.language-toggle{position:absolute;top:20px;right:20px;z-index:10}.lang-btn{background:rgba(255,255,255,.2);border:none;width:40px;height:40px;border-radius:50%;color:#fff;font-size:16px;cursor:pointer;backdrop-filter:blur(5px);transition:all .3s ease;display:flex;align-items:center;justify-content:center}.lang-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.05)}#lang-flag{display:inline-block;transition:transform .3s ease}.lang-btn:hover #lang-flag{transform:rotate(360deg)}.product-detail-section{padding:40px 0;min-height:70vh}.breadcrumb{margin-bottom:30px;font-size:1rem;display:flex;align-items:center;gap:10px}.breadcrumb a{color:#4facfe;text-decoration:none;transition:color .3s ease}.breadcrumb a:hover{color:#667eea;text-decoration:underline}.breadcrumb i{color:#999;font-size:.8rem}.breadcrumb span{color:#4facfe;font-weight:600}.loading-product{text-align:center;padding:60px;color:#666;font-size:1.2rem}.loading-product i{margin-right:10px}.product-image-top{width:100%;margin-bottom:40px;animation:fadeIn .8s ease}.product-image-container{width:100%;max-width:800px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15)}.product-main-image{width:100%;height:auto;max-height:600px;object-fit:contain;display:block;transition:transform .5s ease}.product-image-container:hover .product-main-image{transform:scale(1.02)}.product-info-below{max-width:800px;margin:0 auto}.product-basic-info{margin-bottom:30px;text-align:center}#productTitle{font-size:2.5rem;margin-bottom:15px;color:#1a1a2e;line-height:1.2}.brand-tag{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;padding:8px 20px;border-radius:50px;font-weight:600}.brand-tag i{font-size:.9rem}.product-description-container{margin-bottom:40px;background:#f8f9fa;padding:25px;border-radius:15px;border-left:4px solid #4facfe}.product-description-container h3{font-size:1.5rem;margin-bottom:15px;color:#2d3436}#productDescription{font-size:1.1rem;line-height:1.7;color:#555;white-space:pre-line}.color-section{margin-bottom:30px;padding:20px;background:#f8f9fa;border-radius:12px}.color-section h3{font-size:1.3rem;margin-bottom:15px;color:#2d3436;display:flex;align-items:center;flex-wrap:wrap;gap:5px}.color-note{font-size:.9rem;color:#666;font-weight:400;font-style:italic;margin-left:5px}.color-dropdown-wrapper{position:relative;width:100%;margin-bottom:15px}.color-dropdown-header{display:flex;align-items:center;gap:12px;padding:15px;background:#fff;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;transition:all .3s ease;position:relative}.color-dropdown-header:hover{border-color:#4facfe;box-shadow:0 2px 8px rgba(79,172,254,.1)}.color-dropdown-preview{width:40px;height:40px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-text{flex:1;font-size:1rem;color:#2d3436;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-dropdown-text strong{color:#1a1a2e}.color-dropdown-arrow{color:#666;transition:transform .3s ease}.color-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:2px solid #e0e0e0;border-radius:8px;margin-top:5px;max-height:300px;overflow-y:auto;z-index:1000;box-shadow:0 10px 25px rgba(0,0,0,.1)}.color-dropdown-option{padding:12px 15px;cursor:pointer;transition:all .3s ease;border-bottom:1px solid #f0f0f0}.color-dropdown-option:last-child{border-bottom:none}.color-dropdown-option:hover{background:#f8f9fa}.color-dropdown-option.selected{background:#e3f2ff;border-left:3px solid #4facfe}.color-option-content{display:flex;align-items:center;gap:12px}.color-dropdown-option .color-swatch{width:35px;height:35px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-option:hover .color-swatch{transform:scale(1.1)}.color-text{flex:1;font-size:.95rem;color:#2d3436;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-text strong{color:#1a1a2e;font-weight:600}.selected-shade-info{font-size:1rem;color:#475569;padding:12px 16px;background:#fff;border-radius:8px;border-left:4px solid #4facfe;margin-top:10px;font-weight:500}.selected-shade-info strong{color:#1a1a2e;font-weight:700;margin-right:5px}.product-actions{background:#f8f9fa;padding:30px;border-radius:15px;margin-bottom:40px}.quantity-selector{margin-bottom:25px}.quantity-selector label{display:block;margin-bottom:10px;font-weight:600;color:#2d3436;font-size:1.1rem}.quantity-controls{display:flex;align-items:center;gap:15px}.quantity-controls input{width:80px;text-align:center;padding:12px;font-size:1.2rem;font-weight:600;border:2px solid #ddd;border-radius:8px;outline:none;transition:all .3s ease}.quantity-controls input:focus{border-color:#4facfe;box-shadow:0 0 0 3px rgba(79,172,254,.2)}.quantity-btn{width:45px;height:45px;border-radius:50%;border:2px solid #4facfe;background:#fff;color:#4facfe;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease}.quantity-btn:hover{background:#4facfe;color:#fff;transform:scale(1.1)}.btn-add-to-cart{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;margin-bottom:15px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-add-to-cart:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(79,172,254,.3)}.btn-whatsapp-order{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-whatsapp-order:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(37,211,102,.3)}.animate-button-success{animation:buttonSuccess 1s ease}@keyframes buttonSuccess{0%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}50%{background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%)}100%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}}.contact-info-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:25px;border-radius:15px}.contact-info-card h3{margin-bottom:15px;font-size:1.4rem;display:flex;align-items:center;gap:10px}.contact-info-card p{margin-bottom:15px;opacity:.9}.contact-info-card ul{list-style:none;padding-left:0}.contact-info-card li{margin-bottom:10px;display:flex;align-items:center;gap:10px}.contact-info-card i{width:20px}.related-products{margin-top:60px;padding-top:40px;border-top:2px solid #eee}.related-products h3{font-size:1.8rem;margin-bottom:30px;color:#2d3436}.related-products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}.related-product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation-fill-mode:forwards;position:relative;border:1px solid rgba(240,240,240,.8)}.related-product-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.12);border:1px solid rgba(79,172,254,.1)}.related-product-card a{text-decoration:none;color:inherit;display:block;position:relative;z-index:1}.related-product-image{width:100%;height:180px;object-fit:contain;transition:all .6s cubic-bezier(.4,0,.2,1);transform-origin:center center}.related-product-card:hover .related-product-image{transform:scale(1.08);filter:brightness(1.03) saturate(1.05)}.related-product-info{padding:20px;position:relative;z-index:1}.related-product-info h4{font-size:1.2rem;margin-bottom:10px;color:#2d3436;transition:all .3s cubic-bezier(.4,0,.2,1);line-height:1.4}.related-product-info h4::after{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,#4facfe,#00f2fe);margin-top:5px;transform:scaleX(.3);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}.related-product-card:hover .related-product-info h4{color:#4facfe;transform:translateY(-2px)}.related-product-card:hover .related-product-info h4::after{transform:scaleX(1)}.related-product-info p{color:#666;font-size:.95rem;margin-bottom:15px;line-height:1.5}.view-product{color:#4facfe;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .4s cubic-bezier(.4,0,.2,1);padding:8px 16px;border-radius:50px;background:rgba(79,172,254,.05);border:1px solid rgba(79,172,254,.1)}.related-product-card:hover .view-product{gap:10px;color:#fff;background:linear-gradient(135deg,#4facfe,#00f2fe);border-color:transparent;padding:8px 20px;box-shadow:0 5px 15px rgba(79,172,254,.2)}.view-product i{transition:all .3s cubic-bezier(.4,0,.2,1);font-size:.8rem}.related-product-card:hover .view-product i{transform:translateX(4px)}.no-related{text-align:center;color:#999;font-style:italic;padding:30px;grid-column:1/-1}.error-message{text-align:center;padding:60px;color:#ff4757;font-size:1.2rem;grid-column:1/-1}.cart-count{transition:all .3s ease}.animate-pulse{animation:pulse .3s ease-in-out}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}.product-properties-container{margin:30px 0;padding:25px;background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);border-radius:15px;border-left:4px solid #4facfe}.product-properties-container h3{font-size:1.4rem;margin-bottom:20px;color:#2d3436;display:flex;align-items:center;gap:10px}.product-properties-container h3 i{color:#4facfe}.properties-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.property-item{background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);display:flex;gap:15px;align-items:flex-start;transition:transform .3s ease,box-shadow .3s ease}.property-item:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.12)}.property-icon{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#f8f9fa;padding:8px}.property-content{flex:1}.property-content h4{font-size:1.1rem;margin-bottom:8px;color:#2d3436;font-weight:600}.property-short-label{font-size:.9rem;color:#4facfe;font-weight:500;margin-bottom:10px;padding:4px 10px;background:rgba(79,172,254,.1);border-radius:4px;display:inline-block}.property-full-description{color:#555;font-size:.95rem;line-height:1.6;white-space:pre-line}.no-colors-message{text-align:center;padding:30px;background:#fff;border-radius:10px;border:2px dashed #e0e0e0}.no-colors-message i{font-size:3rem;color:#bdc3c7;margin-bottom:15px;display:block}.no-colors-message p{color:#666;font-size:1.1rem;margin:0}.btn-disabled{opacity:.6;cursor:not-allowed!important;background:linear-gradient(135deg,#ccc 0%,#999 100%)!important}.btn-disabled:hover{transform:none!important;box-shadow:none!important}.highlight-required{animation:highlightPulse 1s ease;border:2px solid #ff9800!important}@keyframes highlightPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,152,0,.4)}50%{box-shadow:0 0 0 10px rgba(255,152,0,0)}}@media(max-width:992px){#productTitle{font-size:2rem}.product-main-image{max-height:450px}.color-section h3{flex-direction:column;align-items:flex-start}.color-note{margin-left:0;margin-top:5px;font-size:.85rem}}@media(max-width:768px){.related-products-grid{grid-template-columns:1fr}.quantity-controls{justify-content:center}.product-actions{padding:20px}.color-dropdown-header{padding:12px}.color-dropdown-preview{width:35px;height:35px}.color-dropdown-option .color-swatch{width:30px;height:30px}.properties-grid{grid-template-columns:1fr}.property-item{flex-direction:column;text-align:center}.property-icon{margin:0 auto}}@media(max-width:480px){#productTitle{font-size:1.8rem}.product-main-image{max-height:350px}.btn-add-to-cart,.btn-whatsapp-order{padding:15px;font-size:1.1rem}.brand-tag{font-size:.9rem;padding:6px 15px}.color-dropdown-header{padding:10px}.color-dropdown-preview{width:30px;height:30px}.color-dropdown-text{font-size:.9rem}.color-dropdown-option{padding:10px 12px}.color-dropdown-option .color-swatch{width:25px;height:25px}}</style>
+  <style>.language-toggle{position:absolute;top:20px;right:20px;z-index:10}.lang-btn{background:rgba(255,255,255,.2);border:none;width:40px;height:40px;border-radius:50%;color:#fff;font-size:16px;cursor:pointer;backdrop-filter:blur(5px);transition:all .3s ease;display:flex;align-items:center;justify-content:center}.lang-btn:hover{background:rgba(255,255,255,.3);transform:scale(1.05)}#lang-flag{display:inline-block;transition:transform .3s ease}.lang-btn:hover #lang-flag{transform:rotate(360deg)}.product-detail-section{padding:40px 0;min-height:70vh}.breadcrumb{margin-bottom:30px;font-size:1rem;display:flex;align-items:center;gap:10px}.breadcrumb a{color:#4facfe;text-decoration:none;transition:color .3s ease}.breadcrumb a:hover{color:#667eea;text-decoration:underline}.breadcrumb i{color:#999;font-size:.8rem}.breadcrumb span{color:#4facfe;font-weight:600}.loading-product{text-align:center;padding:60px;color:#666;font-size:1.2rem}.loading-product i{margin-right:10px}.product-image-top{width:100%;margin-bottom:40px;animation:fadeIn .8s ease}.product-image-container{width:100%;max-width:800px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15)}.product-main-image{width:100%;height:auto;max-height:600px;object-fit:contain;display:block;transition:transform .5s ease}.product-image-container:hover .product-main-image{transform:scale(1.02)}.product-info-below{max-width:800px;margin:0 auto}.product-basic-info{margin-bottom:30px;text-align:center}#productTitle{font-size:2.5rem;margin-bottom:15px;color:#1a1a2e;line-height:1.2}.brand-tag{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;padding:8px 20px;border-radius:50px;font-weight:600}.brand-tag i{font-size:.9rem}.product-description-container{margin-bottom:40px;background:#f8f9fa;padding:25px;border-radius:15px;border-left:4px solid #4facfe}.product-description-container h3{font-size:1.5rem;margin-bottom:15px;color:#2d3436}#productDescription{font-size:1.1rem;line-height:1.7;color:#555;white-space:pre-line}.color-section{margin-bottom:30px;padding:20px;background:#f8f9fa;border-radius:12px}.color-section h3{font-size:1.3rem;margin-bottom:15px;color:#2d3436;display:flex;align-items:center;flex-wrap:wrap;gap:5px}.color-note{font-size:.9rem;color:#666;font-weight:400;font-style:italic;margin-left:5px}.color-dropdown-wrapper{position:relative;width:100%;margin-bottom:15px}.color-dropdown-header{display:flex;align-items:center;gap:12px;padding:15px;background:#fff;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;transition:all .3s ease;position:relative}.color-dropdown-header:hover{border-color:#4facfe;box-shadow:0 2px 8px rgba(79,172,254,.1)}.color-dropdown-preview{width:40px;height:40px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-text{flex:1;font-size:1rem;color:#2d3436;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-dropdown-text strong{color:#1a1a2e}.color-dropdown-arrow{color:#666;transition:transform .3s ease}.color-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:2px solid #e0e0e0;border-radius:8px;margin-top:5px;max-height:300px;overflow-y:auto;z-index:1000;box-shadow:0 10px 25px rgba(0,0,0,.1)}.color-dropdown-option{padding:12px 15px;cursor:pointer;transition:all .3s ease;border-bottom:1px solid #f0f0f0}.color-dropdown-option:last-child{border-bottom:none}.color-dropdown-option:hover{background:#f8f9fa}.color-dropdown-option.selected{background:#e3f2ff;border-left:3px solid #4facfe}.color-option-content{display:flex;align-items:center;gap:12px}.color-dropdown-option .color-swatch{width:35px;height:35px;border-radius:6px;border:2px solid #e0e0e0;flex-shrink:0;transition:all .3s ease}.color-dropdown-option:hover .color-swatch{transform:scale(1.1)}.color-text{flex:1;font-size:.95rem;color:#2d3436;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.color-text strong{color:#1a1a2e;font-weight:600}.selected-shade-info{font-size:1rem;color:#475569;padding:12px 16px;background:#fff;border-radius:8px;border-left:4px solid #4facfe;margin-top:10px;font-weight:500}.selected-shade-info strong{color:#1a1a2e;font-weight:700;margin-right:5px}.product-actions{background:#f8f9fa;padding:30px;border-radius:15px;margin-bottom:40px}.quantity-selector{margin-bottom:25px}.quantity-selector label{display:block;margin-bottom:10px;font-weight:600;color:#2d3436;font-size:1.1rem}.quantity-controls{display:flex;align-items:center;gap:15px}.quantity-controls input{width:80px;text-align:center;padding:12px;font-size:1.2rem;font-weight:600;border:2px solid #ddd;border-radius:8px;outline:none;transition:all .3s ease}.quantity-controls input:focus{border-color:#4facfe;box-shadow:0 0 0 3px rgba(79,172,254,.2)}.quantity-btn{width:45px;height:45px;border-radius:50%;border:2px solid #4facfe;background:#fff;color:#4facfe;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease}.quantity-btn:hover{background:#4facfe;color:#fff;transform:scale(1.1)}.btn-add-to-cart{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;margin-bottom:15px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-add-to-cart:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(79,172,254,.3)}.btn-whatsapp-order{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;width:100%;padding:18px;border:none;border-radius:50px;font-size:1.2rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s ease;position:relative;overflow:hidden}.btn-whatsapp-order:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(37,211,102,.3)}.animate-button-success{animation:buttonSuccess 1s ease}@keyframes buttonSuccess{0%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}50%{background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%)}100%{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}}.contact-info-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:25px;border-radius:15px}.contact-info-card h3{margin-bottom:15px;font-size:1.4rem;display:flex;align-items:center;gap:10px}.contact-info-card p{margin-bottom:15px;opacity:.9}.contact-info-card ul{list-style:none;padding-left:0}.contact-info-card li{margin-bottom:10px;display:flex;align-items:center;gap:10px}.contact-info-card i{width:20px}.related-products{margin-top:60px;padding-top:40px;border-top:2px solid #eee}.related-products h3{font-size:1.8rem;margin-bottom:30px;color:#2d3436}.related-products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}.related-product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation-fill-mode:forwards;position:relative;border:1px solid rgba(240,240,240,.8)}.related-product-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.12);border:1px solid rgba(79,172,254,.1)}.related-product-card a{text-decoration:none;color:inherit;display:block;position:relative;z-index:1}.related-product-image{width:100%;height:180px;object-fit:contain;transition:all .6s cubic-bezier(.4,0,.2,1);transform-origin:center center}.related-product-card:hover .related-product-image{transform:scale(1.08);filter:brightness(1.03) saturate(1.05)}.related-product-info{padding:20px;position:relative;z-index:1}.related-product-info h4{font-size:1.2rem;margin-bottom:10px;color:#2d3436;transition:all .3s cubic-bezier(.4,0,.2,1);line-height:1.4}.related-product-info h4::after{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,#4facfe,#00f2fe);margin-top:5px;transform:scaleX(.3);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}.related-product-card:hover .related-product-info h4{color:#4facfe;transform:translateY(-2px)}.related-product-card:hover .related-product-info h4::after{transform:scaleX(1)}.related-product-info p{color:#666;font-size:.95rem;margin-bottom:15px;line-height:1.5}.view-product{color:#4facfe;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .4s cubic-bezier(.4,0,.2,1);padding:8px 16px;border-radius:50px;background:rgba(79,172,254,.05);border:1px solid rgba(79,172,254,.1)}.related-product-card:hover .view-product{gap:10px;color:#fff;background:linear-gradient(135deg,#4facfe,#00f2fe);border-color:transparent;padding:8px 20px;box-shadow:0 5px 15px rgba(79,172,254,.2)}.view-product i{transition:all .3s cubic-bezier(.4,0,.2,1);font-size:.8rem}.related-product-card:hover .view-product i{transform:translateX(4px)}.no-related{text-align:center;color:#999;font-style:italic;padding:30px;grid-column:1/-1}.error-message{text-align:center;padding:60px;color:#ff4757;font-size:1.2rem;grid-column:1/-1}.cart-count{transition:all .3s ease}.animate-pulse{animation:pulse .3s ease-in-out}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}.product-properties-container{margin:30px 0;padding:25px;background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);border-radius:15px;border-left:4px solid #4facfe}.product-properties-container h3{font-size:1.4rem;margin-bottom:20px;color:#2d3436;display:flex;align-items:center;gap:10px}.product-properties-container h3 i{color:#4facfe}.properties-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.property-item{background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);display:flex;gap:15px;align-items:flex-start;transition:transform .3s ease,box-shadow .3s ease}.property-item:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.12)}.property-icon{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#f8f9fa;padding:8px}.property-content{flex:1}.property-content h4{font-size:1.1rem;margin-bottom:8px;color:#2d3436;font-weight:600}.property-short-label{font-size:.9rem;color:#4facfe;font-weight:500;margin-bottom:10px;padding:4px 10px;background:rgba(79,172,254,.1);border-radius:4px;display:inline-block}.property-full-description{color:#555;font-size:.95rem;line-height:1.6;white-space:pre-line}.no-colors-message{text-align:center;padding:30px;background:#fff;border-radius:10px;border:2px dashed #e0e0e0}.no-colors-message i{font-size:3rem;color:#bdc3c7;margin-bottom:15px;display:block}.no-colors-message p{color:#666;font-size:1.1rem;margin:0}.btn-disabled{opacity:.6;cursor:not-allowed!important;background:linear-gradient(135deg,#ccc 0%,#999 100%)!important}.btn-disabled:hover{transform:none!important;box-shadow:none!important}
+
+/* Shake animation if user forgets to pick a color */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.highlight-required {
+  animation: shake 0.4s ease-in-out;
+  border: 2px solid #ff4757 !important;
+  background: #fff5f5;
+}
+
+/* Button Success State */
+.btn-add-to-cart.animate-button-success {
+  background: linear-gradient(135deg, #2ed573 0%, #7bed9f 100%) !important;
+  transform: scale(1.02);
+}@media(max-width:992px){#productTitle{font-size:2rem}.product-main-image{max-height:450px}.color-section h3{flex-direction:column;align-items:flex-start}.color-note{margin-left:0;margin-top:5px;font-size:.85rem}}@media(max-width:768px){.related-products-grid{grid-template-columns:1fr}.quantity-controls{justify-content:center}.product-actions{padding:20px}.color-dropdown-header{padding:12px}.color-dropdown-preview{width:35px;height:35px}.color-dropdown-option .color-swatch{width:30px;height:30px}.properties-grid{grid-template-columns:1fr}.property-item{flex-direction:column;text-align:center}.property-icon{margin:0 auto}}@media(max-width:480px){#productTitle{font-size:1.8rem}.product-main-image{max-height:350px}.btn-add-to-cart,.btn-whatsapp-order{padding:15px;font-size:1.1rem}.brand-tag{font-size:.9rem;padding:6px 15px}.color-dropdown-header{padding:10px}.color-dropdown-preview{width:30px;height:30px}.color-dropdown-text{font-size:.9rem}.color-dropdown-option{padding:10px 12px}.color-dropdown-option .color-swatch{width:25px;height:25px}}</style>
 </head>
 <body>
   <div class="paint-splatter-bg"></div>
@@ -100,14 +104,14 @@
     </div>
     <nav class="menu-nav">
       <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
-      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="partners.html"><i class="fas fa-tag"></i> Marques</a>
       <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
       <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
       <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Actions rapides</span>
-      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="partners.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/33695225960" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Aller à</span>
       <a href="#"><i class="fas fa-arrow-up"></i> Haut de page</a>
@@ -139,6 +143,13 @@
     </div>
   </section>
 
+<a href="https://wa.me/33695225960" id="pl-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <div class="pl-whatsapp-content">
+    <i class="fab fa-whatsapp"></i>
+    <span class="pl-whatsapp-text">Besoin d'un devis ?</span>
+  </div>
+</a>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -156,7 +167,10 @@
             <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
             <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
             <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
-            <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Itinéraire</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=39+Boulevard+De+La+Muette+95140+Garges-Les-Gonesse" 
+   class="map-link" target="_blank" rel="noopener noreferrer">
+   <i class="fas fa-directions"></i> Itinéraire
+</a>
           </div>
         </div>
         <div class="footer-column">
@@ -170,8 +184,8 @@
         <div class="footer-column">
           <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
           <div class="footer-hours">
-            <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
-            <p><strong>Sunday : </strong> Closed</p>
+            <p><strong>Lundi - Samedi : </strong> 06h30 - 18h00</p>
+            <p><strong>Dimanche : </strong> Fermé</p>
           </div>
           <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
           <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
@@ -228,7 +242,7 @@
     async function loadProductDetails(productId) {
       try {
         document.getElementById('productContainer').innerHTML = `
-          <div class="loading-product"><i class="fas fa-spinner fa-spin"></i> Loading product details...</div>
+          <div class="loading-product"><i class="fas fa-spinner fa-spin"></i> Chargement des détails du produit...</div>
         `;
         ensureSupabase(async () => {
           const { data: product, error } = await window.supabaseClient
@@ -239,43 +253,36 @@
           if (error) throw error;
           currentProduct = product;
 
-          // SEO meta updates based on fetched product
-          // Update meta description
-          let metaDescription = document.querySelector('meta[name="description"]');
-          if (!metaDescription) {
-              metaDescription = document.createElement('meta');
-              metaDescription.name = 'description';
-              document.head.appendChild(metaDescription);
+          // --- DYNAMIC SEO UPDATE ---
+          const pageUrl = window.location.href;
+          const productImg = product.image_url || 'logo.webp';
+          const productTitle = `${product.name} | ${product.brands.name} - Peinture Land`;
+          const productShortDesc = product.description ? product.description.substring(0, 160) : "Découvrez ce produit chez Peinture Land.";
+
+          // Update Standard Tags
+          document.title = productTitle;
+          document.querySelector('meta[name="description"]').setAttribute('content', productShortDesc);
+
+          // Update Open Graph (WhatsApp/Socials)
+          document.getElementById('ogUrl').setAttribute('content', pageUrl);
+          document.getElementById('ogTitle').setAttribute('content', productTitle);
+          document.getElementById('ogDesc').setAttribute('content', productShortDesc);
+          document.getElementById('ogImage').setAttribute('content', productImg);
+
+          // Update Twitter
+          document.getElementById('twitterTitle').setAttribute('content', productTitle);
+          document.getElementById('twitterDesc').setAttribute('content', productShortDesc);
+          document.getElementById('twitterImage').setAttribute('content', productImg);
+
+          // Update canonical URL (master link vs. parameterized)
+          const canonicalEl = document.getElementById('canonicalTag');
+          if (canonicalEl) {
+            canonicalEl.href = `https://peintureland.com/product.html?id=${product.id}`;
           }
-          metaDescription.content = product.description ? product.description.substring(0, 160) : `Achetez ${product.name}, peinture professionnelle de qualité chez Peinture Land.`;
-
-          // Update canonical URL
-          let canonical = document.querySelector('link[rel="canonical"]');
-          if (!canonical) {
-              canonical = document.createElement('link');
-              canonical.rel = 'canonical';
-              document.head.appendChild(canonical);
-          }
-          canonical.href = `https://peintureland.com/product.html?id=${product.id}`;
-
-          // Update Open Graph / Twitter meta tags (as above, using product data)
-          const ogTitle = document.querySelector('meta[property="og:title"]');
-          if (ogTitle) ogTitle.content = `${product.name} – Peinture Land`;
-
-          const ogDescription = document.querySelector('meta[property="og:description"]');
-          if (ogDescription) ogDescription.content = product.description ? product.description.substring(0, 160) : `Achetez ${product.name} sur Peinture Land.`;
-
-          const ogUrl = document.querySelector('meta[property="og:url"]');
-          if (ogUrl) ogUrl.content = `https://peintureland.com/product.html?id=${product.id}`;
-
-          const ogImage = document.querySelector('meta[property="og:image"]');
-          if (ogImage && product.image_url) ogImage.content = product.image_url;
-
-          // Update Twitter meta tags similarly (using product data)
 
           // Update JSON-LD structured data
-          const jsonLdScript = document.getElementById('productJsonLd');
-          if (jsonLdScript) {
+          const schemaScript = document.getElementById('productSchema');
+          if (schemaScript) {
               const productData = {
                   "@context": "https://schema.org/",
                   "@type": "Product",
@@ -288,13 +295,11 @@
                   },
                   "offers": {
                       "@type": "Offer",
-                      "url": `https://peintureland.com/product.html?id=${product.id}`,
-                      "priceCurrency": "EUR",
-                      "price": "0", // replace with actual price if available
+                      "url": window.location.href,
                       "availability": "https://schema.org/InStock"
                   }
               };
-              jsonLdScript.innerHTML = JSON.stringify(productData, null, 2);
+              schemaScript.textContent = JSON.stringify(productData);
           }
 
           const { data: properties, error: propertiesError } = await window.supabaseClient
@@ -369,7 +374,7 @@
             if (!noColorsMsg) {
                 noColorsMsg = document.createElement('div');
                 noColorsMsg.className = 'no-colors-message';
-                noColorsMsg.innerHTML = '<i class="fas fa-palette"></i><p>Ce produit n\'a pas de couleurs.</p>';
+                noColorsMsg.innerHTML = '<i class="fas fa-info-circle"></i><p>Ce produit ne nécessite pas de choix de teinte.</p>';
                 colorSection.appendChild(noColorsMsg);
             }
         }
@@ -603,18 +608,24 @@
       if (!addToCartBtn) return;
       addToCartBtn.addEventListener('click', function() {
         if (product.hasColorGroups && !selectedShade) {
-          const notification = document.createElement('div');
-          notification.style.cssText = 'position:fixed; top:20px; right:20px; background:#ff9800; color:white; padding:15px 25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); z-index:10000; animation:fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; font-weight:600;';
-          notification.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please select a color before adding to cart.';
-          document.body.appendChild(notification);
-          const colorSection = document.getElementById('colorSection');
-          if (colorSection) {
-            colorSection.classList.add('highlight-required');
-            setTimeout(() => colorSection.classList.remove('highlight-required'), 2000);
-          }
-          setTimeout(() => { if (notification.parentNode) notification.remove(); }, 3000);
-          return;
-        }
+    const colorSection = document.getElementById('colorSection');
+    colorSection.classList.add('highlight-required');
+    
+    // Smooth scroll to the color section so the user sees it
+    colorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Temporary notification
+    const note = document.createElement('div');
+    note.style.cssText = 'position:fixed; top:20px; right:20px; background:#ff4757; color:white; padding:15px; border-radius:8px; z-index:9999;';
+    note.innerHTML = '<i class="fas fa-palette"></i> Veuillez choisir une teinte.';
+    document.body.appendChild(note);
+    
+    setTimeout(() => {
+        colorSection.classList.remove('highlight-required');
+        note.remove();
+    }, 3000);
+    return;
+} 
         const quantity = parseInt(document.getElementById('quantity').value);
         const cartProduct = {
           id: product.id,
@@ -645,7 +656,7 @@
           updateCartCount();
           const notification = document.createElement('div');
           notification.style.cssText = 'position:fixed; top:20px; right:20px; background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); color:white; padding:15px 25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); z-index:10000; animation:fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; font-weight:600;';
-          notification.innerHTML = `<i class="fas fa-check-circle"></i> ${product.name} added to cart`;
+          notification.innerHTML = `<i class="fas fa-check-circle"></i> ${product.name} ajouté au panier`;
           document.body.appendChild(notification);
           setTimeout(() => { if (notification.parentNode) notification.remove(); }, 3000);
         }
@@ -653,23 +664,25 @@
         setTimeout(() => this.classList.remove('animate-button-success'), 1000);
       });
     }
-
-    function setupWhatsAppButton(product) {
-      const whatsappBtn = document.getElementById('whatsappOrderBtn');
-      if (!whatsappBtn) return;
-      whatsappBtn.addEventListener('click', function() {
-        const quantity = parseInt(document.getElementById('quantity').value);
-        let shadeText = '';
-        if (selectedShade) {
-          shadeText = ` in shade **${selectedShade.code}${selectedShade.name ? ' – ' + selectedShade.name : ''}**`;
-        }
-        const message = `Hello, I would like to order: ${quantity}x **${product.name}**${shadeText} from **${product.brands.name}**.`;
-        const phoneNumber = '+33695225960';
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-      });
-    }
-
+function setupWhatsAppButton(product) {
+  const whatsappBtn = document.getElementById('whatsappOrderBtn');
+  if (!whatsappBtn) return;
+  
+  whatsappBtn.addEventListener('click', function() {
+    const quantity = parseInt(document.getElementById('quantity').value);
+    
+    // FIX: Only declare shadeText once.
+    const shadeText = selectedShade 
+      ? ` en teinte [${selectedShade.shade_code || selectedShade.code} - ${selectedShade.name || ''}]` 
+      : "";
+    
+    const message = `Bonjour Peinture Land, je souhaite commander ${quantity}x ${product.name}${shadeText} de la marque ${product.brands.name}.`;
+    const phoneNumber = '33695225960'; // Note: removed the '+' for better API compatibility
+    const encodedMessage = encodeURIComponent(message);
+    
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  });
+}
     async function loadRelatedProducts(brandId, excludeProductId) {
       try {
         const { data: products, error } = await window.supabaseClient

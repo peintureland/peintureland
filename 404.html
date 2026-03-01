@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Teinte Introuvable | Peinture Land</title>
+    <meta name="description" content="Oups ! La page que vous recherchez n'existe pas. Laissez-nous vous guider vers les meilleures peintures professionnelles.">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Peinture Land" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/ham.css">
+    <link rel="stylesheet" href="background-pattern.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --luxury-gold: #d4af37;
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin: 0;
+            filter: drop-shadow(0 10px 20px rgba(79, 172, 254, 0.2));
+        }
+
+        .error-visual {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .error-content h1 {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-content p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-404 {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-home {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid #e2e8f0;
+            color: #1e293b;
+        }
+
+        .btn-outline:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        /* Animation Paint Drip */
+        .paint-drip {
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 0 0 20px 20px;
+            animation: drip 3s infinite ease-in;
+        }
+
+        @keyframes drip {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        </header>
+
+    <main class="error-container">
+        <i class="fas fa-palette error-visual" style="font-size: 30rem;"></i>
+
+        <div class="error-content">
+            <h2 class="error-code">404</h2>
+            <h1>Oups ! Cette teinte est introuvable.</h1>
+            <p>Même les meilleurs peintres s'égarent parfois. La page que vous cherchez a probablement été repeinte ou déplacée.</p>
+            
+            <div class="action-group">
+                <a href="index.html" class="btn-404 btn-home">
+                    <i class="fas fa-home"></i> Retour à l'accueil
+                </a>
+                <a href="search.html" class="btn-404 btn-outline">
+                    <i class="fas fa-search"></i> Trouver un produit
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/libs/gsap/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation d'entrée avec GSAP
+            const tl = gsap.timeline();
+
+            tl.from(".error-code", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                ease: "back.out(1.7)"
+            })
+            .from(".error-content h1, .error-content p", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2
+            }, "-=0.5")
+            .from(".action-group .btn-404", {
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.15
+            }, "-=0.3");
+
+            // Animation de flottement pour l'icône de fond
+            gsap.to(".error-visual", {
+                y: 20,
+                rotation: 5,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+    </script>
+</body>
+</html>

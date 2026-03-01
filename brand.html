@@ -8,6 +8,12 @@
   <meta name="description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land. Qualité et fiabilité depuis 2015.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://peintureland.com/brand.html">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Peinture Land" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nos Marques de Peinture – Peinture Land">
@@ -20,8 +26,6 @@
   <meta name="twitter:title" content="Nos Marques de Peinture – Peinture Land">
   <meta name="twitter:description" content="Découvrez toutes les marques de peintures et revêtements professionnels disponibles chez Peinture Land.">
   <meta name="twitter:image" content="https://peintureland.com/logo.webp">
-  <!-- Favicon -->
-  <link rel="icon" href="logo.webp" type="image/webp">
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
@@ -32,6 +36,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/search.css">
   <link rel="stylesheet" href="css/ham.css">
+  <link rel="stylesheet" href="css/whtsp-flot.css">
   <link rel="stylesheet" href="background-pattern.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -98,14 +103,14 @@
     </div>
     <nav class="menu-nav">
       <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
-      <a href="home.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="partners.html"><i class="fas fa-tag"></i> Marques</a>
       <a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
       <a href="checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
       <a href="search.html"><i class="fas fa-search"></i> Recherche</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Actions rapides</span>
-      <a href="home.html"><i class="fas fa-star"></i> Explorer les marques</a>
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="partners.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/33695225960" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <div class="menu-divider"></div>
       <span class="menu-section-title">Aller à</span>
       <!-- Links specific to this page -->
@@ -121,9 +126,16 @@
   <!-- Brand Header -->
   <section class="brand-header animate-gradient-shift" id="brand-header">
     <div class="container">
-      <div class="breadcrumb animate-fade-in-left">
-        <a href="index.html">Accueil</a> <i class="fas fa-chevron-right"></i>
-        <span id="brandName">Brand</span>
+      <div class="breadcrumb animate-fade-in-left" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="index.html" itemprop="item"><span itemprop="name">Accueil</span></a>
+                  <meta itemprop="position" content="1" />
+            </span> 
+            <i class="fas fa-chevron-right"></i>
+            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <span itemprop="name" id="brandName">Chargement...</span>
+                  <meta itemprop="position" content="2" />
+            </span>
       </div>
       <div class="brand-info animate-fade-in-up" id="brandInfo">
         <div class="loading-brand">
@@ -145,6 +157,13 @@
     </div>
   </section>
 
+<a href="https://wa.me/33695225960" id="pl-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <div class="pl-whatsapp-content">
+    <i class="fab fa-whatsapp"></i>
+    <span class="pl-whatsapp-text">Besoin d'un devis ?</span>
+  </div>
+</a>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -162,7 +181,10 @@
             <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
             <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
             <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
-            <a href="https://maps.app.goo.gl/NYagqXvvNyLMVX4o8" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-directions"></i> Itinéraire</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=39+Boulevard+De+La+Muette+95140+Garges-lès-Gonesse" 
+               class="map-link" target="_blank" rel="noopener noreferrer">
+               <i class="fas fa-directions"></i> Itinéraire
+            </a>
           </div>
         </div>
         <div class="footer-column">
@@ -176,8 +198,8 @@
         <div class="footer-column">
           <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
           <div class="footer-hours">
-            <p><strong>Monday - Saturday : </strong> 6:30 AM - 6:00 PM</p>
-            <p><strong>Sunday : </strong> Closed</p>
+            <p><strong>Lundi - Samedi : </strong> 06h30 - 18h00</p>
+            <p><strong>Dimanche : </strong> Fermé</p>
           </div>
           <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
           <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
@@ -383,50 +405,77 @@
     }
 
     function createProductCard(product, brandName) {
-      const shortDescription = product.description && product.description.length > 100 
-        ? product.description.substring(0, 100) + '...' 
-        : product.description || '';
-      const card = document.createElement('a');
-      card.href = `product.html?id=${product.id}`;
-      card.className = 'product-card';
-      card.innerHTML = `
-        <div class="product-image-container">
-          <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop'}" 
-               alt="${product.name}" class="product-image" loading="lazy" width="400" height="300">
-        </div>
-        <div class="product-info">
-          <div class="brand-badge">🔖 ${brandName}</div>
-          <h3 class="product-name">${product.name}</h3>
-          <div class="product-description-container">
-            <p class="product-description">${shortDescription}</p>
-          </div>
-          ${product.product_properties && product.product_properties.length ? `
-            <div class="properties">
-              ${product.product_properties.map(pp => `
-                <span class="property-tag">
-                  ${pp.property.icon_url ? `<img src="${pp.property.icon_url}" alt="${pp.property.name}" class="property-icon" width="16" height="16">` : ''}
-                  <span class="property-label">${pp.property.short_label || pp.property.name}</span>
-                </span>
-              `).join('')}
+        const shortDescription = product.description && product.description.length > 100 
+            ? product.description.substring(0, 100) + '...' 
+            : product.description || 'Découvrez ce produit professionnel chez Peinture Land.';
+        
+        const card = document.createElement('a');
+        card.href = `product.html?id=${product.id}`;
+        card.className = 'product-card';
+        
+        // SEO: Link title for extra context
+        card.title = `Voir les détails de ${product.name} - ${brandName}`;
+        
+        // SEO (Schema.org): Tells Google this specific block is a "Product"
+        card.setAttribute('itemscope', '');
+        card.setAttribute('itemtype', 'https://schema.org/Product');
+
+        // Handle properties HTML securely
+        let propertiesHtml = '';
+        if (product.product_properties && product.product_properties.length) {
+            propertiesHtml = `
+                <div class="properties">
+                    ${product.product_properties.map(pp => `
+                        <span class="property-tag">
+                            ${pp.property.icon_url ? `<img src="${pp.property.icon_url}" alt="Propriété: ${pp.property.name}" class="property-icon" width="16" height="16" loading="lazy">` : ''}
+                            <span class="property-label">${pp.property.short_label || pp.property.name}</span>
+                        </span>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        card.innerHTML = `
+            <div class="product-image-container">
+                <img src="${product.image_url || 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop'}" 
+                     alt="Acheter ${product.name} de la marque ${brandName} - Peinture Land" 
+                     class="product-image" 
+                     itemprop="image"
+                     loading="lazy" 
+                     width="400" height="300">
             </div>
-          ` : ''}
-          <div class="product-actions">
-            <button class="btn add-to-cart" 
-                    data-product-id="${product.id}"
-                    data-product-name="${product.name}"
-                    data-product-description="${product.description}"
-                    data-product-image="${product.image_url || ''}"
-                    data-brand-id="${product.brand_id}">
-              <i class="fas fa-cart-plus"></i> Ajouter au panier
-            </button>
-            <span class="view-details">
-              Voir les détails <i class="fas fa-arrow-right"></i>
-            </span>
-          </div>
-        </div>
-      `;
-      return card;
+            <div class="product-info">
+                <div class="brand-badge" itemprop="brand" itemscope itemtype="https://schema.org/Brand">
+                    <span itemprop="name">🔖 ${brandName}</span>
+                </div>
+                
+                <h3 class="product-name" itemprop="name">${product.name}</h3>
+                
+                <div class="product-description-container">
+                    <p class="product-description" itemprop="description">${shortDescription}</p>
+                </div>
+                
+                ${propertiesHtml}
+                
+                <div class="product-actions">
+                    <button class="btn add-to-cart" 
+                        aria-label="Ajouter le produit ${product.name} au panier"
+                        data-product-id="${product.id}"
+                        data-product-name="${product.name}"
+                        data-product-description="${product.description}"
+                        data-product-image="${product.image_url || ''}"
+                        data-brand-id="${product.brand_id}">
+                        <i class="fas fa-cart-plus" aria-hidden="true"></i> Ajouter au panier
+                    </button>
+                    <span class="view-details" aria-hidden="true">
+                        Voir les détails <i class="fas fa-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+        `;
+        return card;
     }
+
 
     function updateCartCount() {
       const cart = JSON.parse(localStorage.getItem('peintureLandCart')) || [];

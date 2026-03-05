@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PEINTURE LAND – Fournisseur professionnel de peinture</title>
+  <meta name="description" content="PEINTURE LAND, votre partenaire B2B pour peintures et revêtements professionnels. Large gamme, marques certifiées, livraison rapide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://peintureland.com/">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Peinture Land" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.peintureland.com/">
+  <meta property="og:title" content="PEINTURE LAND – Fournisseur professionnel de peinture">
+  <meta property="og:description" content="Distributeur agréé de peintures pour les professionnels. Demandez un devis personnalisé.">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://ywcpovfepiuspgcsjizs.supabase.co">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Existing styles (root-relative) -->
+  <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/landing.css">
+  <link rel="stylesheet" href="/css/ham.css">
+  <!-- Supabase config -->
+  <script>
+    window.SUPABASE_URL = "https://ywcpovfepiuspgcsjizs.supabase.co";
+    window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3Y3BvdmZlcGl1c3BnY3NqaXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNDQ2OTgsImV4cCI6MjA4MTYyMDY5OH0.UY8WgnpVJbckuwnrxTALikfWU9VwBzaW2hIVvgk9D48";
+  </script>
+  <!-- GSAP from CDN (no local 404) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header animate-gradient-shift">
+    <div class="container">
+      <div class="logo-container">
+        <img src="/logo.webp" alt="PEINTURE LAND Logo" class="logo animate-float" width="150" height="50">
+        <h3 class="site-name animate-fade-in">PEINTURE LAND</h3>
+      </div>
+      <div class="global-search-container animate-fade-in">
+        <form class="search-form" id="globalSearchForm">
+          <input type="text" class="search-input" id="globalSearchInput" placeholder="Rechercher produits et marques…" autocomplete="on" aria-label="Rechercher">
+          <button type="submit" class="search-button" aria-label="Rechercher"><i class="fas fa-search"></i></button>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </form>
+      </div>
+      <nav class="nav">
+        <a href="/index.html" class="active animate-fade-in-left"><i class="fas fa-home"></i> Accueil</a>
+        <a href="/cart.html" class="cart-link animate-fade-in-right"><i class="fas fa-shopping-cart"></i> Panier <span class="cart-count">0</span></a>
+      </nav>
+      <!-- Hamburger button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hamburger overlay menu -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-header">
+      <img src="/logo.webp" alt="PEINTURE LAND" class="menu-logo" width="120" height="40">
+      <button class="menu-close" id="menuClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="menu-nav">
+      <a href="/index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="/partners.html"><i class="fas fa-tag"></i> Marques</a>
+      <a href="/cart.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      <a href="/checkout.html"><i class="fas fa-credit-card"></i> Commander</a>
+      <a href="/search.html"><i class="fas fa-search"></i> Recherche</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Actions rapides</span>
+      <a href="/partners.html"><i class="fas fa-star"></i> Explorer les marques</a>
+      <a href="https://wa.me/33695225960" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <div class="menu-divider"></div>
+      <span class="menu-section-title">Aller à</span>
+      <a href="#about"><i class="fas fa-info-circle"></i> Qui sommes-nous</a>
+      <a href="#how-it-works"><i class="fas fa-cogs"></i> Comment ça marche</a>
+      <a href="#brands"><i class="fas fa-building"></i> Marques partenaires</a>
+      <a href="#benefits"><i class="fas fa-thumbs-up"></i> Avantages</a>
+      <a href="legal-notice.html" class="ham-link"><i class="fas fa-file-alt"></i> Mentions légales</a>
+    </nav>
+    <div class="menu-trust">
+      <p><i class="fas fa-lock"></i> Paiement sécurisé</p>
+      <p><i class="fas fa-truck"></i> Livraison rapide</p>
+      <p><i class="fas fa-award"></i> Produits certifiés</p>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+<!-- Hero Section -->
+<section class="hero-luxury" id="hero-luxury">
+  <div class="hero-canvas">
+    <!-- Panel 1: Focus on Professional Brands -->
+    <div class="panel panel-1">
+      <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/panel-1.webp" 
+           alt="Vente en gros peinture Guittet, Unikalo, Tollens - Peinture Land" 
+           title="Large stock de marques professionnelles" 
+           width="300" height="200">
+    </div>
+    <!-- Panel 2: Focus on Results/Surfaces -->
+    <div class="panel panel-2">
+      <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/panel-2.webp" 
+           alt="Revêtement premium pour chantiers de rénovation et décoration" 
+           title="Qualité professionnelle pour artisans" 
+           width="300" height="200">
+    </div>
+    <!-- Panel 3: Focus on Color Mixing/Expertise -->
+    <div class="panel panel-3">
+      <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/panel-3.webp" 
+           alt="Machine à teinter et mélange de couleurs pro chez Peinture Land" 
+           title="Personnalisation de teintes pro" 
+           width="300" height="200">
+    </div>
+    <canvas id="heroParticles"></canvas>
+  </div>
+  
+  <div class="hero-content">
+    <img src="/logo.webp" alt="PEINTURE LAND - Grossiste en peinture et outillage" class="hero-logo">
+    <span class="hero-eyebrow">Grossiste & Revendeur Professionnel</span>
+    
+    <!-- Optimized H1: Keeps your style but adds the 'Wholesale' keyword for bots -->
+    <h1 class="hero-title">
+      La couleur <em>devient matière</em>
+      <span style="display:none;"> - Grossiste Peinture Professionnelle à Garges-lès-Gonesse</span>
+    </h1>
+    
+    <div class="hero-divider"></div>
+    
+    <!-- Stronger B2B description -->
+    <p class="hero-note">
+      Plus de 30 marques en stock immédiat pour les pros du bâtiment.<br>
+      Revêtements haute performance conçus pour durer.
+    </p>
+    
+    <div class="lux-btn-container">
+      <a href="/partners.html" class="lux-btn" aria-label="Voir toutes nos marques de peinture en gros">
+        <span class="lux-btn__label">Explorer nos marques</span>
+        <span class="lux-btn__line"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Image Carousel (Banner) - SEO Optimized for Peinture Land -->
+<section class="carousel-section" id="carousel">
+  <div class="container">
+    <h2>Notre savoir-faire en images</h2>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      
+      <!-- Slide 1: General Branding -->
+      <div class="carousel-slide" 
+           style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/1.webp');" 
+           title="Peinture Land - Grossiste en peinture pro à Garges-lès-Gonesse">
+        <div class="slide-overlay"><h3>Peintures fiables pour maison & commerce</h3></div>
+      </div>
+
+      <!-- Slide 2: Guittet (Calista Mat-Velours) -->
+      <a href="/product.html?id=67fa8acf-16e7-4bbd-8075-96bc322e8762" 
+         class="carousel-slide-link" 
+         aria-label="Acheter Guittet Calista Mat-Velours en gros - Peinture professionnelle sans trace">
+        <div class="carousel-slide" 
+             style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/2.webp');" 
+             title="Guittet Calista : Peinture acrylique haute performance pour artisans">
+          <div class="slide-overlay"><h3>Couleurs durables & protection longue durée</h3></div>
+        </div>
+      </a>
+
+      <!-- Slide 3: Plasdox (Aqualkyd Velours Premium) -->
+      <a href="/product.html?id=7fbd94d4-ecd0-4ee9-ab34-16be8abeef28" 
+         class="carousel-slide-link" 
+         aria-label="Vente en gros Plasdox Aqualkyd Velours Premium - Finition veloutée durable">
+        <div class="carousel-slide" 
+             style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/3.webp');" 
+             title="Plasdox Aqualkyd : La référence pro pour murs et plafonds">
+          <div class="slide-overlay"><h3>Transformez votre espace avec qualité pro</h3></div>
+        </div>
+      </a>
+
+      <!-- Slide 4: L'Outil Parfait (Brand Page) -->
+      <a href="/brand.html?id=057338df-2c2d-4e0c-9378-1ca76b2147fe" 
+         class="carousel-slide-link" 
+         aria-label="Grossiste outillage L'Outil Parfait - Rouleaux, brosses et lames de lissage">
+        <div class="carousel-slide" 
+             style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/4.webp');" 
+             title="Matériel professionnel L'Outil Parfait en stock immédiat">
+          <div class="slide-overlay"><h3>Rouleaux doux pour couverture rapide</h3></div>
+        </div>
+      </a>
+
+      <!-- Slide 5: Semin (CE 78 Naturel Enduit Joint) -->
+      <a href="/product.html?id=e05678b1-d22a-4f94-8ad6-21c73bb613e6" 
+         class="carousel-slide-link" 
+         aria-label="Fournisseur Semin CE 78 Naturel - Enduit de jointoiement prise rapide 4H">
+        <div class="carousel-slide" 
+             style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/5.webp');" 
+             title="Semin CE 78 : Enduit professionnel pour plaques de plâtre">
+          <div class="slide-overlay"><h3>Adhésif fiable pour un résultat durable</h3></div>
+        </div>
+      </a>
+
+      <!-- Slide 6: Warehouse/General Stock -->
+      <div class="carousel-slide" 
+           style="background-image: url('https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/6.webp');" 
+           title="Plus de 30 marques de peinture pro en stock chez Peinture Land">
+        <div class="slide-overlay"><h3>Peintures & outils de qualité supérieure</h3></div>
+      </div>
+
+    </div>
+    <!-- Navigation -->
+    <button class="carousel-btn prev" id="carouselPrev" aria-label="Diapositive précédente"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn next" id="carouselNext" aria-label="Diapositive suivante"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- About / Who We Are -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-text" id="aboutText">
+          <h2>Qui sommes-nous ?</h2>
+          <p class="lead">PEINTURE LAND est le partenaire privilégié des artisans, peintres et collectivités depuis 2024.</p>
+          <p>Basés à Garges-lès-Gonesse, nous distribuons des peintures haut de gamme pour tous types des médias : intérieur, extérieur, sols, bois et métaux. Notre force : un stock permanent et une équipe technique à votre écoute.</p>
+          <div class="stats" id="stats">
+            <div class="stat-item"><span class="stat-number" data-target="15">0</span> <span class="stat-label">ans d'expérience</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="50">0</span> <span class="stat-label">marques partenaires</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="2000">0</span> <span class="stat-label">clients professionnels</span></div>
+          </div>
+        </div>
+        <div class="about-image" id="aboutImage">
+          <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/others/about-pic.webp" 
+               alt="Peinture Land Entrepôt à Garges-lès-Gonesse - Stock de plus de 30 marques de peinture professionnelle" 
+               title="Grossiste Peinture Land : Notre entrepôt de 30+ marques pro en Île-de-France"
+               loading="lazy">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How It Works / Process -->
+    <section class="process" id="how-it-works">
+      <div class="container">
+        <h2>Comment ça marche ?</h2>
+        <div class="process-grid">
+          <div class="process-step" data-step="1"><i class="fas fa-clipboard-list"></i> <h3>1. Devis personnalisé</h3><p>Remplissez notre formulaire ou contactez-nous.</p></div>
+          <div class="process-step" data-step="2"><i class="fas fa-paint-roller"></i> <h3>2. Conseil technique</h3><p>Nos experts valident vos besoins.</p></div>
+          <div class="process-step" data-step="3"><i class="fas fa-truck"></i> <h3>3. Expédition rapide</h3><p>Préparation sous 24h, livraison sur chantier.</p></div>
+          <div class="process-step" data-step="4"><i class="fas fa-hand-holding-usd"></i> <h3>4. Facturation adaptée</h3><p>Paiement 30 jours pour les pros.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+<!-- Brands -->
+<section class="brands-luxury" id="brands">
+  <div class="container">
+    <h2 class="brands-title">Nos marques partenaires</h2>
+    <div class="brands-grid" id="brandsGrid">
+      
+      <!-- Cegecol -->
+      <div class="brand-logo">
+        <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/brands/cegecol.webp" 
+             alt="Grossiste Cegecol - Solutions de collage et mortiers professionnels" 
+             title="Distributeur Cegecol chez Peinture Land" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+      <!-- Gori -->
+      <div class="brand-logo">
+        <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/brands/gori.jpg" 
+             alt="Gori Peinture et Lasures - Revendeur professionnel en gros" 
+             title="Gamme complète Gori disponible en stock" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+      <!-- Semin -->
+      <div class="brand-logo">
+        <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/brands/semin.jpg" 
+             alt="Semin France - Grossiste Enduits et Colles pour professionnels" 
+             title="Semin : Toute la gamme pour le jointoiement et le lissage" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+      <!-- Toupret -->
+      <div class="brand-logo">
+        <img src="https://toupret.com/_nuxt/img/3d90f08.svg" 
+             alt="Toupret Enduits de préparation - Fournisseur pro bâtiment" 
+             title="Large stock Toupret pour vos chantiers de rénovation" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+      <!-- L'Outil Parfait -->
+      <div class="brand-logo">
+        <img src="https://www.lafrenchfab.fr/storage/sites/2/2024/01/LOGO-OP-NOIR.png" 
+             alt="L'Outil Parfait - Outillage de peinture professionnel en gros" 
+             title="Rollers et lames L'Outil Parfait chez Peinture Land" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+      <!-- Guittet -->
+      <div class="brand-logo">
+        <img src="https://ywcpovfepiuspgcsjizs.supabase.co/storage/v1/object/public/brands/guittet.webp" 
+             alt="Peinture Guittet - Distributeur officiel et grossiste agréé" 
+             title="Guittet : La référence peinture haut de gamme" 
+             loading="lazy" width="150" height="80">
+      </div>
+
+    </div>
+    <div class="lux-btn-container">
+      <a href="/partners.html" class="lux-btn" aria-label="Découvrir notre catalogue de 30+ marques professionnelles">
+        <span class="lux-btn__label">Voir toutes les marques</span>
+        <span class="lux-btn__line"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Why Choose Us / Benefits -->
+    <section class="benefits" id="benefits">
+      <div class="container">
+        <h2>Pourquoi choisir PEINTURE LAND ?</h2>
+        <div class="benefits-grid">
+          <div class="benefit"><i class="fas fa-tags"></i> <h3>Prix wholesale</h3><p>Tarifs dégressifs dès le premier achat.</p></div>
+          <div class="benefit"><i class="fas fa-certificate"></i> <h3>Marques certifiées</h3><p>Labels environnementaux et qualité.</p></div>
+          <div class="benefit"><i class="fas fa-clock"></i> <h3>Stock permanent</h3><p>Plus de 90% de disponibilité.</p></div>
+          <div class="benefit"><i class="fas fa-headset"></i> <h3>Support pro</h3><p>Assistance technique par téléphone.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="final-cta">
+      <div class="container final-cta-content">
+        <h2>Prêt à passer commande ?</h2>
+        <p>Devenez client professionnel et bénéficiez de nos tarifs exclusifs.</p>
+        <div class="cta-buttons">
+          <a href="/partners.html" class="btn btn-primary">Voir les marques</a>
+          <a href="https://wa.me/33695225960" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="logo.webp" alt="PEINTURE LAND" class="footer-logo-img" width="120" height="40">
+            <h3>PEINTURE LAND</h3>
+          </div>
+          <p class="footer-tagline">Peinture & Revêtements Pro</p>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-map-marker-alt"></i> Notre adresse</h4>
+          <div class="footer-address">
+            <div class="address-line"><i class="fas fa-building"></i><span>39 Boulevard De La Muette</span></div>
+            <div class="address-line"><i class="fas fa-map-pin"></i><span>95140 Garges-Les-Gonesse</span></div>
+            <div class="address-line"><i class="fas fa-flag"></i><span>France</span></div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=39+Boulevard+De+La+Muette+95140+Garges-lès-Gonesse" 
+               class="map-link" target="_blank" rel="noopener noreferrer">
+               <i class="fas fa-directions"></i> Itinéraire
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-phone"></i> Contactez-nous</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> 06.95.22.59.60</p>
+            <p><i class="fas fa-phone"></i> 07.86.02.96.89</p>
+            <p><i class="fas fa-envelope"></i> sarlpeintureland@gmail.com</p>
+          </div>
+        </div>
+<!-- NEW: Pages column -->
+        <div class="footer-column">
+          <h4><i class="fas fa-link"></i> Pages</h4>
+          <ul class="footer-pages">
+            <li><a href="legal-notice.html" class="footer-link">Mentions légales</a></li>
+            <li><a href="partners.html" class="footer-link">Partenaires</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4><i class="fas fa-clock"></i> Horaires d’ouverture</h4>
+          <div class="footer-hours">
+            <p><strong>Lundi - Samedi : </strong> 06h30 - 18h00</p>
+            <p><strong>Dimanche : </strong> Fermé</p>
+          </div>
+          <h4 style="margin-top:25px;"><i class="fas fa-share-alt"></i> Nos réseaux sociaux</h4>
+          <div class="footer-social" style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
+            <a href="https://www.instagram.com/peinture_land?igsh=a2drczRqNGMzZzRn" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@peinture.land.95?_r=1&_t=ZS-93v1bcM8gsu" class="map-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PEINTURE LAND. Tous droits réservés.</p>
+        <p class="footer-legal">Fournisseurs de peintures professionnelles | SIRET : 931 329 395 00012</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (root-relative, no local GSAP) -->
+  <script src="/logo-loader.js" defer></script>
+  <script src="/js/paint-loader-enhanced.js" defer></script>
+  <script src="/js/landing.js" defer></script>
+  <script src="/js/ham.js" defer></script>
+  <script src="/supabase-client.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>

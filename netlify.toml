@@ -1,0 +1,21 @@
+[build]
+  command = "npm ci && node scripts/generate-sitemaps.js"
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+[[headers]]
+  for = "/css/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/logo.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

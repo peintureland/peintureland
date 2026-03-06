@@ -1,9 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
 Disallow: /checkout.html
 Disallow: /search.html
 Disallow: /cart.html
 Disallow: /404.html
 
-# Sitemaps
 Sitemap: https://peintureland.com/sitemap.xml

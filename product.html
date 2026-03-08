@@ -20,7 +20,7 @@
   <meta property="og:url" id="ogUrl" content="https://peintureland.com/product.html">
   <meta property="og:title" id="ogTitle" content="Peinture Land | Produits Professionnels">
   <meta property="og:description" id="ogDesc" content="Découvrez nos peintures et enduits de qualité artisanale.">
-  <meta property="og:image" content="https://peintureland.com/images/og-image.webp">
+  <meta property="og:image" id="ogImage" content="https://peintureland.com/images/og-image.webp">
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" id="twitterTitle" content="Peinture Land">
@@ -40,8 +40,6 @@
   <link rel="stylesheet" href="css/ham.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Supabase (deferred) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <!-- Supabase (deferred) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script>
@@ -320,7 +318,6 @@
           if (propertiesError) console.warn('Could not load product properties:', propertiesError);
           product.properties = properties || [];
 
-          document.title = `${product.name} - PEINTURE LAND`;
           document.getElementById('productNameTitle').textContent = product.name;
           const brandLinkEl = document.getElementById('brandLink');
           brandLinkEl.textContent = product.brands.name;
